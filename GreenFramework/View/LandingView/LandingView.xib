@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LandingView" customModule="MiBook" customModuleProvider="target">
+            <connections>
+                <outlet property="indicator" destination="kVU-1W-BdS" id="Ceh-Q5-1C3"/>
+                <outlet property="paddingBottom" destination="Ip1-o8-9jb" id="S2R-CR-zKO"/>
+                <outlet property="view" destination="iN0-l3-epB" id="uj2-e0-2XN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="kVU-1W-BdS">
+                    <rect key="frame" x="0.0" y="590" width="375" height="37"/>
+                    <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="currentPageIndicatorTintColor" red="0.15172932689999999" green="0.58179932190000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </pageControl>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="kVU-1W-BdS" secondAttribute="bottom" constant="40" id="Ip1-o8-9jb"/>
+                <constraint firstAttribute="trailing" secondItem="kVU-1W-BdS" secondAttribute="trailing" id="QRV-ZC-D5M"/>
+                <constraint firstItem="kVU-1W-BdS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="h6r-hz-DDb"/>
+            </constraints>
+            <point key="canvasLocation" x="-123" y="-30"/>
+        </view>
+    </objects>
+</document>

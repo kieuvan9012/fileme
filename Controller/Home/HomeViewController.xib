@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="MiBook" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomContraits" destination="Zm2-Yo-t8e" id="IPP-t5-eCa"/>
+                <outlet property="contentView" destination="8fu-2K-klr" id="wfh-aN-p4M"/>
+                <outlet property="homeNavi" destination="ToV-lJ-AXV" id="efh-Ht-jXE"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ToV-lJ-AXV" customClass="HomeNaviView" customModule="MiBook" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" id="gV6-uM-nwF"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8fu-2K-klr">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oi5-P3-SqA">
+                    <rect key="frame" x="0.0" y="667" width="375" height="0.0"/>
+                    <color key="backgroundColor" red="0.20000000000000001" green="0.70980392156862748" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                    <state key="normal" title="Tải bản cập nhật mới">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="updateTouch:" destination="-1" eventType="touchUpInside" id="Mkt-lF-wUr"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Oi5-P3-SqA" firstAttribute="top" secondItem="8fu-2K-klr" secondAttribute="bottom" id="1tg-bB-qXX"/>
+                <constraint firstItem="Oi5-P3-SqA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="G67-ko-cHf"/>
+                <constraint firstAttribute="trailing" secondItem="8fu-2K-klr" secondAttribute="trailing" id="Nvb-Kw-WMm"/>
+                <constraint firstAttribute="trailing" secondItem="Oi5-P3-SqA" secondAttribute="trailing" id="Ofg-sk-26U"/>
+                <constraint firstAttribute="bottom" secondItem="8fu-2K-klr" secondAttribute="bottom" id="Zm2-Yo-t8e"/>
+                <constraint firstAttribute="bottom" secondItem="Oi5-P3-SqA" secondAttribute="bottom" id="dZG-qc-foB"/>
+                <constraint firstItem="8fu-2K-klr" firstAttribute="top" secondItem="ToV-lJ-AXV" secondAttribute="bottom" id="drb-6U-Qew"/>
+                <constraint firstAttribute="trailing" secondItem="ToV-lJ-AXV" secondAttribute="trailing" id="gSj-3s-lt4"/>
+                <constraint firstItem="8fu-2K-klr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="n2M-QF-F1j"/>
+                <constraint firstItem="ToV-lJ-AXV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="oK1-qL-MQ4"/>
+                <constraint firstItem="ToV-lJ-AXV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="zj1-GY-d6a"/>
+            </constraints>
+            <point key="canvasLocation" x="-1730" y="27"/>
+        </view>
+    </objects>
+</document>

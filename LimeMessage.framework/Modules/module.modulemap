@@ -1,0 +1,11 @@
+framework module LimeMessage {
+  umbrella header "LimeMessage.h"
+
+  export *
+  module * { export * }
+}
+
+module LimeMessage.Swift {
+    header "LimeMessage-Swift.h"
+    requires objc
+}

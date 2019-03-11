@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>MiBook truy cập thư viện ảnh tạo bài viết, thêm sách, chia sẻ hình ảnh.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Mibook sử dụng dữ liệu vị trí để chia sẻ tủ sách của bạn, Vị trí của bạn sẽ được lưu trữ tại hệ thống của chúng tôi, cam kết an toàn và bảo mật</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Comfortaa-Bold</string>
+		<string>Comfortaa-Light</string>
+		<string>Comfortaa-Regular</string>
+		<string>PinyonScript-Regular.tff</string>
+		<string>Gotham-Light.otf</string>
+		<string>SVN-Sharpen.otf</string>
+		<string>Quicksand_Dash.otf</string>
+		<string>Quicksand-Bold.otf</string>
+		<string>Quicksand-BoldItalic.otf</string>
+		<string>Quicksand-Italic.otf</string>
+		<string>Quicksand-Light.otf</string>
+		<string>Quicksand-LightItalic.otf</string>
+		<string>Quicksand-Regular.otf</string>
+	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>MiBook dùng camera để chụp ảnh sách</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Main</string>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+</dict>
+</plist>

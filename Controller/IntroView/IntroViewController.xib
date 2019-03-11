@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IntroViewController" customModule="MiBook" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="yB9-pl-9Bx" id="Zah-ou-qCf"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="yB9-pl-9Bx">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Laucher" translatesAutoresizingMaskIntoConstraints="NO" id="bNN-YQ-acg">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2018 limerence. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="AgU-sE-MAB">
+                    <rect key="frame" x="20" y="626.5" width="335" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="bNN-YQ-acg" secondAttribute="trailing" id="1xu-hz-9s9"/>
+                <constraint firstAttribute="centerX" secondItem="AgU-sE-MAB" secondAttribute="centerX" id="7hI-bg-wjv"/>
+                <constraint firstItem="bNN-YQ-acg" firstAttribute="top" secondItem="yB9-pl-9Bx" secondAttribute="top" id="KfC-Yn-AGP"/>
+                <constraint firstItem="bNN-YQ-acg" firstAttribute="leading" secondItem="yB9-pl-9Bx" secondAttribute="leading" id="YCM-4D-7Z3"/>
+                <constraint firstAttribute="bottom" secondItem="AgU-sE-MAB" secondAttribute="bottom" constant="20" id="o8n-2h-4Qq"/>
+                <constraint firstAttribute="bottom" secondItem="bNN-YQ-acg" secondAttribute="bottom" id="rGX-iS-w8c"/>
+                <constraint firstItem="AgU-sE-MAB" firstAttribute="leading" secondItem="yB9-pl-9Bx" secondAttribute="leading" constant="20" symbolic="YES" id="wbh-1E-GW1"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="DY4-gS-Xlf"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Laucher" width="414" height="896"/>
+    </resources>
+</document>

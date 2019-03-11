@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RadioView" customModule="LimeBook" customModuleProvider="target">
+            <connections>
+                <outlet property="imgCheck" destination="fxw-Q5-2HS" id="LTo-Py-ngo"/>
+                <outlet property="lbTitle" destination="rN0-40-Ex7" id="iJs-R1-Kqa"/>
+                <outlet property="view" destination="iN0-l3-epB" id="knL-Wv-ozM"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HTq-kW-sSv">
+                    <rect key="frame" x="0.0" y="0.0" width="42" height="54"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ButtonUncheck" translatesAutoresizingMaskIntoConstraints="NO" id="fxw-Q5-2HS">
+                            <rect key="frame" x="12" y="18" width="18" height="18"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="18" id="3LU-6e-ZBs"/>
+                                <constraint firstAttribute="width" constant="18" id="luM-0o-UvW"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="42" id="PZR-NN-eYc"/>
+                        <constraint firstItem="fxw-Q5-2HS" firstAttribute="centerY" secondItem="HTq-kW-sSv" secondAttribute="centerY" id="jWn-6V-eIM"/>
+                        <constraint firstItem="fxw-Q5-2HS" firstAttribute="centerX" secondItem="HTq-kW-sSv" secondAttribute="centerX" id="snX-7u-29U"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rN0-40-Ex7">
+                    <rect key="frame" x="42" y="0.0" width="333" height="54"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GkL-Iv-NkX">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
+                    <connections>
+                        <action selector="touch:" destination="-1" eventType="touchUpInside" id="Ejg-lh-Rd9"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="rN0-40-Ex7" secondAttribute="trailing" id="3Qp-7h-6HN"/>
+                <constraint firstAttribute="bottom" secondItem="GkL-Iv-NkX" secondAttribute="bottom" id="EvP-ji-zMs"/>
+                <constraint firstItem="rN0-40-Ex7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="LFB-nR-ac9"/>
+                <constraint firstItem="rN0-40-Ex7" firstAttribute="leading" secondItem="HTq-kW-sSv" secondAttribute="trailing" id="NSU-jk-Fb1"/>
+                <constraint firstAttribute="bottom" secondItem="rN0-40-Ex7" secondAttribute="bottom" id="Qdd-8G-eWM"/>
+                <constraint firstAttribute="bottom" secondItem="HTq-kW-sSv" secondAttribute="bottom" id="Sje-Ru-3Nd"/>
+                <constraint firstAttribute="trailing" secondItem="GkL-Iv-NkX" secondAttribute="trailing" id="ca8-Aj-oyN"/>
+                <constraint firstItem="HTq-kW-sSv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="hQa-8i-8ky"/>
+                <constraint firstItem="HTq-kW-sSv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="px0-Kc-tsd"/>
+                <constraint firstItem="GkL-Iv-NkX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="wHQ-Zc-VJx"/>
+                <constraint firstItem="GkL-Iv-NkX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="wT4-Bf-6DJ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="25" y="-259"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ButtonUncheck" width="18" height="18"/>
+    </resources>
+</document>

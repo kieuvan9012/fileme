@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserImageView" customModule="LimeBook" customModuleProvider="target">
+            <connections>
+                <outlet property="imgView" destination="6Bm-in-jMh" id="Zpr-I1-kzf"/>
+                <outlet property="lbName" destination="pOW-X2-fSQ" id="kDz-Vr-xPY"/>
+                <outlet property="view" destination="iN0-l3-epB" id="MRr-KS-kr7"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOW-X2-fSQ">
+                    <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Bm-in-jMh">
+                    <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="pOW-X2-fSQ" secondAttribute="bottom" id="Dq2-zt-VZu"/>
+                <constraint firstAttribute="bottom" secondItem="6Bm-in-jMh" secondAttribute="bottom" id="MNT-9M-3wk"/>
+                <constraint firstAttribute="trailing" secondItem="6Bm-in-jMh" secondAttribute="trailing" id="NXT-jQ-9Ft"/>
+                <constraint firstItem="6Bm-in-jMh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="S8V-VJ-Cfv"/>
+                <constraint firstItem="6Bm-in-jMh" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="a65-vI-V7M"/>
+                <constraint firstItem="pOW-X2-fSQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="iSU-jF-yHg"/>
+                <constraint firstItem="pOW-X2-fSQ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="phj-CU-PDE"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="pOW-X2-fSQ" secondAttribute="trailing" id="uJc-zm-fc7"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-409" y="-90"/>
+        </view>
+    </objects>
+</document>

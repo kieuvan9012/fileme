@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GreenInfoFieldSymbol">
+            <connections>
+                <outlet property="bottomTFContraint" destination="aVR-oK-rlo" id="rIX-sh-RsC"/>
+                <outlet property="leftBt" destination="Q73-KO-yGb" id="7r7-yS-muC"/>
+                <outlet property="lineView" destination="dSR-AD-NE2" id="NCK-D7-mQn"/>
+                <outlet property="rightBt" destination="gYC-am-aGo" id="8Qw-hx-oVx"/>
+                <outlet property="rightView" destination="OB2-pY-cIO" id="Z0o-Ml-a1b"/>
+                <outlet property="tfContent" destination="vzM-F5-FgK" id="jUq-qL-rbi"/>
+                <outlet property="view" destination="iN0-l3-epB" id="2ML-vW-bvh"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="265" height="38"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q73-KO-yGb" customClass="GreenButtonCenter" customModule="MiBook" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="32" height="38"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="32" id="8cc-61-36I"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OB2-pY-cIO" customClass="GreenEmptyView" customModule="MiBook" customModuleProvider="target">
+                    <rect key="frame" x="32" y="0.0" width="233" height="38"/>
+                    <subviews>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vzM-F5-FgK" customClass="GreenTextField" customModule="MiBook" customModuleProvider="target">
+                            <rect key="frame" x="4" y="0.0" width="229" height="38"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="vzM-F5-FgK" firstAttribute="top" secondItem="OB2-pY-cIO" secondAttribute="top" id="Bhd-bQ-MiB"/>
+                        <constraint firstAttribute="trailing" secondItem="vzM-F5-FgK" secondAttribute="trailing" id="K70-23-FbW"/>
+                        <constraint firstItem="vzM-F5-FgK" firstAttribute="leading" secondItem="OB2-pY-cIO" secondAttribute="leading" constant="4" id="V1F-nD-Aen"/>
+                        <constraint firstAttribute="bottom" secondItem="vzM-F5-FgK" secondAttribute="bottom" id="aVR-oK-rlo"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gYC-am-aGo" customClass="GreenButtonCenter" customModule="MiBook" customModuleProvider="target">
+                    <rect key="frame" x="265" y="0.0" width="0.0" height="38"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" id="V7A-fy-2A6"/>
+                    </constraints>
+                </view>
+                <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dSR-AD-NE2" customClass="GreenEmptyView" customModule="MiBook" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="38" width="265" height="0.0"/>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.36705092490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="JSP-Kp-uH9"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="gYC-am-aGo" secondAttribute="trailing" id="0Oc-ho-4W9"/>
+                <constraint firstItem="OB2-pY-cIO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="BL8-Nt-GdW"/>
+                <constraint firstItem="dSR-AD-NE2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="CrA-hT-xEh"/>
+                <constraint firstItem="Q73-KO-yGb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Eu3-rX-AIy"/>
+                <constraint firstAttribute="bottom" secondItem="OB2-pY-cIO" secondAttribute="bottom" id="PiM-3n-pig"/>
+                <constraint firstItem="OB2-pY-cIO" firstAttribute="leading" secondItem="Q73-KO-yGb" secondAttribute="trailing" id="TZG-wn-ulb"/>
+                <constraint firstAttribute="trailing" secondItem="dSR-AD-NE2" secondAttribute="trailing" id="U6F-s8-uMi"/>
+                <constraint firstItem="Q73-KO-yGb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="VzW-zy-9lk"/>
+                <constraint firstItem="gYC-am-aGo" firstAttribute="leading" secondItem="OB2-pY-cIO" secondAttribute="trailing" id="Zn0-Nz-CbR"/>
+                <constraint firstAttribute="bottom" secondItem="dSR-AD-NE2" secondAttribute="bottom" id="d0G-6r-Ndu"/>
+                <constraint firstAttribute="bottom" secondItem="gYC-am-aGo" secondAttribute="bottom" id="eFo-6D-dDy"/>
+                <constraint firstItem="gYC-am-aGo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="rVo-fP-3t7"/>
+                <constraint firstAttribute="bottom" secondItem="Q73-KO-yGb" secondAttribute="bottom" id="vsc-0h-P1r"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="73" y="201"/>
+        </view>
+    </objects>
+</document>

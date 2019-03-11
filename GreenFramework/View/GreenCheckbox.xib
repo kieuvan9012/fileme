@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GreenCheckbox">
+            <connections>
+                <outlet property="btCheck" destination="IMa-8x-Yyu" id="SQo-Z6-zO4"/>
+                <outlet property="heightCtr" destination="qly-R9-LtN" id="dBT-TK-PGp"/>
+                <outlet property="img" destination="OAI-4V-snk" id="2tp-vM-rgv"/>
+                <outlet property="view" destination="iN0-l3-epB" id="T3p-e4-4wF"/>
+                <outlet property="widthCtr" destination="abg-Lb-riz" id="6kU-zg-4bR"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="60" height="51"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_check" translatesAutoresizingMaskIntoConstraints="NO" id="OAI-4V-snk">
+                    <rect key="frame" x="18" y="14" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="abg-Lb-riz"/>
+                        <constraint firstAttribute="width" constant="24" id="qly-R9-LtN"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMa-8x-Yyu">
+                    <rect key="frame" x="0.0" y="0.0" width="60" height="51"/>
+                    <connections>
+                        <action selector="checkAction:" destination="-1" eventType="touchUpInside" id="mxW-ru-aR9"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="IMa-8x-Yyu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="2wC-7A-mbm"/>
+                <constraint firstItem="IMa-8x-Yyu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="NDe-8c-Auo"/>
+                <constraint firstItem="OAI-4V-snk" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="VZR-mS-w9j"/>
+                <constraint firstAttribute="trailing" secondItem="IMa-8x-Yyu" secondAttribute="trailing" id="b3k-yy-WQO"/>
+                <constraint firstItem="OAI-4V-snk" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="kRo-oq-4ga"/>
+                <constraint firstAttribute="bottom" secondItem="IMa-8x-Yyu" secondAttribute="bottom" id="oje-2j-wnx"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="361" y="289.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_check" width="20" height="20"/>
+    </resources>
+</document>

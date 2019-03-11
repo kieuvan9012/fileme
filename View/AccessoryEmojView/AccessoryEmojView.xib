@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AccessoryEmojView" customModule="LimeBook" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="GoR-3M-S32"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RNm-cv-b0j">
+                    <rect key="frame" x="12" y="0.0" width="43" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="ywQ-is-hxy"/>
+                    </constraints>
+                    <state key="normal" image="keyboard"/>
+                    <connections>
+                        <action selector="keyboardSelect:" destination="-1" eventType="touchUpInside" id="lv7-S1-cNb"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="can-HL-jz1">
+                    <rect key="frame" x="67" y="0.0" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="IU1-8n-Huk"/>
+                    </constraints>
+                    <state key="normal" image="happiness"/>
+                    <connections>
+                        <action selector="emojSelect:" destination="-1" eventType="touchUpInside" id="7IN-Yc-Flp"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="RNm-cv-b0j" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="0dV-lC-sGE"/>
+                <constraint firstItem="can-HL-jz1" firstAttribute="centerY" secondItem="RNm-cv-b0j" secondAttribute="centerY" id="0tb-vr-dCy"/>
+                <constraint firstItem="can-HL-jz1" firstAttribute="top" secondItem="RNm-cv-b0j" secondAttribute="top" id="AQI-kq-PP1"/>
+                <constraint firstAttribute="bottom" secondItem="RNm-cv-b0j" secondAttribute="bottom" priority="250" id="Hc9-9o-3A1"/>
+                <constraint firstItem="RNm-cv-b0j" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="12" id="fJw-CK-2Do"/>
+                <constraint firstItem="can-HL-jz1" firstAttribute="height" secondItem="RNm-cv-b0j" secondAttribute="height" id="o0e-HC-8FZ"/>
+                <constraint firstItem="can-HL-jz1" firstAttribute="leading" secondItem="RNm-cv-b0j" secondAttribute="trailing" constant="12" id="vuS-m7-eLg"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="92" y="201"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="happiness" width="26" height="26"/>
+        <image name="keyboard" width="43" height="26"/>
+    </resources>
+</document>
