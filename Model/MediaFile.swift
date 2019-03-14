@@ -139,7 +139,6 @@ class MediaFile: Mi {
         }
     }
     
-    
     func closeExpand()
     {
         isExpand = false

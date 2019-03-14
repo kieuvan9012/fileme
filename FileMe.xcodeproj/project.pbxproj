@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F8EA00922390DF7007D949E /* ListDataGGDriveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8EA00722390DF7007D949E /* ListDataGGDriveViewController.swift */; };
+		4F8EA00A22390DF7007D949E /* ListDataGGDriveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F8EA00822390DF7007D949E /* ListDataGGDriveViewController.xib */; };
+		4F8EA0122239182C007D949E /* ListDataGGDriveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8EA0102239182C007D949E /* ListDataGGDriveTableViewCell.swift */; };
+		4F8EA0132239182C007D949E /* ListDataGGDriveTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F8EA0112239182C007D949E /* ListDataGGDriveTableViewCell.xib */; };
+		4FBC7E622238E136000D2DA0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FBC7E612238E136000D2DA0 /* GoogleService-Info.plist */; };
 		510B48EA2234DE5F00BA4706 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B48E82234DE5F00BA4706 /* UserViewController.swift */; };
 		510B48EB2234DE5F00BA4706 /* UserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 510B48E92234DE5F00BA4706 /* UserViewController.xib */; };
 		510B48EE2234DE6A00BA4706 /* UserDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B48EC2234DE6A00BA4706 /* UserDetailCell.swift */; };
@@ -241,6 +246,11 @@
 
 /* Begin PBXFileReference section */
 		4903824D5EC5C045F4B81446 /* Pods-FileMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FileMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-FileMe/Pods-FileMe.release.xcconfig"; sourceTree = "<group>"; };
+		4F8EA00722390DF7007D949E /* ListDataGGDriveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDataGGDriveViewController.swift; sourceTree = "<group>"; };
+		4F8EA00822390DF7007D949E /* ListDataGGDriveViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListDataGGDriveViewController.xib; sourceTree = "<group>"; };
+		4F8EA0102239182C007D949E /* ListDataGGDriveTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDataGGDriveTableViewCell.swift; sourceTree = "<group>"; };
+		4F8EA0112239182C007D949E /* ListDataGGDriveTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListDataGGDriveTableViewCell.xib; sourceTree = "<group>"; };
+		4FBC7E612238E136000D2DA0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		510B48E82234DE5F00BA4706 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		510B48E92234DE5F00BA4706 /* UserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserViewController.xib; sourceTree = "<group>"; };
 		510B48EC2234DE6A00BA4706 /* UserDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailCell.swift; sourceTree = "<group>"; };
@@ -261,7 +271,7 @@
 		510B4974223517D700BA4706 /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 		510B4975223517D700BA4706 /* HistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryCell.xib; sourceTree = "<group>"; };
 		510B49792235701E00BA4706 /* File Me.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "File Me.entitlements"; sourceTree = "<group>"; };
-		510EA290222BE64500DB3724 /* File Me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "File Me.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		510EA290222BE64500DB3724 /* FileMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FileMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		510EA293222BE64500DB3724 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		510EA295222BE64500DB3724 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		510EA298222BE64500DB3724 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -488,6 +498,25 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		4F1B64BF2238EB6400E63105 /* GGDrive */ = {
+			isa = PBXGroup;
+			children = (
+				4F8EA00722390DF7007D949E /* ListDataGGDriveViewController.swift */,
+				4F8EA00822390DF7007D949E /* ListDataGGDriveViewController.xib */,
+				4F8EA00F22391811007D949E /* Cell */,
+			);
+			path = GGDrive;
+			sourceTree = "<group>";
+		};
+		4F8EA00F22391811007D949E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4F8EA0102239182C007D949E /* ListDataGGDriveTableViewCell.swift */,
+				4F8EA0112239182C007D949E /* ListDataGGDriveTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		510B48FA2234E34500BA4706 /* Conversation */ = {
 			isa = PBXGroup;
 			children = (
@@ -517,6 +546,7 @@
 			isa = PBXGroup;
 			children = (
 				510B49792235701E00BA4706 /* File Me.entitlements */,
+				4FBC7E612238E136000D2DA0 /* GoogleService-Info.plist */,
 				510B494B2234EEA500BA4706 /* LimeMessage.framework */,
 				510EA4B6222BF94500DB3724 /* View */,
 				510EA415222BF8B200DB3724 /* GreenFramework */,
@@ -535,7 +565,7 @@
 		510EA291222BE64500DB3724 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				510EA290222BE64500DB3724 /* File Me.app */,
+				510EA290222BE64500DB3724 /* FileMe.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -813,22 +843,22 @@
 		510EA4B6222BF94500DB3724 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				510EA4EA222BF94600DB3724 /* NavigationView.xib */,
 				510EA4F9222BF94600DB3724 /* NavigationView.swift */,
-				510EA4B7222BF94500DB3724 /* ImageBook */,
-				510EA4BA222BF94500DB3724 /* BookImageView */,
-				510EA4BD222BF94500DB3724 /* MIDialog */,
-				510EA4C0222BF94500DB3724 /* ReactView */,
-				510EA4E2222BF94600DB3724 /* MIDropList */,
+				510EA4EA222BF94600DB3724 /* NavigationView.xib */,
 				510EA4E7222BF94600DB3724 /* AccessoryEmojView */,
+				510EA4BA222BF94500DB3724 /* BookImageView */,
 				510EA4EB222BF94600DB3724 /* Cell */,
-				510EA4F3222BF94600DB3724 /* Line */,
-				510EA4F6222BF94600DB3724 /* SimpleNavi */,
-				510EA503222BF94600DB3724 /* ImageSelect */,
-				510EA510222BF94600DB3724 /* ImageDisplayView */,
 				510EA513222BF94600DB3724 /* HTTableView */,
-				510EA518222BF94600DB3724 /* RadioView */,
 				510EA51B222BF94600DB3724 /* Hud */,
+				510EA4B7222BF94500DB3724 /* ImageBook */,
+				510EA510222BF94600DB3724 /* ImageDisplayView */,
+				510EA503222BF94600DB3724 /* ImageSelect */,
+				510EA4F3222BF94600DB3724 /* Line */,
+				510EA4BD222BF94500DB3724 /* MIDialog */,
+				510EA4E2222BF94600DB3724 /* MIDropList */,
+				510EA518222BF94600DB3724 /* RadioView */,
+				510EA4C0222BF94500DB3724 /* ReactView */,
+				510EA4F6222BF94600DB3724 /* SimpleNavi */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1054,9 +1084,10 @@
 		51C6385B2231233800E05D65 /* File */ = {
 			isa = PBXGroup;
 			children = (
-				510B49692234F8A700BA4706 /* Cell */,
 				51C6385F2231248800E05D65 /* FileViewController.swift */,
 				51C638602231248800E05D65 /* FileViewController.xib */,
+				510B49692234F8A700BA4706 /* Cell */,
+				4F1B64BF2238EB6400E63105 /* GGDrive */,
 			);
 			path = File;
 			sourceTree = "<group>";
@@ -1104,9 +1135,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		510EA28F222BE64500DB3724 /* File Me */ = {
+		510EA28F222BE64500DB3724 /* FileMe */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 510EA2A2222BE65B00DB3724 /* Build configuration list for PBXNativeTarget "File Me" */;
+			buildConfigurationList = 510EA2A2222BE65B00DB3724 /* Build configuration list for PBXNativeTarget "FileMe" */;
 			buildPhases = (
 				10768346F59FEC2DECDC1F0A /* [CP] Check Pods Manifest.lock */,
 				510EA28C222BE64500DB3724 /* Sources */,
@@ -1120,9 +1151,9 @@
 			);
 			dependencies = (
 			);
-			name = "File Me";
+			name = FileMe;
 			productName = FileMe;
-			productReference = 510EA290222BE64500DB3724 /* File Me.app */;
+			productReference = 510EA290222BE64500DB3724 /* FileMe.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1160,7 +1191,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				510EA28F222BE64500DB3724 /* File Me */,
+				510EA28F222BE64500DB3724 /* FileMe */,
 			);
 		};
 /* End PBXProject section */
@@ -1188,6 +1219,7 @@
 				510B4977223517D700BA4706 /* HistoryCell.xib in Resources */,
 				510EA486222BF8B300DB3724 /* GDown.png in Resources */,
 				510EA3B2222BF48A00DB3724 /* Comfortaa-Light.ttf in Resources */,
+				4F8EA00A22390DF7007D949E /* ListDataGGDriveViewController.xib in Resources */,
 				510EA3D3222BF48A00DB3724 /* book1.jpeg in Resources */,
 				510EA484222BF8B300DB3724 /* GRight.png in Resources */,
 				510EA3CE222BF48A00DB3724 /* popcorn.mp3 in Resources */,
@@ -1253,6 +1285,7 @@
 				510EA560222BF94700DB3724 /* ImageDisplayView.xib in Resources */,
 				510EA4A2222BF8B300DB3724 /* Trash.png in Resources */,
 				510EA4A3222BF8B300DB3724 /* GMenu.png in Resources */,
+				4FBC7E622238E136000D2DA0 /* GoogleService-Info.plist in Resources */,
 				510EA4AA222BF8B300DB3724 /* WifiDisconnect.png in Resources */,
 				510EA542222BF94700DB3724 /* AccessoryEmojView.xib in Resources */,
 				510B496D2234F8D800BA4706 /* FileListCell.xib in Resources */,
@@ -1268,6 +1301,7 @@
 				510EA3BE222BF48A00DB3724 /* maintance.jpg in Resources */,
 				510EA4AC222BF8B300DB3724 /* GreenCheckbox.xib in Resources */,
 				510EA567222BF94700DB3724 /* RadioView.xib in Resources */,
+				4F8EA0132239182C007D949E /* ListDataGGDriveTableViewCell.xib in Resources */,
 				510EA48E222BF8B300DB3724 /* GUser_1.png in Resources */,
 				510EA562222BF94700DB3724 /* MasterFooterView.xib in Resources */,
 				510EA54B222BF94700DB3724 /* LineView.xib in Resources */,
@@ -1317,7 +1351,11 @@
 				"${BUILT_PRODUCTS_DIR}/DeviceUtil/DeviceUtil.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/Gallery/Gallery.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/KissXML/KissXML.framework",
 				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
@@ -1341,7 +1379,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DeviceUtil.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gallery.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KissXML.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
@@ -1387,12 +1429,14 @@
 				"${PODS_ROOT}/AccountKit/AccountKitStrings.bundle",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccountKitStrings.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1419,6 +1463,7 @@
 				510EA639222BFAD700DB3724 /* MasterViewController.swift in Sources */,
 				510EA407222BF6BF00DB3724 /* DeviceInfo.swift in Sources */,
 				510EA478222BF8B300DB3724 /* GreenExtension+NSAttributeString.swift in Sources */,
+				4F8EA00922390DF7007D949E /* ListDataGGDriveViewController.swift in Sources */,
 				510EA481222BF8B300DB3724 /* GreenTextField.swift in Sources */,
 				510EA3F1222BF6BF00DB3724 /* ApplicationInfo.swift in Sources */,
 				510B48F72234DEE300BA4706 /* UserImageView.swift in Sources */,
@@ -1487,6 +1532,7 @@
 				510EA476222BF8B300DB3724 /* GreenExtention+UITextField.swift in Sources */,
 				510EA53E222BF94700DB3724 /* MIDropListView.swift in Sources */,
 				510EA563222BF94700DB3724 /* MasterHeaderView.swift in Sources */,
+				4F8EA0122239182C007D949E /* ListDataGGDriveTableViewCell.swift in Sources */,
 				510EA566222BF94700DB3724 /* RadioView.swift in Sources */,
 				510EA401222BF6BF00DB3724 /* Mi.swift in Sources */,
 				510EA3F2222BF6BF00DB3724 /* University.swift in Sources */,
@@ -1643,6 +1689,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "File Me.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9MP9PYH84M;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1657,6 +1704,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = KieuVan.FileMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1668,6 +1716,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "File Me.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9MP9PYH84M;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1682,6 +1731,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = KieuVan.FileMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1699,7 +1749,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		510EA2A2222BE65B00DB3724 /* Build configuration list for PBXNativeTarget "File Me" */ = {
+		510EA2A2222BE65B00DB3724 /* Build configuration list for PBXNativeTarget "FileMe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				510EA2A3222BE65B00DB3724 /* Debug */,

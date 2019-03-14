@@ -21,7 +21,25 @@ PODS:
     - Bolts (~> 1.9)
   - FBSDKLoginKit (4.40.0):
     - FBSDKCoreKit
+  - FirebaseAnalytics (3.9.0):
+    - FirebaseCore (~> 3.6)
+    - FirebaseInstanceID (~> 1.0)
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
+  - FirebaseCore (3.6.0):
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
+  - FirebaseInstanceID (1.0.10):
+    - FirebaseCore (~> 3.6)
   - Gallery (2.2.0)
+  - Google/Core (3.0.3):
+    - FirebaseAnalytics (~> 3.2)
+  - Google/SignIn (3.0.3):
+    - Google/Core
+    - GoogleSignIn (~> 4.0)
+  - GoogleAPIClientForREST/Core (1.2.1):
+    - GTMSessionFetcher (>= 1.1.7)
+  - GoogleAPIClientForREST/Drive (1.2.1):
+    - GoogleAPIClientForREST/Core
+    - GTMSessionFetcher (>= 1.1.7)
   - GoogleMaps (3.0.3):
     - GoogleMaps/Maps (= 3.0.3)
   - GoogleMaps/Base (3.0.3)
@@ -29,6 +47,28 @@ PODS:
     - GoogleMaps/Base
   - GooglePlaces (3.0.3):
     - GoogleMaps/Base (= 3.0.3)
+  - GoogleSignIn (4.1.2):
+    - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
+    - "GoogleToolboxForMac/NSString+URLArguments (~> 2.1)"
+    - GTMOAuth2 (~> 1.0)
+    - GTMSessionFetcher/Core (~> 1.1)
+  - GoogleToolboxForMac/DebugUtils (2.2.0):
+    - GoogleToolboxForMac/Defines (= 2.2.0)
+  - GoogleToolboxForMac/Defines (2.2.0)
+  - "GoogleToolboxForMac/NSData+zlib (2.2.0)":
+    - GoogleToolboxForMac/Defines (= 2.2.0)
+  - "GoogleToolboxForMac/NSDictionary+URLArguments (2.2.0)":
+    - GoogleToolboxForMac/DebugUtils (= 2.2.0)
+    - GoogleToolboxForMac/Defines (= 2.2.0)
+    - "GoogleToolboxForMac/NSString+URLArguments (= 2.2.0)"
+  - "GoogleToolboxForMac/NSString+URLArguments (2.2.0)"
+  - GTMOAuth2 (1.1.6):
+    - GTMSessionFetcher (~> 1.1)
+  - GTMSessionFetcher (1.2.1):
+    - GTMSessionFetcher/Full (= 1.2.1)
+  - GTMSessionFetcher/Core (1.2.1)
+  - GTMSessionFetcher/Full (1.2.1):
+    - GTMSessionFetcher/Core (= 1.2.1)
   - KissXML (5.2.3)
   - libidn (1.35)
   - PureLayout (3.1.4)
@@ -59,8 +99,11 @@ DEPENDENCIES:
   - DeviceUtil
   - FBSDKLoginKit
   - Gallery
+  - Google/SignIn (~> 3.0.3)
+  - GoogleAPIClientForREST/Drive (~> 1.2.1)
   - GoogleMaps
   - GooglePlaces
+  - GoogleSignIn (~> 4.1.1)
   - PureLayout
   - SDWebImage
   - Socket.IO-Client-Swift (~> 13.1.0)
@@ -82,9 +125,18 @@ SPEC REPOS:
     - DeviceUtil
     - FBSDKCoreKit
     - FBSDKLoginKit
+    - FirebaseAnalytics
+    - FirebaseCore
+    - FirebaseInstanceID
     - Gallery
+    - Google
+    - GoogleAPIClientForREST
     - GoogleMaps
     - GooglePlaces
+    - GoogleSignIn
+    - GoogleToolboxForMac
+    - GTMOAuth2
+    - GTMSessionFetcher
     - KissXML
     - libidn
     - PureLayout
@@ -108,9 +160,18 @@ SPEC CHECKSUMS:
   DeviceUtil: effb5fd6d301a1bd42e0ac367b3391696651431e
   FBSDKCoreKit: ae214474b25033399c131dc81d258e412582a2ba
   FBSDKLoginKit: 7a1e411d46acc8834588eca437daf34de42e1d52
+  FirebaseAnalytics: e5fe8486efc01bec33f6bf82e2fa9fce4b124052
+  FirebaseCore: 9691ee2ade70c098d7cf92440f4303f16d83ca75
+  FirebaseInstanceID: b9eedd6846fb5e1f0f7279e1deaa7a7e4cf8392e
   Gallery: 3f4c780c4b22906d6b0a5e55d12167cdc4b4fc5b
+  Google: cd92fab98f800f509da88c1e0c570275713bc9d5
+  GoogleAPIClientForREST: a8b95a252014ce2e618df6b75dc72eca2c00b4af
   GoogleMaps: fd5c9fa58871781b9fb94d4936f19c69fe60ce32
   GooglePlaces: f09e76993c9c3ee4af8f4f7f535bb94d6aa3b649
+  GoogleSignIn: d9ef55b10f0aa401a5de2747f59b725e4b9732ac
+  GoogleToolboxForMac: ff31605b7d66400dcec09bed5861689aebadda4d
+  GTMOAuth2: e8b6512c896235149df975c41d9a36c868ab7fba
+  GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   KissXML: 09f88ff8161fd058d67b70740b8b516687b52823
   libidn: e4576a956b797c584c77aaedfc6e3dd639b61bdc
   PureLayout: f08c01b8dec00bb14a1fefa3de4c7d9c265df85e
@@ -123,6 +184,6 @@ SPEC CHECKSUMS:
   SwipeableTabBarController: 4706fcc25de25785c87a7d0b9ac63c056e79bda3
   XMPPFramework: 5d31ff9f73dce031b24bc49bcf88093627a3a86e
 
-PODFILE CHECKSUM: 441f9c67fba0dca427111ea2d5a77cf474afce2f
+PODFILE CHECKSUM: 2c39f4e6beed416add29edb3ab17b5ba90a80bcf
 
 COCOAPODS: 1.5.3

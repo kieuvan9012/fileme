@@ -83,6 +83,15 @@ public extension UIButton
         self.setTitle(title, for: .normal)
     }
     
+    public func setHidden()
+    {
+        self.isHidden = true
+    }
+
+    public func setShow()
+    {
+        self.isHidden = false
+    }
 }
 
 open class ButtonSuccess: UIButton {
