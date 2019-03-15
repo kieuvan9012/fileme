@@ -18,6 +18,7 @@ class FileViewController: MasterViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var tbView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         
         simpleNavi.set("My File")
         tbView.setIdentifier("FileListCell")
@@ -61,8 +62,9 @@ class FileViewController: MasterViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tbView.dequeueReusableCell(withIdentifier: "FileListCell") as! FileListCell
         cell.set(files[indexPath.row])
-        return cell ;
+        return cell
     }
+    
     func generatorProcessing(item : MediaFile)
     {
         files.append(item)
@@ -71,22 +73,14 @@ class FileViewController: MasterViewController, UITableViewDelegate, UITableView
             generatorProcessing(item: child)
         }
     }
+    
     @IBAction func addTouch(_ sender: Any) {
-        
-        let types: [String] = ["public.jpeg","public.png","com.adobe.pdf ","com.microsoft.word.doc","com.microsoft.excel.xls","com.microsoft.powerpoint.​ppt"]
-        
-        let importMenu = UIDocumentMenuViewController(documentTypes:types, in: .import)
-        importMenu.delegate = self
-        importMenu.addOption(withTitle: <#T##String#>, image: <#T##UIImage?#>, order: <#T##UIDocumentMenuOrder#>, handler: <#T##() -> Void#>)
-        
-        importMenu.modalPresentationStyle = .formSheet
-        self.present(importMenu, animated: true, completion: nil)
-
-
+        let view = ListDataGGDriveViewController()
+        self.navigationController?.pushViewController(view, animated: false)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return files[indexPath.row].getHeightDisplay();
+        return files[indexPath.row].getHeightDisplay()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -99,7 +93,6 @@ class FileViewController: MasterViewController, UITableViewDelegate, UITableView
         tbView.beginUpdates()
         tbView.endUpdates()
     }
-    
     
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
 //        viewModel.attachDocuments(at: urls)

@@ -26,18 +26,18 @@
                             <constraint firstAttribute="width" secondItem="1cd-O8-OjE" secondAttribute="height" id="hcw-on-EnW"/>
                         </constraints>
                     </imageView>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="rLH-fW-mj3">
-                        <rect key="frame" x="50" y="0.0" width="280" height="165.5"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="rLH-fW-mj3">
+                        <rect key="frame" x="50" y="5" width="280" height="155.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBN-qD-FHn">
-                                <rect key="frame" x="0.0" y="0.0" width="280" height="72"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBN-qD-FHn">
+                                <rect key="frame" x="0.0" y="0.0" width="280" height="75.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9A-R5-ZAW">
-                                <rect key="frame" x="0.0" y="94" width="280" height="71.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9A-R5-ZAW">
+                                <rect key="frame" x="0.0" y="80.5" width="280" height="75"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -55,11 +55,11 @@
                 <constraints>
                     <constraint firstItem="1cd-O8-OjE" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="2KE-J2-xpg"/>
                     <constraint firstAttribute="trailing" secondItem="Saz-Ka-aKm" secondAttribute="trailing" constant="5" id="7uJ-lT-EAL"/>
-                    <constraint firstItem="rLH-fW-mj3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="P3w-Or-ldk"/>
+                    <constraint firstItem="rLH-fW-mj3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="P3w-Or-ldk"/>
                     <constraint firstAttribute="trailingMargin" secondItem="rLH-fW-mj3" secondAttribute="trailing" id="crj-el-8Ie"/>
                     <constraint firstItem="rLH-fW-mj3" firstAttribute="leading" secondItem="1cd-O8-OjE" secondAttribute="trailing" constant="5" id="iPp-VP-PnV"/>
                     <constraint firstItem="1cd-O8-OjE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="ie7-ex-MzG"/>
-                    <constraint firstAttribute="bottom" secondItem="rLH-fW-mj3" secondAttribute="bottom" id="p4m-WL-PDT"/>
+                    <constraint firstAttribute="bottom" secondItem="rLH-fW-mj3" secondAttribute="bottom" constant="5" id="p4m-WL-PDT"/>
                     <constraint firstItem="Saz-Ka-aKm" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="qPm-Rx-lvF"/>
                 </constraints>
             </tableViewCellContentView>

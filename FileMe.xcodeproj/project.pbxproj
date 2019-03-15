@@ -12,6 +12,8 @@
 		4F8EA0122239182C007D949E /* ListDataGGDriveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8EA0102239182C007D949E /* ListDataGGDriveTableViewCell.swift */; };
 		4F8EA0132239182C007D949E /* ListDataGGDriveTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F8EA0112239182C007D949E /* ListDataGGDriveTableViewCell.xib */; };
 		4FBC7E622238E136000D2DA0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FBC7E612238E136000D2DA0 /* GoogleService-Info.plist */; };
+		4FC74A6E223A031300579071 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC74A6C223A031200579071 /* NavigationView.swift */; };
+		4FC74A6F223A031300579071 /* NavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FC74A6D223A031300579071 /* NavigationView.xib */; };
 		510B48EA2234DE5F00BA4706 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B48E82234DE5F00BA4706 /* UserViewController.swift */; };
 		510B48EB2234DE5F00BA4706 /* UserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 510B48E92234DE5F00BA4706 /* UserViewController.xib */; };
 		510B48EE2234DE6A00BA4706 /* UserDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B48EC2234DE6A00BA4706 /* UserDetailCell.swift */; };
@@ -180,14 +182,12 @@
 		510EA541222BF94700DB3724 /* MIDropListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 510EA4E6222BF94600DB3724 /* MIDropListView.xib */; };
 		510EA542222BF94700DB3724 /* AccessoryEmojView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 510EA4E8222BF94600DB3724 /* AccessoryEmojView.xib */; };
 		510EA543222BF94700DB3724 /* AccessoryEmojView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510EA4E9222BF94600DB3724 /* AccessoryEmojView.swift */; };
-		510EA544222BF94700DB3724 /* NavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 510EA4EA222BF94600DB3724 /* NavigationView.xib */; };
 		510EA545222BF94700DB3724 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 510EA4EC222BF94600DB3724 /* UserCell.xib */; };
 		510EA546222BF94700DB3724 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510EA4ED222BF94600DB3724 /* UserCell.swift */; };
 		510EA54A222BF94700DB3724 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510EA4F4222BF94600DB3724 /* LineView.swift */; };
 		510EA54B222BF94700DB3724 /* LineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 510EA4F5222BF94600DB3724 /* LineView.xib */; };
 		510EA54C222BF94700DB3724 /* SimpleNavi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510EA4F7222BF94600DB3724 /* SimpleNavi.swift */; };
 		510EA54D222BF94700DB3724 /* SimpleNavi.xib in Resources */ = {isa = PBXBuildFile; fileRef = 510EA4F8222BF94600DB3724 /* SimpleNavi.xib */; };
-		510EA54E222BF94700DB3724 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510EA4F9222BF94600DB3724 /* NavigationView.swift */; };
 		510EA556222BF94700DB3724 /* ImageSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510EA504222BF94600DB3724 /* ImageSelectView.swift */; };
 		510EA557222BF94700DB3724 /* ImageSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 510EA505222BF94600DB3724 /* ImageSelectView.xib */; };
 		510EA558222BF94700DB3724 /* ImageSelectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 510EA507222BF94600DB3724 /* ImageSelectCell.xib */; };
@@ -251,6 +251,8 @@
 		4F8EA0102239182C007D949E /* ListDataGGDriveTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDataGGDriveTableViewCell.swift; sourceTree = "<group>"; };
 		4F8EA0112239182C007D949E /* ListDataGGDriveTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListDataGGDriveTableViewCell.xib; sourceTree = "<group>"; };
 		4FBC7E612238E136000D2DA0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4FC74A6C223A031200579071 /* NavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
+		4FC74A6D223A031300579071 /* NavigationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationView.xib; sourceTree = "<group>"; };
 		510B48E82234DE5F00BA4706 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		510B48E92234DE5F00BA4706 /* UserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserViewController.xib; sourceTree = "<group>"; };
 		510B48EC2234DE6A00BA4706 /* UserDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailCell.swift; sourceTree = "<group>"; };
@@ -425,14 +427,12 @@
 		510EA4E6222BF94600DB3724 /* MIDropListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MIDropListView.xib; sourceTree = "<group>"; };
 		510EA4E8222BF94600DB3724 /* AccessoryEmojView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccessoryEmojView.xib; sourceTree = "<group>"; };
 		510EA4E9222BF94600DB3724 /* AccessoryEmojView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessoryEmojView.swift; sourceTree = "<group>"; };
-		510EA4EA222BF94600DB3724 /* NavigationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationView.xib; sourceTree = "<group>"; };
 		510EA4EC222BF94600DB3724 /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
 		510EA4ED222BF94600DB3724 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		510EA4F4222BF94600DB3724 /* LineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		510EA4F5222BF94600DB3724 /* LineView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LineView.xib; sourceTree = "<group>"; };
 		510EA4F7222BF94600DB3724 /* SimpleNavi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleNavi.swift; sourceTree = "<group>"; };
 		510EA4F8222BF94600DB3724 /* SimpleNavi.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimpleNavi.xib; sourceTree = "<group>"; };
-		510EA4F9222BF94600DB3724 /* NavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		510EA504222BF94600DB3724 /* ImageSelectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSelectView.swift; sourceTree = "<group>"; };
 		510EA505222BF94600DB3724 /* ImageSelectView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageSelectView.xib; sourceTree = "<group>"; };
 		510EA507222BF94600DB3724 /* ImageSelectCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageSelectCell.xib; sourceTree = "<group>"; };
@@ -843,8 +843,8 @@
 		510EA4B6222BF94500DB3724 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				510EA4F9222BF94600DB3724 /* NavigationView.swift */,
-				510EA4EA222BF94600DB3724 /* NavigationView.xib */,
+				4FC74A6C223A031200579071 /* NavigationView.swift */,
+				4FC74A6D223A031300579071 /* NavigationView.xib */,
 				510EA4E7222BF94600DB3724 /* AccessoryEmojView */,
 				510EA4BA222BF94500DB3724 /* BookImageView */,
 				510EA4EB222BF94600DB3724 /* Cell */,
@@ -1247,6 +1247,7 @@
 				510EA495222BF8B300DB3724 /* GCancel.png in Resources */,
 				510EA3D1222BF48A00DB3724 /* Comfortaa-Bold.ttf in Resources */,
 				510EA4B0222BF8B300DB3724 /* LandingView.xib in Resources */,
+				4FC74A6F223A031300579071 /* NavigationView.xib in Resources */,
 				510EA54D222BF94700DB3724 /* SimpleNavi.xib in Resources */,
 				510EA497222BF8B300DB3724 /* GLogout.png in Resources */,
 				510EA488222BF8B300DB3724 /* GHome.png in Resources */,
@@ -1256,7 +1257,6 @@
 				510EA3CD222BF48A00DB3724 /* complete.mp3 in Resources */,
 				510EA524222BF94700DB3724 /* ReactUserView.xib in Resources */,
 				510B48EF2234DE6A00BA4706 /* UserDetailCell.xib in Resources */,
-				510EA544222BF94700DB3724 /* NavigationView.xib in Resources */,
 				510EA4A5222BF8B300DB3724 /* GClover.png in Resources */,
 				510EA493222BF8B300DB3724 /* GMinus.png in Resources */,
 				510EA49C222BF8B300DB3724 /* Panel.png in Resources */,
@@ -1454,7 +1454,6 @@
 				510EA680222E29D700DB3724 /* MainTabbarViewController.swift in Sources */,
 				510EA47D222BF8B300DB3724 /* GreenTextView.swift in Sources */,
 				510EA474222BF8B300DB3724 /* GreenExtention+UIView.swift in Sources */,
-				510EA296222BE64500DB3724 /* ViewController.swift in Sources */,
 				510EA543222BF94700DB3724 /* AccessoryEmojView.swift in Sources */,
 				510EA47F222BF8B300DB3724 /* GreenButton.swift in Sources */,
 				510EA477222BF8B300DB3724 /* GreenExtention+UITableView.swift in Sources */,
@@ -1477,7 +1476,6 @@
 				510EA475222BF8B300DB3724 /* GreenExtention+UIButton.swift in Sources */,
 				510B49642234F54900BA4706 /* MessageInstance.swift in Sources */,
 				51C638652231249D00E05D65 /* HistoryViewController.swift in Sources */,
-				510EA54E222BF94700DB3724 /* NavigationView.swift in Sources */,
 				510EA67E222E29D700DB3724 /* HomeNaviView.swift in Sources */,
 				510EA410222BF7F100DB3724 /* AppInstance.swift in Sources */,
 				510EA46D222BF8B300DB3724 /* GreenExtention+UITextView.swift in Sources */,
@@ -1533,6 +1531,7 @@
 				510EA53E222BF94700DB3724 /* MIDropListView.swift in Sources */,
 				510EA563222BF94700DB3724 /* MasterHeaderView.swift in Sources */,
 				4F8EA0122239182C007D949E /* ListDataGGDriveTableViewCell.swift in Sources */,
+				4FC74A6E223A031300579071 /* NavigationView.swift in Sources */,
 				510EA566222BF94700DB3724 /* RadioView.swift in Sources */,
 				510EA401222BF6BF00DB3724 /* Mi.swift in Sources */,
 				510EA3F2222BF6BF00DB3724 /* University.swift in Sources */,

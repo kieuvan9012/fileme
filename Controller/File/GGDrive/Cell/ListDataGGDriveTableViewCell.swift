@@ -17,6 +17,8 @@ class ListDataGGDriveTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        lblTitle.text = ""
+        lblSubTitle.text = ""
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -33,11 +35,11 @@ class ListDataGGDriveTableViewCell: UITableViewCell {
         if(ConfigGoogleDrive.isFolder(file)) {
             fileExtension = "Folder"
             imageName = "folder"
-            btnDownload.setHidden()
+            btnDownload.hidden()
             self.accessoryType = .disclosureIndicator
         } else {
             self.accessoryType = .none
-            btnDownload.setShow()
+            btnDownload.show()
             
             if(file.fileExtension != nil && !(file.fileExtension?.isEmpty)!) {
                 imageName = file.fileExtension!
@@ -53,10 +55,11 @@ class ListDataGGDriveTableViewCell: UITableViewCell {
                 fileExtension = file.fileExtension!
             }
         }
-
-        imgType.image = imageName.image()
+        
+        let image = UIImage.init(named: imageName)
+        imgType.image = image ?? "file".image()
         lblTitle.text = file.name
-        lblSubTitle.text = fileExtension + "  " + fileSize
+        lblSubTitle.text = fileExtension.isEmpty ? fileSize : fileExtension + "  " + fileSize
     }
 }
 

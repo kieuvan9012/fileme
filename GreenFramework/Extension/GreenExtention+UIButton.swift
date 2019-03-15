@@ -83,14 +83,18 @@ public extension UIButton
         self.setTitle(title, for: .normal)
     }
     
-    public func setHidden()
+    public func hidden()
     {
         self.isHidden = true
     }
 
-    public func setShow()
+    public func show()
     {
         self.isHidden = false
+    }
+    
+    public func titleColor(_ color: UIColor) {
+        self.setTitleColor(color, for: .normal)
     }
 }
 
