@@ -381,11 +381,11 @@ public extension UIView
         return nil
     }
     
-    func hidden() {
+    func hiddenView() {
         self.isHidden = true
     }
     
-    func show() {
+    func showView() {
         self.isHidden = false
     }
 }

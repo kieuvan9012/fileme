@@ -39,10 +39,10 @@ class ListDataGGDriveViewController: MasterViewController {
     }
     
     func setUpView() {
-        self.viewDownloadFile.hidden()
+        self.viewDownloadFile.hiddenView()
         self.viewDownloadFile.backgroundColor = template.primaryColor
         self.lblProgress.textColor = .white
-        self.btnCancel.titleColor("7F3830".hexColor())
+        self.btnCancel.titleColor(.white)
         
         self.navigationView.bringSubview(toFront: viewDownloadFile)
         
@@ -126,7 +126,7 @@ class ListDataGGDriveViewController: MasterViewController {
     
     @IBAction func actionCancelDownloadFile() {
         fetcher.stopFetching()
-        viewDownloadFile.hidden()
+        viewDownloadFile.hiddenView()
         lblProgress.text = ""
         UIView.animate(withDuration: 0.3, animations: {
             self.progressView.alpha = 0
@@ -212,7 +212,7 @@ extension ListDataGGDriveViewController: UITableViewDelegate {
         self.fetcher = self.serviceGGDrive.fetcherService.fetcher(with: downloadRequest)
         // Progress
 
-        self.viewDownloadFile.show()
+        self.viewDownloadFile.showView()
         self.fetcher.receivedProgressBlock = { bytesWritten, totalBytesWritten in
             let progress = Float(totalBytesWritten) / fileData.size!.floatValue
             weakSelf?.updateDownloadProgress(progress)
@@ -225,7 +225,7 @@ extension ListDataGGDriveViewController: UITableViewDelegate {
         }
         
         self.fetcher.beginFetch(completionHandler: { (data, fetchError) in
-            self.viewDownloadFile.hidden()
+            self.viewDownloadFile.hiddenView()
             self.lblProgress.text = ""
             
             UIView.animate(withDuration: 0.3, animations: {

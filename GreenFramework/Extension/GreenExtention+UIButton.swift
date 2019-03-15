@@ -83,12 +83,12 @@ public extension UIButton
         self.setTitle(title, for: .normal)
     }
     
-    public func hidden()
+    public func hiddenView()
     {
         self.isHidden = true
     }
 
-    public func show()
+    public func showView()
     {
         self.isHidden = false
     }

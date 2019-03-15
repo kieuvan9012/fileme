@@ -35,11 +35,11 @@ class ListDataGGDriveTableViewCell: UITableViewCell {
         if(ConfigGoogleDrive.isFolder(file)) {
             fileExtension = "Folder"
             imageName = "folder"
-            btnDownload.hidden()
+            btnDownload.hiddenView()
             self.accessoryType = .disclosureIndicator
         } else {
             self.accessoryType = .none
-            btnDownload.show()
+            btnDownload.showView()
             
             if(file.fileExtension != nil && !(file.fileExtension?.isEmpty)!) {
                 imageName = file.fileExtension!
