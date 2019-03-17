@@ -13,9 +13,6 @@ enum AlertButton {
     case info
     case DB_Error
     
-
-
-
     func values() -> (name: String, value: Int)
     {
         switch self {
@@ -29,11 +26,7 @@ enum AlertButton {
     }
 }
 
-
-
-
 let AnyViewTag = 101
-
 
 let ALERTBOXCONTAINERTAG =  9009
 let ALERTBOXALPHATAG =  9001
@@ -53,21 +46,19 @@ public extension UIView
         addSubview(containerView)
         setLayout(containerView)
         
-
         containerView.addSubview(alphaView)
         containerView.setLayout(alphaView)
-
+        
         containerView.addSubview(targetView)
-
         
         let xConstraint = NSLayoutConstraint(item: targetView, attribute: .centerX, relatedBy: .equal, toItem: containerView, attribute: .centerX, multiplier: 1, constant: 0)
         
         let yConstraint = NSLayoutConstraint(item: targetView, attribute: .centerY, relatedBy: .equal, toItem: containerView, attribute: .centerY, multiplier: 1, constant: 0)
-
+        
         containerView.addConstraint(xConstraint)
         containerView.addConstraint(yConstraint)
-
-
+        
+        
     }
     
     func alertBox(_ targetView : UIView, ratio : CGFloat)
@@ -96,14 +87,14 @@ public extension UIView
         
         
         let widthConstraint = NSLayoutConstraint(item: targetView, attribute: .width, relatedBy: .equal, toItem: containerView, attribute: .width, multiplier: ratio, constant: 0)
-
+        
         containerView.addConstraint(widthConstraint)
         containerView.addConstraint(xConstraint)
         containerView.addConstraint(yConstraint)
         
         
     }
-
+    
     
     func hideAlertBox()
     {
@@ -144,7 +135,7 @@ public extension UIView
             view.removeFromSuperview()
         }
     }
-
+    
     func setY(y : CGFloat)
     {
         self.frame = CGRect.init(x: self.frame.origin.x, y: y, width: self.frame.size.width, height: self.frame.size.height)
@@ -163,7 +154,7 @@ public extension UIView
     {
         self.frame.size.height = height
     }
-
+    
     public func drawRound()
     {
         self.layer.cornerRadius = self.frame.size.width/2;
@@ -187,10 +178,10 @@ public extension UIView
         
         self.layer.borderColor = UIColor.clear.cgColor
         
-//        self.layer.maskedCorners =  corners
+        //        self.layer.maskedCorners =  corners
         
     }
-
+    
     public func drawRadius(_ radius  : CGFloat,color : UIColor , thickness :CGFloat )  {
         self.layer.cornerRadius = radius
         self.layer.borderWidth = thickness
@@ -289,7 +280,7 @@ public extension UIView
             
             
             print(self.bounds.width)
-
+            
             self.addSubview(limeUnit)
             var previousXView : UIView!
             var targetView : UIView!
@@ -343,7 +334,7 @@ public extension UIView
             
             
             print(limeUnit.frame)
-
+            
             
         }
     }
@@ -364,9 +355,9 @@ public extension UIView
     
     
     
-        func dropShadow() {
-            dropShadow(radius: 2, width: -1, height: -1, opacity: 0.12, shadowRadius : 2)
-        }
+    func dropShadow() {
+        dropShadow(radius: 2, width: -1, height: -1, opacity: 0.12, shadowRadius : 2)
+    }
     
     
     func dropShadow(radius : CGFloat , width : CGFloat, height : CGFloat ,opacity : CGFloat , shadowRadius : CGFloat) {
@@ -378,7 +369,7 @@ public extension UIView
         self.layer.shadowOpacity = Float(opacity);
         self.layer.shadowColor = UIColor.black.cgColor
     }
-
+    
     func viewController() -> UIViewController? {
         var responder = self as? UIResponder
         while (responder != nil) {
@@ -389,8 +380,14 @@ public extension UIView
         }
         return nil
     }
-
     
+    func hiddenView() {
+        self.isHidden = true
+    }
+    
+    func showView() {
+        self.isHidden = false
+    }
 }
 extension UIView {
     func parentView<T: UIView>(of type: T.Type) -> T? {
@@ -410,4 +407,5 @@ extension UIView {
     }
     
 }
+
 

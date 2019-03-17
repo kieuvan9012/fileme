@@ -14,7 +14,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="FileMe" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="File_Me" customModuleProvider="target">
             <connections>
                 <outlet property="btFace" destination="ZuF-lV-yTx" id="xLu-hk-X6o"/>
                 <outlet property="btLogin" destination="Td0-L4-3wa" id="CZg-IM-gqi"/>
@@ -38,15 +38,15 @@
                         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i5M-Pr-FkT">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cdo-ge-XIv" customClass="GreenInfoFieldSymbol" customModule="FileMe" customModuleProvider="target">
-                                    <rect key="frame" x="20" y="312.5" width="335" height="40"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cdo-ge-XIv" customClass="GreenInfoFieldSymbol" customModule="File_Me" customModuleProvider="target">
+                                    <rect key="frame" x="20" y="316" width="335" height="40"/>
                                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="pL1-hI-JEH"/>
                                     </constraints>
                                 </view>
-                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Td0-L4-3wa" customClass="ButtonSuccess" customModule="FileMe" customModuleProvider="target">
-                                    <rect key="frame" x="20" y="460.5" width="335" height="40"/>
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Td0-L4-3wa" customClass="ButtonSuccess" customModule="File_Me" customModuleProvider="target">
+                                    <rect key="frame" x="20" y="464" width="335" height="40"/>
                                     <color key="backgroundColor" red="0.071262716130000001" green="0.45187341450000001" blue="0.91223826139999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                     <state key="normal" title="Đăng Nhập"/>
@@ -67,12 +67,12 @@
                                         <action selector="register:" destination="-1" eventType="touchUpInside" id="JMi-Av-cLm"/>
                                     </connections>
                                 </button>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yoa-hQ-fhX" customClass="GreenInfoFieldSymbol" customModule="FileMe" customModuleProvider="target">
-                                    <rect key="frame" x="20" y="360.5" width="335" height="40"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yoa-hQ-fhX" customClass="GreenInfoFieldSymbol" customModule="File_Me" customModuleProvider="target">
+                                    <rect key="frame" x="20" y="364" width="335" height="40"/>
                                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZuF-lV-yTx">
-                                    <rect key="frame" x="20" y="512.5" width="335" height="40"/>
+                                    <rect key="frame" x="20" y="516" width="335" height="40"/>
                                     <color key="backgroundColor" red="0.29411764705882354" green="0.44313725490196076" blue="0.65098039215686276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                     <state key="normal" title="Facebook">
@@ -83,7 +83,7 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="File Me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZi-iw-Gsi">
-                                    <rect key="frame" x="67" y="120" width="241.5" height="72.5"/>
+                                    <rect key="frame" x="82" y="120" width="211" height="76"/>
                                     <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="65"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>

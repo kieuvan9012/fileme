@@ -17,13 +17,16 @@ class MasterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
-
     
     override func viewWillAppear(_ animated: Bool) {
-        
         super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("current VC: ", type(of: self))
+        print("current xib: ", self.nibName ?? "dont know")
     }
     
     func setTitleWithBackAction(_ value : String)
