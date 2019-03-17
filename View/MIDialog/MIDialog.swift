@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 enum MIDialogType
 {
     case info
@@ -17,10 +16,8 @@ enum MIDialogType
     case warningConfirm
 }
 
-
-
 class MIDialog: GreenView {
-
+    
     @IBOutlet weak var lbDes: UILabel!
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var btCancel: UIButton!
@@ -33,7 +30,7 @@ class MIDialog: GreenView {
     
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var mainView: UIView!
-
+    
     @IBAction func cancel(_ sender: Any) {
         cancelBlock()
         remove()
@@ -47,7 +44,6 @@ class MIDialog: GreenView {
     @IBAction func accept(_ sender: Any) {
         acceptBlock()
         remove()
-
     }
     
     init(title : String,desc : String, type : MIDialogType, acceptBlock : @escaping (()->Void),cancelBlock : @escaping (()->Void))
@@ -59,60 +55,49 @@ class MIDialog: GreenView {
         alphaView.backgroundColor = UIColor.black
         alphaView.alpha =  0.48
         mainView.drawRadius(1.75)
-//        contentView.dropShadow(color: UIColor.lightGray)
         
         lbTitle.text = title
         lbDes.text = desc
         
         switch type {
-        case .info: infoStyle() ; break
-        case .warning: warningStyle() ; break
-        case .infoConfirm: infoConfirm() ; break
-        case .warningConfirm: warningConfirm() ; break
-
+        case .info: infoStyle()  ; break
+        case .warning: warningStyle()  ; break
+        case .infoConfirm: infoConfirm()  ; break
+        case .warningConfirm: warningConfirm()  ; break
         }
-        
         
         btAccept.setTitleColor(template.primaryColor, for: .normal)
         headerView.backgroundColor = UIColor.white
-
     }
     
     func infoConfirm()
     {
         btCancel.isHidden = false
-        lbTitle.textColor = template.primaryColor ;
-
+        lbTitle.textColor = template.primaryColor
     }
     
     func warningConfirm()
     {
-        lbTitle.textColor = template.dangerColor ;
+        lbTitle.textColor = template.dangerColor
         btCancel.isHidden = false
     }
     
-    
     func infoStyle()
     {
-        lbTitle.textColor = template.primaryColor ;
+        lbTitle.textColor = template.primaryColor
         btCancel.isHidden = true
-
     }
     
     func warningStyle()
     {
-        lbTitle.textColor = template.dangerColor ;
+        lbTitle.textColor = template.dangerColor
         btCancel.isHidden = true
     }
-    
     
     public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
 }
-
-
 
 extension UIView
 {
@@ -124,22 +109,15 @@ extension UIView
             cancelBlock()
         }
         
-        
-        
-        
-        
-        
         app.window?.rootViewController?.view.addSubview(dialog)
         app.window?.rootViewController?.view.setLayout(dialog)
         
         dialog.alpha = 0.0
-
+        
         dialog.contentView.drawRadius(4)
         UIView.animate(withDuration: 0.25) { () -> Void in
             dialog.alpha = 1.0
         }
-        
-
     }
     
     func dialogView(title : String ,desc : String , type : MIDialogType ,acceptBlock : @escaping (()->Void),cancelBlock : @escaping (()->Void))
@@ -159,8 +137,6 @@ extension UIView
         UIView.animate(withDuration: 0.25) { () -> Void in
             dialog.alpha = 1.0
         }
-        
-        
     }
     
     func info(title : String ,desc : String )
@@ -178,10 +154,8 @@ extension UIView
         UIView.animate(withDuration: 0.25) { () -> Void in
             dialog.alpha = 1.0
         }
-        
-        
     }
-
+    
     func warning(title : String ,desc : String )
     {
         let dialog = MIDialog.init(title: title, desc: desc, type: .warning, acceptBlock: { () in
@@ -196,8 +170,20 @@ extension UIView
             dialog.alpha = 1.0
         }
     }
-
     
-
+    func error(desc : String )
+    {
+        let dialog = MIDialog.init(title: "Lỗi", desc: desc, type: .warning, acceptBlock: { () in
+        }) { () in
+        }
+        self.addSubview(dialog)
+        self.setLayout(dialog)
+        dialog.alpha = 0.0
+        
+        dialog.contentView.drawRadius(4)
+        UIView.animate(withDuration: 0.25) { () -> Void in
+            dialog.alpha = 1.0
+        }
+    }
+    
 }
-

@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NavigationView" customModule="MBS_Mobile" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NavigationView" customModule="FileMe" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="HTX-Qm-Ynw" id="Jjq-29-Cqk"/>
                 <outlet property="heightContent" destination="EdW-dj-Ib7" id="mj4-38-ZkQ"/>
                 <outlet property="heightStatusBar" destination="fhY-MQ-U4v" id="C3s-8t-Yqe"/>
-                <outlet property="imgDropAccount" destination="o4C-H4-pjU" id="hdr-qL-lOv"/>
-                <outlet property="lbAccoutNo" destination="Pfo-Tz-Y0J" id="UM1-hp-U8d"/>
                 <outlet property="lbTitle" destination="zhJ-vD-d0p" id="QMJ-af-1p1"/>
                 <outlet property="leftImage" destination="rNo-bf-xwW" id="pWX-DP-Ydi"/>
                 <outlet property="leftView" destination="Fa0-xz-tmX" id="bt3-Nc-7sh"/>
@@ -49,36 +47,19 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pfo-Tz-Y0J">
-                                    <rect key="frame" x="130.5" y="32" width="26.5" height="12"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_down_selected.png" translatesAutoresizingMaskIntoConstraints="NO" id="o4C-H4-pjU">
-                                    <rect key="frame" x="167" y="33" width="10" height="10"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="10" id="GJX-ri-i0t"/>
-                                        <constraint firstAttribute="width" secondItem="o4C-H4-pjU" secondAttribute="height" id="QbP-td-2nr"/>
-                                    </constraints>
-                                </imageView>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="o4C-H4-pjU" firstAttribute="leading" secondItem="Pfo-Tz-Y0J" secondAttribute="trailing" constant="10" id="LXb-FK-gza"/>
                                 <constraint firstItem="zhJ-vD-d0p" firstAttribute="leading" secondItem="LIz-jJ-43P" secondAttribute="leading" id="MGI-vj-8X2"/>
                                 <constraint firstAttribute="bottom" secondItem="zhJ-vD-d0p" secondAttribute="bottom" id="ZRM-ZK-Dpf"/>
                                 <constraint firstItem="zhJ-vD-d0p" firstAttribute="top" secondItem="LIz-jJ-43P" secondAttribute="top" id="cQ9-Ul-3oc"/>
-                                <constraint firstAttribute="bottom" secondItem="Pfo-Tz-Y0J" secondAttribute="bottom" id="dPf-4c-hYD"/>
                                 <constraint firstAttribute="trailing" secondItem="zhJ-vD-d0p" secondAttribute="trailing" id="dVa-nX-Jfi"/>
-                                <constraint firstItem="Pfo-Tz-Y0J" firstAttribute="centerX" secondItem="LIz-jJ-43P" secondAttribute="centerX" id="f8p-gy-NhT"/>
-                                <constraint firstItem="o4C-H4-pjU" firstAttribute="centerY" secondItem="Pfo-Tz-Y0J" secondAttribute="centerY" id="vWL-QU-cpn"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8SQ-SU-lP8">
                             <rect key="frame" x="331" y="0.0" width="44" height="44"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Default_Search_White" translatesAutoresizingMaskIntoConstraints="NO" id="zLo-37-gsl">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zLo-37-gsl">
                                     <rect key="frame" x="10" y="10" width="24" height="24"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="24" id="7Jp-Fc-1uM"/>
@@ -165,7 +146,5 @@
     </objects>
     <resources>
         <image name="Default_Back_White" width="26" height="50"/>
-        <image name="Default_Search_White" width="24" height="25"/>
-        <image name="arrow_down_selected.png" width="20" height="20"/>
     </resources>
 </document>

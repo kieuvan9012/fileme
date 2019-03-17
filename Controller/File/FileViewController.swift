@@ -65,10 +65,22 @@ class FileViewController: MasterViewController, UITableViewDelegate, UITableView
         hideAlertBox()
         switch storeType {
         case .icloud : pushIcloud() ; break;
-        case .dropbox : pushIcloud() ; break;
-        case .drive : pushIcloud() ; break;
+        case .dropbox : pushDropbox() ; break;
+        case .drive : pushGoogleDrive() ; break;
         case .fileMe : pushIcloud() ; break;
         }
+    }
+    
+    func pushGoogleDrive() {
+        let view = ListDataGGDriveViewController()
+        
+        self.navigationController?.pushViewController(view, animated: false)
+    }
+    
+    func pushDropbox() {
+        let view = ListDataDropBoxViewController()
+        
+        self.navigationController?.pushViewController(view, animated: false)
     }
     
     func pushIcloud()

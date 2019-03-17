@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DownloadViewController" customModule="FileMe" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="458" height="117"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t3d-Bj-zdX">
+                    <rect key="frame" x="0.0" y="0.0" width="458" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CzF-U9-Hzn">
+                    <rect key="frame" x="10" y="49" width="438" height="2"/>
+                </progressView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcH-6f-Q7j">
+                    <rect key="frame" x="10" y="56" width="438" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n17-au-Ac2">
+                    <rect key="frame" x="0.0" y="87" width="458" height="30"/>
+                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="y3v-aA-JJw"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="cancelDownloadPressed:" destination="-1" eventType="touchUpInside" id="V3h-94-LBX"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="t3d-Bj-zdX" secondAttribute="trailing" id="6NU-ce-41G"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="n17-au-Ac2" secondAttribute="trailing" id="7MD-Vp-MXc"/>
+                <constraint firstAttribute="trailing" secondItem="CzF-U9-Hzn" secondAttribute="trailing" constant="10" id="7nQ-Bf-c0J"/>
+                <constraint firstItem="rcH-6f-Q7j" firstAttribute="top" secondItem="CzF-U9-Hzn" secondAttribute="bottom" constant="5" id="EbM-og-cWQ"/>
+                <constraint firstItem="n17-au-Ac2" firstAttribute="top" secondItem="rcH-6f-Q7j" secondAttribute="bottom" constant="10" id="OgS-AT-Uht"/>
+                <constraint firstItem="rcH-6f-Q7j" firstAttribute="trailing" secondItem="CzF-U9-Hzn" secondAttribute="trailing" id="Ots-cf-jP0"/>
+                <constraint firstItem="CzF-U9-Hzn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="S79-ee-YDr"/>
+                <constraint firstItem="t3d-Bj-zdX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="SKu-Xx-b9l"/>
+                <constraint firstItem="rcH-6f-Q7j" firstAttribute="leading" secondItem="CzF-U9-Hzn" secondAttribute="leading" id="ZIH-fs-nZ4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="n17-au-Ac2" secondAttribute="bottom" id="pEj-Sx-sML"/>
+                <constraint firstItem="n17-au-Ac2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="yN2-Gm-9OX"/>
+                <constraint firstItem="t3d-Bj-zdX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="z89-cP-NKi"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="110.40000000000001" y="-248.72563718140933"/>
+        </view>
+    </objects>
+</document>

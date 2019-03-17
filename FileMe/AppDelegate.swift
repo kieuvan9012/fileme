@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import SwiftyDropbox
+
 let app = UIApplication.shared.delegate as! AppDelegate
 
 @UIApplicationMain
@@ -13,13 +15,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+        DropboxClientsManager.setupWithAppKey("tm7vfvtwq1v3lpe")
+
         UIApplication.shared.statusBarStyle = .lightContent
         self.window?.makeKeyAndVisible()
-
         self.window?.rootViewController = IntroViewController()
+
+        return true
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        if let authResult = DropboxClientsManager.handleRedirectURL(url) {
+            switch authResult {
+            case .success:
+                print("Success! User is logged into Dropbox.")
+            case .cancel:
+                print("Authorization flow was manually canceled by user!")
+                let mainController = self.window!.rootViewController as! UINavigationController
+                mainController.popViewController(animated: false)
+                
+            case .error(_, let description):
+                print("Error: \(description)")
+//                let mainController = self.window!.rootViewController as! UINavigationController
+//                mainController.popViewController(animated: false)
+            }
+        }
+        
         return true
     }
 
@@ -38,13 +60,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func maintenance()
     {
         let mt = MaintenanceViewController()
-        self.window?.rootViewController = mt ;
-        
+        self.window?.rootViewController = mt
     }
     
     func login()
     {
-        
         DispatchQueue.main.async {
             let loginVC = LoginViewController()
             self.loginNavi = UINavigationController.init(rootViewController: loginVC)
@@ -52,7 +72,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.loginNavi.isNavigationBarHidden = true ;
         }
     }
-    
     
     func info()
     {
@@ -66,27 +85,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         info.fromFace = true;
         self.window?.rootViewController = info
     }
+    
     var navi : UINavigationController!
     var homeV : HomeViewController!
     
-    
     func home()
     {
-        
         DispatchQueue.main.async {
             self.homeV = HomeViewController()
             self.navi = UINavigationController.init(rootViewController: self.homeV)
             
             self.navi.isNavigationBarHidden = true
             self.window?.rootViewController = self.navi
-            
-            
-            
         }
     }
-    
-    
-
     
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
@@ -99,7 +111,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
 

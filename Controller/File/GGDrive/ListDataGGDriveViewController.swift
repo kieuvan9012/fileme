@@ -15,17 +15,17 @@ private let kKeychainItemName = "GoogleDrive"
 private let kClientID = "47587196428-3svqb2ftjaj77e79r9f9argeosgd8qvc.apps.googleusercontent.com"
 private let kClientSecret = ""
 
+
 class ListDataGGDriveViewController: MasterViewController {
     @IBOutlet weak var tbContent: UITableView!
     @IBOutlet weak var lblProgress: UILabel!
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var btnCancel: UIButton!
     @IBOutlet weak var viewDownloadFile: UIView!
+    @IBOutlet weak var btnSignOut: UIButton!
 
-    var serviceGGDrive : GTLRDriveService!
-    var fetcher: GTMSessionFetcher! = GTMSessionFetcher()
-
-    var refreshControl: UIRefreshControl!
+    private var serviceGGDrive : GTLRDriveService!
+    private var fetcher: GTMSessionFetcher! = GTMSessionFetcher()
 
     private var lstData: [GTLRDrive_File] = []
     private var folderId = "root"
@@ -42,18 +42,16 @@ class ListDataGGDriveViewController: MasterViewController {
         self.viewDownloadFile.hiddenView()
         self.viewDownloadFile.backgroundColor = template.primaryColor
         self.lblProgress.textColor = .white
+        self.lblProgress.text = ""
+        self.progressView.progress = 0
+        self.progressView.transform = .init(scaleX: 1.0, y: 3.5)
         self.btnCancel.titleColor(.white)
-        
         self.navigationView.bringSubview(toFront: viewDownloadFile)
-        
+        self.navigationView.bringSubview(toFront: btnSignOut)
+
         setTitleWithBackAction(folderName.isEmpty ? "Google Drive": folderName)
         
-        tbContent.setIdentifier("ListDataGGDriveTableViewCell")
-        refreshControl = UIRefreshControl()
-        refreshControl.tintColor = template.primaryColor
-        refreshControl.attributedTitle = NSAttributedString(string: "Kéo mạnh lên ^_^")
-        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
-        tbContent.addSubview(refreshControl)
+        tbContent.setIdentifier("ListDataFileTableViewCell")
     }
     
     @objc func refresh(_ sender: Any) {
@@ -115,7 +113,6 @@ class ListDataGGDriveViewController: MasterViewController {
             print(ticket)
             print(result as! GTLRDrive_FileList)
             print(error as Any)
-            self.refreshControl.endRefreshing()
             
             if(error == nil) {
                 self.lstData = (result as! GTLRDrive_FileList).files!
@@ -125,13 +122,19 @@ class ListDataGGDriveViewController: MasterViewController {
     }
     
     @IBAction func actionCancelDownloadFile() {
-        fetcher.stopFetching()
-        viewDownloadFile.hiddenView()
-        lblProgress.text = ""
-        UIView.animate(withDuration: 0.3, animations: {
-            self.progressView.alpha = 0
-            self.progressView.progress = 0
-        })
+        weak var weakSelf = self
+        
+        weakSelf?.fetcher.stopFetching()
+        weakSelf?.btnSignOut.showView()
+
+        weakSelf?.viewDownloadFile.hiddenView()
+        weakSelf?.lblProgress.text = ""
+        weakSelf?.progressView.progress = 0
+    }
+    
+    @IBAction func signOutButtonPressed(_ sender: Any) {
+        GTMOAuth2ViewControllerTouch.removeAuthFromKeychain(forName: kKeychainItemName)
+        self.navigationController?.popViewController(animated: false)
     }
 }
 
@@ -141,7 +144,7 @@ extension ListDataGGDriveViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ListDataGGDriveTableViewCell", for: indexPath) as! ListDataGGDriveTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ListDataFileTableViewCell", for: indexPath) as! ListDataFileTableViewCell
 //        cell.selectionStyle = .none
         
         let fileData = lstData[indexPath.row]
@@ -155,46 +158,35 @@ extension ListDataGGDriveViewController: UITableViewDataSource {
 
 extension ListDataGGDriveViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        weak var weakSelf = self
+
         let fileData = lstData[indexPath.row]
-        if(ConfigGoogleDrive.isFolder(fileData)) {
+        if(ConfigFileType.isFolderGGDrive(fileData)) {
             let view = ListDataGGDriveViewController()
             view.serviceGGDrive = serviceGGDrive
             view.folderId = fileData.identifier ?? "root"
             view.folderName = fileData.name ?? "Google Drive"
             
-            navigationController?.pushViewController(view, animated: false)
+            weakSelf?.navigationController?.pushViewController(view, animated: false)
         } else {
 //            UIApplication.shared.openURL(URL.init(string: fileData.webViewLink!)!)
-            self.downloadFile(fileData)
+            if(!ConfigFileType.isSupportFile(fileData.fileExtension)) {
+                weakSelf?.view.warning(title: "Lỗi", desc: "Không thể tải tập tin này")
+                return
+            }
+            
+            weakSelf?.downloadFile(fileData)
         }
     }
     
     func downloadFile(_ fileData: GTLRDrive_File) {
-//        let query = GTLRDriveQuery_FilesGet.queryForMedia(withFileId: fileData.identifier!)
-//        serviceGGDrive.executeQuery(query) { (ticket, file , error) in
-//            if (error == nil) {
-//                print(ticket)
-//                print(error as Any)
-//                print((file as! GTLRDataObject))
-//                print((file as! GTLRDataObject).data)
-//            } else {
-//
-//            }
-//        }
-        
-        if(fetcher.isFetching) {
+        weak var weakSelf = self
+
+        if((weakSelf?.fetcher.isFetching)!) {
             self.actionCancelDownloadFile()
         }
-
-        if (fileData.size != nil) {
-            self.lblProgress.text = "Downloading 0 KB of " + ByteCountFormatter.string(fromByteCount: (fileData.size?.int64Value)!, countStyle: .file)
-        } else {
-            self.lblProgress.text =  "Wait for Downloading..."
-        }
-
-        weak var weakSelf = self
+        
         var downloadRequest: URLRequest
-
         if (fileData.fileExtension == nil) {
             // Google Spread Sheet like googles own format can be downloaded via this query
             // https://developers.google.com/drive/v3/web/manage-downloads
@@ -204,70 +196,84 @@ extension ListDataGGDriveViewController: UITableViewDelegate {
             let query = GTLRDriveQuery_FilesGet.queryForMedia(withFileId: fileData.identifier!)
             downloadRequest = self.serviceGGDrive.request(for: query) as URLRequest
         }
-
         if(downloadRequest == nil) {
             return
         }
 
-        self.fetcher = self.serviceGGDrive.fetcherService.fetcher(with: downloadRequest)
-        // Progress
+        weakSelf?.fetcher = self.serviceGGDrive.fetcherService.fetcher(with: downloadRequest)
 
-        self.viewDownloadFile.showView()
-        self.fetcher.receivedProgressBlock = { bytesWritten, totalBytesWritten in
+        // reset data
+        weakSelf?.viewDownloadFile.showView()
+        weakSelf?.progressView.progress = 0
+        weakSelf?.btnSignOut.hiddenView()
+
+        if (fileData.size != nil) {
+            weakSelf?.lblProgress.text = "Downloading 0 KB of " + ByteCountFormatter.string(fromByteCount: (fileData.size?.int64Value)!, countStyle: .file)
+        } else {
+            weakSelf?.lblProgress.text =  "Wait for Downloading..."
+        }
+
+        // Progress
+        weakSelf?.fetcher.receivedProgressBlock = { bytesWritten, totalBytesWritten in
             let progress = Float(totalBytesWritten) / fileData.size!.floatValue
             weakSelf?.updateDownloadProgress(progress)
             
             if (fileData.size != nil) {
-                weakSelf?.lblProgress.text = "Downloading \(ByteCountFormatter.string(fromByteCount: totalBytesWritten, countStyle: .file)) of \(ByteCountFormatter.string(fromByteCount: fileData.size!.int64Value, countStyle: .file))"
+                weakSelf?.lblProgress.text = String(format: "Downloading %@ of %@", ByteCountFormatter.string(fromByteCount: totalBytesWritten, countStyle: .file), ByteCountFormatter.string(fromByteCount: fileData.size!.int64Value, countStyle: .file))
             } else {
-                weakSelf?.lblProgress.text = "Downloading... \(ByteCountFormatter.string(fromByteCount: totalBytesWritten, countStyle: .file)) "
+                weakSelf?.lblProgress.text = String(format: "Downloading... %@", ByteCountFormatter.string(fromByteCount: totalBytesWritten, countStyle: .file))
             }
         }
         
-        self.fetcher.beginFetch(completionHandler: { (data, fetchError) in
-            self.viewDownloadFile.hiddenView()
-            self.lblProgress.text = ""
-            
-            UIView.animate(withDuration: 0.3, animations: {
-                self.progressView.alpha = 0.0
-                self.progressView.progress = 0.0
-            })
-            
+        weakSelf?.fetcher.beginFetch(completionHandler: { (data, fetchError) in
             if fetchError == nil {
-                let viewSuccessNoti = UIView(frame: CGRect(x: 0, y: self.navigationView.frame.size.height , width: self.navigationView.frame.size.width , height: 30))
-                viewSuccessNoti.backgroundColor = UIColor(red: 92 / 255.0, green: 195 / 255.0, blue: 138 / 255.0, alpha: 1)
-                
-                let lblDLSuccess = UILabel(frame: CGRect(x: 0, y: 0, width: self.navigationView.frame.size.width , height: 30))
-                lblDLSuccess.textColor = UIColor.black
-                lblDLSuccess.font = UIFont.systemFont(ofSize: 18)
-                lblDLSuccess.textColor = UIColor.white
-                lblDLSuccess.textAlignment = .center
-                lblDLSuccess.text = "Successfully Downloaded"
-                
-                viewSuccessNoti.addSubview(lblDLSuccess)
-                viewSuccessNoti.alpha = 0.0
-                self.view.addSubview(viewSuccessNoti)
-                
-                UIView.animate(withDuration: 0.8, animations: {
-                    viewSuccessNoti.alpha = 1.0
-                }) { finished in
-                    viewSuccessNoti.removeFromSuperview()
-                }
+                weakSelf?.successDownload(fileData.name!)
             } else {
-                self.actionCancelDownloadFile()
-                self.view.warning(title: "Lỗi", desc: (fetchError?.localizedDescription)!)
+                weakSelf?.actionCancelDownloadFile()
+                weakSelf?.view.warning(title: "Lỗi", desc: (fetchError?.localizedDescription)!)
             }
         })
+        
+        // cách download khác - k có progress
+        
+        //        let query = GTLRDriveQuery_FilesGet.queryForMedia(withFileId: fileData.identifier!)
+        //        serviceGGDrive.executeQuery(query) { (ticket, file , error) in
+        //            if (error == nil) {
+        //                print(ticket)
+        //                print(error as Any)
+        //                print((file as! GTLRDataObject))
+        //                print((file as! GTLRDataObject).data)
+        //            } else {
+        //
+        //            }
+        //        }
+    }
+    
+    func successDownload(_ val: String) {
+        self.viewDownloadFile.hiddenView()
 
+        let viewSuccessNoti = UIView(frame: CGRect(x: 0, y: self.navigationView.frame.size.height , width: self.navigationView.frame.size.width , height: 30))
+        viewSuccessNoti.backgroundColor = UIColor(red: 92 / 255.0, green: 195 / 255.0, blue: 138 / 255.0, alpha: 1)
+        
+        let lblDLSuccess = UILabel(frame: CGRect(x: 0, y: 0, width: self.navigationView.frame.size.width , height: 30))
+        lblDLSuccess.textColor = UIColor.black
+        lblDLSuccess.font = UIFont.systemFont(ofSize: 18)
+        lblDLSuccess.textColor = UIColor.white
+        lblDLSuccess.textAlignment = .center
+        lblDLSuccess.text = "Tải thành công " + val
+        
+        viewSuccessNoti.addSubview(lblDLSuccess)
+        viewSuccessNoti.alpha = 0.0
+        self.view.addSubview(viewSuccessNoti)
+        
+        UIView.animate(withDuration: 1.0, animations: {
+            viewSuccessNoti.alpha = 1.0
+        }) { finished in
+            viewSuccessNoti.removeFromSuperview()
+        }
     }
     
     func updateDownloadProgress(_ progress: Float) {
-        if (progressView.alpha == 0) {
-            UIView.animate(withDuration: 0.3, animations: {
-                self.progressView.alpha = 1.0
-            })
-        }
-        
         self.progressView.progress = progress
     }
 }

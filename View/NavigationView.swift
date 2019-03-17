@@ -50,7 +50,6 @@ class NavigationView: GreenView , UITextFieldDelegate{
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var leftBt: GreenButtonCenter!
     @IBOutlet weak var lbTitle: UILabel!
-    @IBOutlet weak var imgDropAccount: UIImageView!
     
     var delegate : NavigationViewDelegate!
     var completion : (()->Void)!
@@ -65,13 +64,9 @@ class NavigationView: GreenView , UITextFieldDelegate{
     @IBOutlet weak var rightButton: GreenButtonCenter!
     @IBOutlet weak var heightStatusBar: NSLayoutConstraint!
     @IBOutlet weak var heightNavi: NSLayoutConstraint!
-    @IBOutlet weak var lbAccoutNo: UILabel!
     
     override func initStyle()
     {
-        lbAccoutNo.isHidden = true
-        imgDropAccount.isHidden = true
-        
         if(IS_LANDSCAPE()) {
             heightStatusBar.constant = 0
         } else {
@@ -159,11 +154,6 @@ class NavigationView: GreenView , UITextFieldDelegate{
     func setTitle(_ value : String)
     {
         self.lbTitle.text = value;
-    }
-    
-    func hidenAccountNo(){
-        self.lbAccoutNo.isHidden =  true
-        self.imgDropAccount.isHidden = true
     }
     
     @objc public func setRight(_ image : UIImage, touch : @escaping (()->Void))
