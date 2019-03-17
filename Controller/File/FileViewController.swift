@@ -8,61 +8,40 @@
 import UIKit
 import MobileCoreServices
 
-class FileViewController: MasterViewController, UITableViewDelegate, UITableViewDataSource, UIDocumentMenuDelegate, UIDocumentPickerDelegate
+class FileViewController: MasterViewController, UITableViewDelegate, UITableViewDataSource, UIDocumentMenuDelegate, AddFolderViewDelegate, UIDocumentPickerDelegate,FileAddViewDelegate
 {
-    
-    
     @IBOutlet weak var stackView: UIStackView!
     var files : [MediaFile] = []
-    
+    var root : MediaFile!
     @IBOutlet weak var tbView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
         
         simpleNavi.set("My File")
         tbView.setIdentifier("FileListCell")
-        
-        let item = MediaFile.init()
-        item.title = "Nhóm học tập"
-        item.isExpand = true
-        let sub0 = MediaFile.init()
-        sub0.fileType = .excel
-        sub0.title = "File excel 0"
-        
-        let sub1 = MediaFile.init()
-        sub1.fileType = .word
-        sub1.title = "File doc 0"
-        
-        let item1 = MediaFile.init()
-        item1.title = "Điện ảnh"
-        item1.isExpand = true
-        
-        let sub01 = MediaFile.init()
-        sub01.fileType = .excel
-        sub01.title = "File excel 1"
-        
-        let sub11 = MediaFile.init()
-        sub11.fileType = .word
-        sub11.title = "File doc 1"
-        
-
-        item1.addChild([sub01,sub11])
-
-        item.addChild([sub0,sub1,item1])
-
-        generatorProcessing(item: item)
-        tbView.reloadData()
-        
         simpleNavi.bringSubview(toFront: stackView)
-
+        loadData()
     }
-
+    
+    func loadData()
+    {
+        weak var weakself = self;
+        files.removeAll()
+        
+        services.fileList(success: { (response) in
+            weakself?.root = response
+            weakself?.generatorProcessing(item: response)
+            weakself?.tbView.reloadData()
+        }) { (error) in
+            
+        }
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tbView.dequeueReusableCell(withIdentifier: "FileListCell") as! FileListCell
         cell.set(files[indexPath.row])
-        return cell
+        return cell ;
     }
     
     func generatorProcessing(item : MediaFile)
@@ -75,35 +54,137 @@ class FileViewController: MasterViewController, UITableViewDelegate, UITableView
     }
     
     @IBAction func addTouch(_ sender: Any) {
-        let view = ListDataGGDriveViewController()
-        self.navigationController?.pushViewController(view, animated: false)
+        let selectFileView = FileAddView.init(frame: CGRect.init())
+        selectFileView.delegate = self;
+        view.alertBox(selectFileView, ratio: 0.90)
+
+    }
+    
+    
+    func fileAddViewSelect(_ storeType: FileStore) {
+        hideAlertBox()
+        switch storeType {
+        case .icloud : pushIcloud() ; break;
+        case .dropbox : pushIcloud() ; break;
+        case .drive : pushIcloud() ; break;
+        case .fileMe : pushIcloud() ; break;
+        }
+    }
+    
+    func pushIcloud()
+    {
+        let types: [String] = ["public.jpeg","public.png","com.adobe.pdf ","com.microsoft.word.doc","com.microsoft.excel.xls","org.openxmlformats.wordprocessingml.document","com.microsoft.powerpoint.​ppt","org.openxmlformats.spreadsheetml.sheet"]
+        
+        let importMenu = UIDocumentPickerViewController(documentTypes:types, in: .import)
+        importMenu.delegate = self
+        importMenu.modalPresentationStyle = .formSheet
+        self.present(importMenu, animated: true, completion: nil)
+
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return files[indexPath.row].getHeightDisplay()
+        return files[indexPath.row].getHeightDisplay();
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return files.count
     }
-
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         files[indexPath.row].toggle()
-        tbView.beginUpdates()
-        tbView.endUpdates()
+        tbView.reloadData()
     }
     
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-//        viewModel.attachDocuments(at: urls)
+        
+        weak var weakself = self;
+        services.uploadFile(file: MediaFile.init(urls[0]), success: { (response) in
+            let media = MediaFile.list(data: response.data as! [Dictionary<String, Any>])[0]
+            weakself?.insertMediaFile(media)
+        }, failure: { (error) in
+            
+        }) { (progress) in
+            
+        }
+    }
+    
+    func insertMediaFile(_ value : MediaFile)
+    {
+        let request = MediaFileInsert_Request.init(value)
+        request.parent_id = getActiveId()
+        
+        let parent = files.index{$0.id == getActiveId()}
+        files[parent!].addChild([value])
+        files.removeAll()
+        generatorProcessing(item: root)
+        tbView.reloadData()
+        
+        services.fileInsert(request, success: {response in
+            
+        }) { (error) in
+            
+        }
     }
     
     func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
         controller.dismiss(animated: true, completion: nil)
     }
+    
     func documentMenu(_ documentMenu: UIDocumentMenuViewController, didPickDocumentPicker documentPicker: UIDocumentPickerViewController) {
-        
     }
-
-
+    
+    @IBAction func createFolderTouch(_ sender: Any) {
+        let add = AddFolderView()
+        add.delegate = self;
+        view.alertBox(add, ratio: 0.90)
+    }
+    
+    func addFolderViewAccept(_ value: String) {
+        let request = MediaFileInsert_Request()
+        request.originalname = value
+        request.parent_id = getActiveId()
+        services.fileInsert(request, success: { response in
+            let parent = self.files.index{$0.id == self.getActiveId()}
+            self.files[parent!].addChild([response])
+            self.files.removeAll()
+            self.generatorProcessing(item: self.root)
+            self.tbView.reloadData()
+        }) { (error) in
+            
+        }
+    }
+    
+    func getActiveId()-> Int
+    {
+        if let index = self.files.index(where: {$0.active})
+        {
+            return self.files[index].id
+        }
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            deleteFile(files[indexPath.row])
+        }
+    }
+    
+    func deleteFile(_ value : MediaFile)
+    {
+        let request = MediaFileDelete_Request()
+        request.file_ids = value.grossIds()
+        
+        weak var weakobject = value
+        weak var weakself = self;
+        
+        services.fileDelete(request, success: {
+            weakobject!.delete()
+            weakself!.files.removeAll()
+            weakself?.generatorProcessing(item: (weakself?.root)!)
+            weakself?.tbView.reloadData()
+            
+        }) { (error) in
+            
+        }
+    }
 }

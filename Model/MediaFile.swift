@@ -127,7 +127,7 @@ class MediaFile: Mi {
         case "xls","xlsb","xlsm","xlsx": fileType = .excel;
         case "sldx","pptx","pptm","potx","potm","ppam","ppsx","ppsm": fileType = .ppt;
         case "png","jpg","jpeg" : fileType = .image;
-        default : fileType = .none;
+        default : fileType = .folder;
         }
 
     }
@@ -155,7 +155,6 @@ class MediaFile: Mi {
         {
             return
         }
-        
         
         isExpand = !isExpand
         if(!isExpand)

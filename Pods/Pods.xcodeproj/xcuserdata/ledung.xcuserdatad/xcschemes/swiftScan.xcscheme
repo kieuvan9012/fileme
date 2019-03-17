@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4C49F6F2B986D32189221229DFB49077"
+               BlueprintIdentifier = "586ADC819ECCEE711E4B5019ACC8E1F0"
                BlueprintName = "swiftScan"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "swiftScan.framework">

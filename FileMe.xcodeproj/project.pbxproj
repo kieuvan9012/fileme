@@ -223,6 +223,8 @@
 		51463BEE223D7EE300841276 /* MIDropListTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51463BED223D7EE300841276 /* MIDropListTableView.xib */; };
 		51463BF0223D8FEE00841276 /* CoutingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51463BEF223D8FEE00841276 /* CoutingView.swift */; };
 		51463BF2223D900100841276 /* CoutingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51463BF1223D900100841276 /* CoutingView.xib */; };
+		51463BF5223E12F600841276 /* FileAddView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51463BF3223E12F500841276 /* FileAddView.xib */; };
+		51463BF6223E12F600841276 /* FileAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51463BF4223E12F600841276 /* FileAddView.swift */; };
 		5198EEF62238E9EA008B5E22 /* Message_Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5198EEF22238E9EA008B5E22 /* Message_Contact.swift */; };
 		5198EEF72238E9EA008B5E22 /* MessageEMIT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5198EEF32238E9EA008B5E22 /* MessageEMIT.swift */; };
 		5198EEF82238E9EA008B5E22 /* MessageInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5198EEF42238E9EA008B5E22 /* MessageInstance.swift */; };
@@ -297,7 +299,7 @@
 		510B4974223517D700BA4706 /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 		510B4975223517D700BA4706 /* HistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryCell.xib; sourceTree = "<group>"; };
 		510B49792235701E00BA4706 /* File Me.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "File Me.entitlements"; sourceTree = "<group>"; };
-		510EA290222BE64500DB3724 /* File Me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "File Me.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		510EA290222BE64500DB3724 /* FileMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FileMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		510EA293222BE64500DB3724 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		510EA295222BE64500DB3724 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		510EA298222BE64500DB3724 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -501,6 +503,8 @@
 		51463BED223D7EE300841276 /* MIDropListTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MIDropListTableView.xib; sourceTree = "<group>"; };
 		51463BEF223D8FEE00841276 /* CoutingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoutingView.swift; sourceTree = "<group>"; };
 		51463BF1223D900100841276 /* CoutingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoutingView.xib; sourceTree = "<group>"; };
+		51463BF3223E12F500841276 /* FileAddView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FileAddView.xib; sourceTree = "<group>"; };
+		51463BF4223E12F600841276 /* FileAddView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileAddView.swift; sourceTree = "<group>"; };
 		5198EEF22238E9EA008B5E22 /* Message_Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message_Contact.swift; sourceTree = "<group>"; };
 		5198EEF32238E9EA008B5E22 /* MessageEMIT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageEMIT.swift; sourceTree = "<group>"; };
 		5198EEF42238E9EA008B5E22 /* MessageInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageInstance.swift; sourceTree = "<group>"; };
@@ -611,7 +615,7 @@
 		510EA291222BE64500DB3724 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				510EA290222BE64500DB3724 /* File Me.app */,
+				510EA290222BE64500DB3724 /* FileMe.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1219,6 +1223,8 @@
 		51F215A7223AC90C009FAC97 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				51463BF4223E12F600841276 /* FileAddView.swift */,
+				51463BF3223E12F500841276 /* FileAddView.xib */,
 				51F215A8223AC926009FAC97 /* AddFolderView.swift */,
 				51F215AA223AC978009FAC97 /* AddFolderView.xib */,
 				51F215C5223B3C45009FAC97 /* AddFileView.swift */,
@@ -1274,9 +1280,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		510EA28F222BE64500DB3724 /* File Me */ = {
+		510EA28F222BE64500DB3724 /* FileMe */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 510EA2A2222BE65B00DB3724 /* Build configuration list for PBXNativeTarget "File Me" */;
+			buildConfigurationList = 510EA2A2222BE65B00DB3724 /* Build configuration list for PBXNativeTarget "FileMe" */;
 			buildPhases = (
 				10768346F59FEC2DECDC1F0A /* [CP] Check Pods Manifest.lock */,
 				510EA28C222BE64500DB3724 /* Sources */,
@@ -1290,9 +1296,9 @@
 			);
 			dependencies = (
 			);
-			name = "File Me";
+			name = FileMe;
 			productName = FileMe;
-			productReference = 510EA290222BE64500DB3724 /* File Me.app */;
+			productReference = 510EA290222BE64500DB3724 /* FileMe.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1330,7 +1336,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				510EA28F222BE64500DB3724 /* File Me */,
+				510EA28F222BE64500DB3724 /* FileMe */,
 			);
 		};
 /* End PBXProject section */
@@ -1346,6 +1352,7 @@
 				510EA492222BF8B300DB3724 /* Library.png in Resources */,
 				510EA3C5222BF48A00DB3724 /* input.mp3 in Resources */,
 				51F215D4223B4DB8009FAC97 /* PrintAddUnitView.xib in Resources */,
+				51463BF5223E12F600841276 /* FileAddView.xib in Resources */,
 				510EA494222BF8B300DB3724 /* GDelete.png in Resources */,
 				510EA499222BF8B300DB3724 /* Help.png in Resources */,
 				510EA632222BF99D00DB3724 /* InitInfoViewController.xib in Resources */,
@@ -1499,7 +1506,11 @@
 				"${BUILT_PRODUCTS_DIR}/DeviceUtil/DeviceUtil.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/Gallery/Gallery.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/KissXML/KissXML.framework",
 				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
@@ -1523,7 +1534,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DeviceUtil.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gallery.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KissXML.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
@@ -1569,12 +1584,14 @@
 				"${PODS_ROOT}/AccountKit/AccountKitStrings.bundle",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccountKitStrings.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1700,6 +1717,7 @@
 				510EA568222BF94700DB3724 /* MIHud.swift in Sources */,
 				51F215C6223B3C45009FAC97 /* AddFileView.swift in Sources */,
 				510EA53F222BF94700DB3724 /* MIDropListCell.swift in Sources */,
+				51463BF6223E12F600841276 /* FileAddView.swift in Sources */,
 				510EA473222BF8B300DB3724 /* GreenExtension+UIImage.swift in Sources */,
 				51F215AF223ACE6A009FAC97 /* CloseButton.swift in Sources */,
 			);
@@ -1907,7 +1925,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		510EA2A2222BE65B00DB3724 /* Build configuration list for PBXNativeTarget "File Me" */ = {
+		510EA2A2222BE65B00DB3724 /* Build configuration list for PBXNativeTarget "FileMe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				510EA2A3222BE65B00DB3724 /* Debug */,
