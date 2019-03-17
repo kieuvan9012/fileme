@@ -19,7 +19,7 @@ class LineView: GreenView {
     */
     
     override func initStyle() {
-        view.backgroundColor = template.backgroundColor
+        view.backgroundColor = template.primaryColor
     }
 
 }

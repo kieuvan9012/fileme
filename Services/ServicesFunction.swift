@@ -82,12 +82,13 @@ enum APIFunction : String
     case orderChange = "order/change"
     case addressNode      =    "address/node"
     case test = "place/location/service"
-    //
-    //
-    //    ?locationId=08f6f30f-4667-49e5-8050-fd0488594d6e
-    //
-    
-    
+
+
+
+    case fileList       =    "file/list"
+    case fileInsert     =    "file/insert"
+    case fileDelete     =    "file/delete"
+
 }
 
 

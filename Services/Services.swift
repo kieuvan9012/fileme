@@ -141,6 +141,48 @@ class Services: NSObject {
             }
         }
     }
+    
+    
+    func uploadFile(file : MediaFile,success :@escaping ((APIResponse)->Void), failure :@escaping ((String)->Void), progress: @escaping ((Progress)->Void))
+    {
+        weak var weakself = self
+        let dataRequest = repareRequest(api: APIFunction.uploadMedia, parameter: NSDictionary() as! Dictionary<String, AnyObject>)
+        Alamofire.upload(multipartFormData: { (multipartFormData) in
+            
+            let StringID = String(userInstance.user.id)
+            multipartFormData.append("1".data(using: String.Encoding.utf8)!, withName: "brand")
+            multipartFormData.append(StringID.data(using: String.Encoding.utf8)!, withName: "user_id")
+            multipartFormData.append(file.data  , withName: "media", fileName: file.name, mimeType: file.fileExtension)
+            
+        }, to:dataRequest.0,headers:nil)
+        { (result) in
+            switch result {
+            case .success(let upload,_,_ ):
+                upload.uploadProgress(closure: { (progressValue) in
+                    progress(progressValue)
+                })
+                upload.responseJSON
+                    { response in
+                        
+                        print(response.result.value as Any)   // result of response serialization
+                        
+                        let apiResponse = weakself?.processReponse(response: response)
+                        if (apiResponse?.success == true) {
+                            success(apiResponse!)
+                        }
+                        else
+                        {
+                            failure((apiResponse?.message)!)
+                        }
+                }
+            case .failure( _):
+                failure("Lỗi không xác định")
+                
+                break
+            }
+        }
+    }
+
 
     
 }

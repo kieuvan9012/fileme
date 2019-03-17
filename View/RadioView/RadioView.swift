@@ -23,9 +23,7 @@ class RadioView: GreenView {
 
     override func initStyle() {
         view.backgroundColor = UIColor.white
-
     }
-    
     
     func font(_ value : UIFont)
     {
@@ -50,12 +48,15 @@ class RadioView: GreenView {
         if(isCheck)
         {
             imgCheck.image = checkImg
-            lbTitle.font = UIFont.boldSystemFont(ofSize: 16)
+            lbTitle.font = UIFont.boldSystemFont(ofSize: 14)
+            lbTitle.textColor = template.generalTextColor
+            
         }
         else
         {
             imgCheck.image = unCheckUmg
-            lbTitle.font = UIFont.systemFont(ofSize: 16)
+            lbTitle.font = UIFont.systemFont(ofSize: 14)
+            lbTitle.textColor = template.subTextColor
         }
     }
     

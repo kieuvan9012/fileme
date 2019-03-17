@@ -18,8 +18,6 @@
 		510B48F92234E14C00BA4706 /* user_header.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 510B48F82234E14B00BA4706 /* user_header.jpg */; };
 		510B494C2234EEA600BA4706 /* LimeMessage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 510B494B2234EEA500BA4706 /* LimeMessage.framework */; };
 		510B494D2234EEA600BA4706 /* LimeMessage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 510B494B2234EEA500BA4706 /* LimeMessage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		510B49642234F54900BA4706 /* MessageInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B49632234F54800BA4706 /* MessageInstance.swift */; };
-		510B49662234F60C00BA4706 /* MessageFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B49652234F60C00BA4706 /* MessageFile.swift */; };
 		510B496C2234F8D800BA4706 /* FileListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B496A2234F8D800BA4706 /* FileListCell.swift */; };
 		510B496D2234F8D800BA4706 /* FileListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 510B496B2234F8D800BA4706 /* FileListCell.xib */; };
 		510B49712234FA9F00BA4706 /* Excel.ico in Resources */ = {isa = PBXBuildFile; fileRef = 510B496E2234FA9F00BA4706 /* Excel.ico */; };
@@ -218,10 +216,50 @@
 		510EA680222E29D700DB3724 /* MainTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510EA67B222E29D700DB3724 /* MainTabbarViewController.swift */; };
 		510EA684222E29EB00DB3724 /* MaintenanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510EA682222E29EA00DB3724 /* MaintenanceViewController.swift */; };
 		510EA685222E29EB00DB3724 /* MaintenanceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 510EA683222E29EA00DB3724 /* MaintenanceViewController.xib */; };
+		51463BE5223D59F900841276 /* PrintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51463BE4223D59F900841276 /* PrintView.swift */; };
+		51463BE9223D5AB200841276 /* PrintSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51463BE7223D5AB200841276 /* PrintSelectViewController.swift */; };
+		51463BEA223D5AB200841276 /* PrintSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51463BE8223D5AB200841276 /* PrintSelectViewController.xib */; };
+		51463BEC223D7ED900841276 /* MIDropListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51463BEB223D7ED900841276 /* MIDropListTableView.swift */; };
+		51463BEE223D7EE300841276 /* MIDropListTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51463BED223D7EE300841276 /* MIDropListTableView.xib */; };
+		51463BF0223D8FEE00841276 /* CoutingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51463BEF223D8FEE00841276 /* CoutingView.swift */; };
+		51463BF2223D900100841276 /* CoutingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51463BF1223D900100841276 /* CoutingView.xib */; };
+		5198EEF62238E9EA008B5E22 /* Message_Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5198EEF22238E9EA008B5E22 /* Message_Contact.swift */; };
+		5198EEF72238E9EA008B5E22 /* MessageEMIT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5198EEF32238E9EA008B5E22 /* MessageEMIT.swift */; };
+		5198EEF82238E9EA008B5E22 /* MessageInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5198EEF42238E9EA008B5E22 /* MessageInstance.swift */; };
+		5198EEF92238E9EA008B5E22 /* MessageON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5198EEF52238E9EA008B5E22 /* MessageON.swift */; };
+		5198EEFD2238EBFD008B5E22 /* LimeContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5198EEFA2238EBFA008B5E22 /* LimeContact.swift */; };
+		5198EEFE2238EBFD008B5E22 /* LimeMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5198EEFB2238EBFB008B5E22 /* LimeMessage.swift */; };
+		5198EEFF2238EBFD008B5E22 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5198EEFC2238EBFC008B5E22 /* Conversation.swift */; };
+		5198EF042238EC30008B5E22 /* ConfernceDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5198EF012238EC30008B5E22 /* ConfernceDataStore.swift */; };
+		5198EF052238EC30008B5E22 /* ContactDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5198EF022238EC30008B5E22 /* ContactDataStore.swift */; };
+		5198EF062238EC30008B5E22 /* InterfaceDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5198EF032238EC30008B5E22 /* InterfaceDataStore.swift */; };
+		5198EF0A2238EC7C008B5E22 /* NotifyInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5198EF072238EC7A008B5E22 /* NotifyInstance.swift */; };
+		5198EF0B2238EC7C008B5E22 /* FormaterInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5198EF082238EC7A008B5E22 /* FormaterInstance.swift */; };
+		5198EF0C2238EC7C008B5E22 /* LocationInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5198EF092238EC7B008B5E22 /* LocationInstance.swift */; };
+		5198EF0E2238EF9D008B5E22 /* Message_File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5198EF0D2238EF9D008B5E22 /* Message_File.swift */; };
 		51C638612231248800E05D65 /* FileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C6385F2231248800E05D65 /* FileViewController.swift */; };
 		51C638622231248800E05D65 /* FileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51C638602231248800E05D65 /* FileViewController.xib */; };
 		51C638652231249D00E05D65 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C638632231249D00E05D65 /* HistoryViewController.swift */; };
 		51C638662231249D00E05D65 /* HistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51C638642231249D00E05D65 /* HistoryViewController.xib */; };
+		51F215A9223AC926009FAC97 /* AddFolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F215A8223AC926009FAC97 /* AddFolderView.swift */; };
+		51F215AB223AC978009FAC97 /* AddFolderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51F215AA223AC978009FAC97 /* AddFolderView.xib */; };
+		51F215AD223ACC02009FAC97 /* HeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F215AC223ACC02009FAC97 /* HeaderLabel.swift */; };
+		51F215AF223ACE6A009FAC97 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F215AE223ACE6A009FAC97 /* CloseButton.swift */; };
+		51F215B1223ACE78009FAC97 /* CloseButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51F215B0223ACE78009FAC97 /* CloseButton.xib */; };
+		51F215B5223B2A13009FAC97 /* PrintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F215B3223B2A13009FAC97 /* PrintViewController.swift */; };
+		51F215B6223B2A13009FAC97 /* PrintViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51F215B4223B2A13009FAC97 /* PrintViewController.xib */; };
+		51F215B9223B2B3F009FAC97 /* PrintView_DOC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F215B8223B2B3F009FAC97 /* PrintView_DOC.swift */; };
+		51F215BB223B2B46009FAC97 /* PrintView_DOC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51F215BA223B2B46009FAC97 /* PrintView_DOC.xib */; };
+		51F215BD223B2BC3009FAC97 /* PrintSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F215BC223B2BC3009FAC97 /* PrintSelectView.swift */; };
+		51F215BF223B2BCE009FAC97 /* PrintSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51F215BE223B2BCE009FAC97 /* PrintSelectView.xib */; };
+		51F215C3223B2EBE009FAC97 /* PrintSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F215C1223B2EBE009FAC97 /* PrintSelectCell.swift */; };
+		51F215C4223B2EBE009FAC97 /* PrintSelectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51F215C2223B2EBE009FAC97 /* PrintSelectCell.xib */; };
+		51F215C6223B3C45009FAC97 /* AddFileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F215C5223B3C45009FAC97 /* AddFileView.swift */; };
+		51F215C8223B3C4E009FAC97 /* AddFileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51F215C7223B3C4E009FAC97 /* AddFileView.xib */; };
+		51F215CE223B4D11009FAC97 /* PrintAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F215CD223B4D11009FAC97 /* PrintAddView.swift */; };
+		51F215D0223B4D1E009FAC97 /* PrintAddView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51F215CF223B4D1E009FAC97 /* PrintAddView.xib */; };
+		51F215D2223B4DAE009FAC97 /* PrintAddUnitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F215D1223B4DAE009FAC97 /* PrintAddUnitView.swift */; };
+		51F215D4223B4DB8009FAC97 /* PrintAddUnitView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51F215D3223B4DB8009FAC97 /* PrintAddUnitView.xib */; };
 		B39BEB2D688BAEFD6A8E657A /* Pods_FileMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA5D8A8BE0A2584FDFE83F3 /* Pods_FileMe.framework */; };
 /* End PBXBuildFile section */
 
@@ -251,8 +289,6 @@
 		510B48F52234DEE300BA4706 /* UserImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserImageView.swift; sourceTree = "<group>"; };
 		510B48F82234E14B00BA4706 /* user_header.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = user_header.jpg; sourceTree = "<group>"; };
 		510B494B2234EEA500BA4706 /* LimeMessage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LimeMessage.framework; sourceTree = "<group>"; };
-		510B49632234F54800BA4706 /* MessageInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageInstance.swift; sourceTree = "<group>"; };
-		510B49652234F60C00BA4706 /* MessageFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageFile.swift; sourceTree = "<group>"; };
 		510B496A2234F8D800BA4706 /* FileListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileListCell.swift; sourceTree = "<group>"; };
 		510B496B2234F8D800BA4706 /* FileListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FileListCell.xib; sourceTree = "<group>"; };
 		510B496E2234FA9F00BA4706 /* Excel.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = Excel.ico; sourceTree = "<group>"; };
@@ -458,10 +494,50 @@
 		510EA67B222E29D700DB3724 /* MainTabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabbarViewController.swift; sourceTree = "<group>"; };
 		510EA682222E29EA00DB3724 /* MaintenanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaintenanceViewController.swift; sourceTree = "<group>"; };
 		510EA683222E29EA00DB3724 /* MaintenanceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MaintenanceViewController.xib; sourceTree = "<group>"; };
+		51463BE4223D59F900841276 /* PrintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintView.swift; sourceTree = "<group>"; };
+		51463BE7223D5AB200841276 /* PrintSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintSelectViewController.swift; sourceTree = "<group>"; };
+		51463BE8223D5AB200841276 /* PrintSelectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrintSelectViewController.xib; sourceTree = "<group>"; };
+		51463BEB223D7ED900841276 /* MIDropListTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIDropListTableView.swift; sourceTree = "<group>"; };
+		51463BED223D7EE300841276 /* MIDropListTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MIDropListTableView.xib; sourceTree = "<group>"; };
+		51463BEF223D8FEE00841276 /* CoutingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoutingView.swift; sourceTree = "<group>"; };
+		51463BF1223D900100841276 /* CoutingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoutingView.xib; sourceTree = "<group>"; };
+		5198EEF22238E9EA008B5E22 /* Message_Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message_Contact.swift; sourceTree = "<group>"; };
+		5198EEF32238E9EA008B5E22 /* MessageEMIT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageEMIT.swift; sourceTree = "<group>"; };
+		5198EEF42238E9EA008B5E22 /* MessageInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageInstance.swift; sourceTree = "<group>"; };
+		5198EEF52238E9EA008B5E22 /* MessageON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageON.swift; sourceTree = "<group>"; };
+		5198EEFA2238EBFA008B5E22 /* LimeContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LimeContact.swift; sourceTree = "<group>"; };
+		5198EEFB2238EBFB008B5E22 /* LimeMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LimeMessage.swift; sourceTree = "<group>"; };
+		5198EEFC2238EBFC008B5E22 /* Conversation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
+		5198EF012238EC30008B5E22 /* ConfernceDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfernceDataStore.swift; sourceTree = "<group>"; };
+		5198EF022238EC30008B5E22 /* ContactDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDataStore.swift; sourceTree = "<group>"; };
+		5198EF032238EC30008B5E22 /* InterfaceDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceDataStore.swift; sourceTree = "<group>"; };
+		5198EF072238EC7A008B5E22 /* NotifyInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyInstance.swift; sourceTree = "<group>"; };
+		5198EF082238EC7A008B5E22 /* FormaterInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormaterInstance.swift; sourceTree = "<group>"; };
+		5198EF092238EC7B008B5E22 /* LocationInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationInstance.swift; sourceTree = "<group>"; };
+		5198EF0D2238EF9D008B5E22 /* Message_File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message_File.swift; sourceTree = "<group>"; };
 		51C6385F2231248800E05D65 /* FileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileViewController.swift; sourceTree = "<group>"; };
 		51C638602231248800E05D65 /* FileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FileViewController.xib; sourceTree = "<group>"; };
 		51C638632231249D00E05D65 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		51C638642231249D00E05D65 /* HistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryViewController.xib; sourceTree = "<group>"; };
+		51F215A8223AC926009FAC97 /* AddFolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFolderView.swift; sourceTree = "<group>"; };
+		51F215AA223AC978009FAC97 /* AddFolderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddFolderView.xib; sourceTree = "<group>"; };
+		51F215AC223ACC02009FAC97 /* HeaderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderLabel.swift; sourceTree = "<group>"; };
+		51F215AE223ACE6A009FAC97 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
+		51F215B0223ACE78009FAC97 /* CloseButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CloseButton.xib; sourceTree = "<group>"; };
+		51F215B3223B2A13009FAC97 /* PrintViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintViewController.swift; sourceTree = "<group>"; };
+		51F215B4223B2A13009FAC97 /* PrintViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrintViewController.xib; sourceTree = "<group>"; };
+		51F215B8223B2B3F009FAC97 /* PrintView_DOC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintView_DOC.swift; sourceTree = "<group>"; };
+		51F215BA223B2B46009FAC97 /* PrintView_DOC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrintView_DOC.xib; sourceTree = "<group>"; };
+		51F215BC223B2BC3009FAC97 /* PrintSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintSelectView.swift; sourceTree = "<group>"; };
+		51F215BE223B2BCE009FAC97 /* PrintSelectView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrintSelectView.xib; sourceTree = "<group>"; };
+		51F215C1223B2EBE009FAC97 /* PrintSelectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintSelectCell.swift; sourceTree = "<group>"; };
+		51F215C2223B2EBE009FAC97 /* PrintSelectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrintSelectCell.xib; sourceTree = "<group>"; };
+		51F215C5223B3C45009FAC97 /* AddFileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFileView.swift; sourceTree = "<group>"; };
+		51F215C7223B3C4E009FAC97 /* AddFileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddFileView.xib; sourceTree = "<group>"; };
+		51F215CD223B4D11009FAC97 /* PrintAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintAddView.swift; sourceTree = "<group>"; };
+		51F215CF223B4D1E009FAC97 /* PrintAddView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrintAddView.xib; sourceTree = "<group>"; };
+		51F215D1223B4DAE009FAC97 /* PrintAddUnitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintAddUnitView.swift; sourceTree = "<group>"; };
+		51F215D3223B4DB8009FAC97 /* PrintAddUnitView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrintAddUnitView.xib; sourceTree = "<group>"; };
 		6FA5D8A8BE0A2584FDFE83F3 /* Pods_FileMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FileMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B96A9E022024184ECD4BEBBE /* Pods-FileMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FileMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FileMe/Pods-FileMe.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -566,6 +642,8 @@
 		510EA2E4222BF46200DB3724 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				51463BE6223D5A8F00841276 /* PrintSelect */,
+				51F215B2223B29FB009FAC97 /* Print */,
 				510B48FA2234E34500BA4706 /* Conversation */,
 				51C6385E2231235400E05D65 /* UserInfo */,
 				51C6385D2231234600E05D65 /* HistoryPrint */,
@@ -650,6 +728,9 @@
 				510EA3E8222BF6BE00DB3724 /* MediaFile.swift */,
 				510EA3EC222BF6BE00DB3724 /* DeviceInfo.swift */,
 				510EA3EE222BF6BE00DB3724 /* Province.swift */,
+				5198EEFC2238EBFC008B5E22 /* Conversation.swift */,
+				5198EEFA2238EBFA008B5E22 /* LimeContact.swift */,
+				5198EEFB2238EBFB008B5E22 /* LimeMessage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -666,8 +747,11 @@
 		510EA414222BF7F500DB3724 /* Instance */ = {
 			isa = PBXGroup;
 			children = (
-				510B49632234F54800BA4706 /* MessageInstance.swift */,
-				510B49652234F60C00BA4706 /* MessageFile.swift */,
+				5198EF002238EC30008B5E22 /* DataStore */,
+				5198EEF12238E9EA008B5E22 /* Message */,
+				5198EF082238EC7A008B5E22 /* FormaterInstance.swift */,
+				5198EF092238EC7B008B5E22 /* LocationInstance.swift */,
+				5198EF072238EC7A008B5E22 /* NotifyInstance.swift */,
 				510EA40C222BF7F000DB3724 /* AppInstance.swift */,
 				510EA40E222BF7F000DB3724 /* DeviceInstance.swift */,
 				510EA40D222BF7F000DB3724 /* Template.swift */,
@@ -829,6 +913,11 @@
 				510EA513222BF94600DB3724 /* HTTableView */,
 				510EA518222BF94600DB3724 /* RadioView */,
 				510EA51B222BF94600DB3724 /* Hud */,
+				51F215AC223ACC02009FAC97 /* HeaderLabel.swift */,
+				51F215AE223ACE6A009FAC97 /* CloseButton.swift */,
+				51F215B0223ACE78009FAC97 /* CloseButton.xib */,
+				51463BEF223D8FEE00841276 /* CoutingView.swift */,
+				51463BF1223D900100841276 /* CoutingView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -873,6 +962,8 @@
 			isa = PBXGroup;
 			children = (
 				510EA4E3222BF94600DB3724 /* MIDropListView.swift */,
+				51463BEB223D7ED900841276 /* MIDropListTableView.swift */,
+				51463BED223D7EE300841276 /* MIDropListTableView.xib */,
 				510EA4E4222BF94600DB3724 /* MIDropListCell.swift */,
 				510EA4E5222BF94600DB3724 /* MIDropListCell.xib */,
 				510EA4E6222BF94600DB3724 /* MIDropListView.xib */,
@@ -1051,9 +1142,41 @@
 			path = Maintenance;
 			sourceTree = "<group>";
 		};
+		51463BE6223D5A8F00841276 /* PrintSelect */ = {
+			isa = PBXGroup;
+			children = (
+				51463BE7223D5AB200841276 /* PrintSelectViewController.swift */,
+				51463BE8223D5AB200841276 /* PrintSelectViewController.xib */,
+			);
+			path = PrintSelect;
+			sourceTree = "<group>";
+		};
+		5198EEF12238E9EA008B5E22 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				5198EEF42238E9EA008B5E22 /* MessageInstance.swift */,
+				5198EEF22238E9EA008B5E22 /* Message_Contact.swift */,
+				5198EEF32238E9EA008B5E22 /* MessageEMIT.swift */,
+				5198EEF52238E9EA008B5E22 /* MessageON.swift */,
+				5198EF0D2238EF9D008B5E22 /* Message_File.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		5198EF002238EC30008B5E22 /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+				5198EF012238EC30008B5E22 /* ConfernceDataStore.swift */,
+				5198EF022238EC30008B5E22 /* ContactDataStore.swift */,
+				5198EF032238EC30008B5E22 /* InterfaceDataStore.swift */,
+			);
+			path = DataStore;
+			sourceTree = "<group>";
+		};
 		51C6385B2231233800E05D65 /* File */ = {
 			isa = PBXGroup;
 			children = (
+				51F215A7223AC90C009FAC97 /* View */,
 				510B49692234F8A700BA4706 /* Cell */,
 				51C6385F2231248800E05D65 /* FileViewController.swift */,
 				51C638602231248800E05D65 /* FileViewController.xib */,
@@ -1091,6 +1214,53 @@
 				510B48E92234DE5F00BA4706 /* UserViewController.xib */,
 			);
 			path = UserInfo;
+			sourceTree = "<group>";
+		};
+		51F215A7223AC90C009FAC97 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				51F215A8223AC926009FAC97 /* AddFolderView.swift */,
+				51F215AA223AC978009FAC97 /* AddFolderView.xib */,
+				51F215C5223B3C45009FAC97 /* AddFileView.swift */,
+				51F215C7223B3C4E009FAC97 /* AddFileView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		51F215B2223B29FB009FAC97 /* Print */ = {
+			isa = PBXGroup;
+			children = (
+				51F215C0223B2EA5009FAC97 /* Cell */,
+				51F215B7223B2B2E009FAC97 /* View */,
+				51F215B3223B2A13009FAC97 /* PrintViewController.swift */,
+				51F215B4223B2A13009FAC97 /* PrintViewController.xib */,
+			);
+			path = Print;
+			sourceTree = "<group>";
+		};
+		51F215B7223B2B2E009FAC97 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				51463BE4223D59F900841276 /* PrintView.swift */,
+				51F215B8223B2B3F009FAC97 /* PrintView_DOC.swift */,
+				51F215BA223B2B46009FAC97 /* PrintView_DOC.xib */,
+				51F215BC223B2BC3009FAC97 /* PrintSelectView.swift */,
+				51F215BE223B2BCE009FAC97 /* PrintSelectView.xib */,
+				51F215CD223B4D11009FAC97 /* PrintAddView.swift */,
+				51F215CF223B4D1E009FAC97 /* PrintAddView.xib */,
+				51F215D1223B4DAE009FAC97 /* PrintAddUnitView.swift */,
+				51F215D3223B4DB8009FAC97 /* PrintAddUnitView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		51F215C0223B2EA5009FAC97 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				51F215C1223B2EBE009FAC97 /* PrintSelectCell.swift */,
+				51F215C2223B2EBE009FAC97 /* PrintSelectCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		F22D39E93DDB8722C7C23A30 /* Frameworks */ = {
@@ -1172,8 +1342,10 @@
 			files = (
 				510EA55B222BF94700DB3724 /* ImageSelectCell_Empty.xib in Resources */,
 				510EA3B5222BF48A00DB3724 /* Book2.jpg in Resources */,
+				51463BEA223D5AB200841276 /* PrintSelectViewController.xib in Resources */,
 				510EA492222BF8B300DB3724 /* Library.png in Resources */,
 				510EA3C5222BF48A00DB3724 /* input.mp3 in Resources */,
+				51F215D4223B4DB8009FAC97 /* PrintAddUnitView.xib in Resources */,
 				510EA494222BF8B300DB3724 /* GDelete.png in Resources */,
 				510EA499222BF8B300DB3724 /* Help.png in Resources */,
 				510EA632222BF99D00DB3724 /* InitInfoViewController.xib in Resources */,
@@ -1199,6 +1371,7 @@
 				510B48EB2234DE5F00BA4706 /* UserViewController.xib in Resources */,
 				510EA522222BF94700DB3724 /* MIDialog.xib in Resources */,
 				510EA3B3222BF48A00DB3724 /* cnllcngd.jpg in Resources */,
+				51463BF2223D900100841276 /* CoutingView.xib in Resources */,
 				510EA48F222BF8B300DB3724 /* GPhone.png in Resources */,
 				510EA3CA222BF48A00DB3724 /* synth.mp3 in Resources */,
 				510EA3C8222BF48A00DB3724 /* chord.mp3 in Resources */,
@@ -1210,14 +1383,19 @@
 				510EA29B222BE65B00DB3724 /* Assets.xcassets in Resources */,
 				510B48F92234E14C00BA4706 /* user_header.jpg in Resources */,
 				510EA3C1222BF48A00DB3724 /* Quicksand-Italic.otf in Resources */,
+				51463BEE223D7EE300841276 /* MIDropListTableView.xib in Resources */,
+				51F215C8223B3C4E009FAC97 /* AddFileView.xib in Resources */,
 				510EA569222BF94700DB3724 /* MIHud.xib in Resources */,
 				510EA4A9222BF8B300DB3724 /* Refresh.png in Resources */,
+				51F215AB223AC978009FAC97 /* AddFolderView.xib in Resources */,
 				510EA495222BF8B300DB3724 /* GCancel.png in Resources */,
 				510EA3D1222BF48A00DB3724 /* Comfortaa-Bold.ttf in Resources */,
 				510EA4B0222BF8B300DB3724 /* LandingView.xib in Resources */,
 				510EA54D222BF94700DB3724 /* SimpleNavi.xib in Resources */,
 				510EA497222BF8B300DB3724 /* GLogout.png in Resources */,
 				510EA488222BF8B300DB3724 /* GHome.png in Resources */,
+				51F215BB223B2B46009FAC97 /* PrintView_DOC.xib in Resources */,
+				51F215D0223B4D1E009FAC97 /* PrintAddView.xib in Resources */,
 				510EA3C6222BF48A00DB3724 /* bamboo.mp3 in Resources */,
 				510EA483222BF8B300DB3724 /* GSelect.png in Resources */,
 				510EA3BF222BF48A00DB3724 /* bg3.jpg in Resources */,
@@ -1253,9 +1431,11 @@
 				510EA560222BF94700DB3724 /* ImageDisplayView.xib in Resources */,
 				510EA4A2222BF8B300DB3724 /* Trash.png in Resources */,
 				510EA4A3222BF8B300DB3724 /* GMenu.png in Resources */,
+				51F215B6223B2A13009FAC97 /* PrintViewController.xib in Resources */,
 				510EA4AA222BF8B300DB3724 /* WifiDisconnect.png in Resources */,
 				510EA542222BF94700DB3724 /* AccessoryEmojView.xib in Resources */,
 				510B496D2234F8D800BA4706 /* FileListCell.xib in Resources */,
+				51F215C4223B2EBE009FAC97 /* PrintSelectCell.xib in Resources */,
 				510EA485222BF8B300DB3724 /* GStart.png in Resources */,
 				510B48F62234DEE300BA4706 /* UserImageView.xib in Resources */,
 				510EA520222BF94700DB3724 /* BookImageView.xib in Resources */,
@@ -1263,6 +1443,7 @@
 				510EA498222BF8B300DB3724 /* InfoWarning.png in Resources */,
 				510EA5DD222BF97200DB3724 /* LoginViewController.xib in Resources */,
 				510B49712234FA9F00BA4706 /* Excel.ico in Resources */,
+				51F215BF223B2BCE009FAC97 /* PrintSelectView.xib in Resources */,
 				510B49722234FA9F00BA4706 /* PowerPoint.ico in Resources */,
 				510B49732234FA9F00BA4706 /* Word.ico in Resources */,
 				510EA3BE222BF48A00DB3724 /* maintance.jpg in Resources */,
@@ -1295,6 +1476,7 @@
 				510EA3C3222BF48A00DB3724 /* Quicksand-Light.otf in Resources */,
 				510EA545222BF94700DB3724 /* UserCell.xib in Resources */,
 				510EA67F222E29D700DB3724 /* HomeNaviView.xib in Resources */,
+				51F215B1223ACE78009FAC97 /* CloseButton.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1412,29 +1594,35 @@
 				510EA474222BF8B300DB3724 /* GreenExtention+UIView.swift in Sources */,
 				510EA296222BE64500DB3724 /* ViewController.swift in Sources */,
 				510EA543222BF94700DB3724 /* AccessoryEmojView.swift in Sources */,
+				51463BE9223D5AB200841276 /* PrintSelectViewController.swift in Sources */,
 				510EA47F222BF8B300DB3724 /* GreenButton.swift in Sources */,
+				51F215AD223ACC02009FAC97 /* HeaderLabel.swift in Sources */,
 				510EA477222BF8B300DB3724 /* GreenExtention+UITableView.swift in Sources */,
 				510EA2AA222BF44C00DB3724 /* ServicesConfig.swift in Sources */,
+				51463BE5223D59F900841276 /* PrintView.swift in Sources */,
 				510EA525222BF94700DB3724 /* ReactUserView.swift in Sources */,
 				510EA639222BFAD700DB3724 /* MasterViewController.swift in Sources */,
 				510EA407222BF6BF00DB3724 /* DeviceInfo.swift in Sources */,
 				510EA478222BF8B300DB3724 /* GreenExtension+NSAttributeString.swift in Sources */,
 				510EA481222BF8B300DB3724 /* GreenTextField.swift in Sources */,
 				510EA3F1222BF6BF00DB3724 /* ApplicationInfo.swift in Sources */,
+				51F215B5223B2A13009FAC97 /* PrintViewController.swift in Sources */,
+				5198EF0C2238EC7C008B5E22 /* LocationInstance.swift in Sources */,
 				510B48F72234DEE300BA4706 /* UserImageView.swift in Sources */,
 				510EA523222BF94700DB3724 /* MIDialog.swift in Sources */,
 				510EA412222BF7F100DB3724 /* DeviceInstance.swift in Sources */,
+				5198EEF72238E9EA008B5E22 /* MessageEMIT.swift in Sources */,
 				510EA67D222E29D700DB3724 /* HomeViewController.swift in Sources */,
 				510EA5DE222BF97200DB3724 /* LoginViewController.swift in Sources */,
 				510EA634222BF99D00DB3724 /* IntroViewController.swift in Sources */,
 				510EA411222BF7F100DB3724 /* Template.swift in Sources */,
 				510EA561222BF94700DB3724 /* ImageDisplayView.swift in Sources */,
 				510EA475222BF8B300DB3724 /* GreenExtention+UIButton.swift in Sources */,
-				510B49642234F54900BA4706 /* MessageInstance.swift in Sources */,
 				51C638652231249D00E05D65 /* HistoryViewController.swift in Sources */,
 				510EA54E222BF94700DB3724 /* NavigationView.swift in Sources */,
 				510EA67E222E29D700DB3724 /* HomeNaviView.swift in Sources */,
 				510EA410222BF7F100DB3724 /* AppInstance.swift in Sources */,
+				5198EF0A2238EC7C008B5E22 /* NotifyInstance.swift in Sources */,
 				510EA46D222BF8B300DB3724 /* GreenExtention+UITextView.swift in Sources */,
 				510EA3FC222BF6BF00DB3724 /* User.swift in Sources */,
 				510EA400222BF6BF00DB3724 /* MasterRequest.swift in Sources */,
@@ -1442,13 +1630,18 @@
 				510EA46F222BF8B300DB3724 /* GreenExtension+UIViewController.swift in Sources */,
 				510EA556222BF94700DB3724 /* ImageSelectView.swift in Sources */,
 				510EA409222BF6BF00DB3724 /* Province.swift in Sources */,
+				5198EF052238EC30008B5E22 /* ContactDataStore.swift in Sources */,
 				510EA46C222BF8B300DB3724 /* GreenExtention+UILabel.swift in Sources */,
 				510EA2AB222BF44C00DB3724 /* ServicesFunction.swift in Sources */,
+				51F215A9223AC926009FAC97 /* AddFolderView.swift in Sources */,
+				51463BEC223D7ED900841276 /* MIDropListTableView.swift in Sources */,
 				510EA472222BF8B300DB3724 /* MD5Digest.swift in Sources */,
 				510B48EE2234DE6A00BA4706 /* UserDetailCell.swift in Sources */,
 				510EA559222BF94700DB3724 /* ImageSelectCell.swift in Sources */,
+				51463BF0223D8FEE00841276 /* CoutingView.swift in Sources */,
 				510EA47A222BF8B300DB3724 /* GreenExtension+UITableViewCell.swift in Sources */,
 				510EA3FD222BF6BF00DB3724 /* District.swift in Sources */,
+				5198EEFD2238EBFD008B5E22 /* LimeContact.swift in Sources */,
 				510EA633222BF99D00DB3724 /* InitInfoViewController.swift in Sources */,
 				51C638612231248800E05D65 /* FileViewController.swift in Sources */,
 				510EA4B2222BF8B300DB3724 /* GreenButtonCenter.swift in Sources */,
@@ -1460,12 +1653,17 @@
 				510EA413222BF7F100DB3724 /* UserInstance.swift in Sources */,
 				510EA564222BF94700DB3724 /* MasterFooterView.swift in Sources */,
 				510EA46E222BF8B300DB3724 /* GreenExtension+String.swift in Sources */,
+				5198EEFE2238EBFD008B5E22 /* LimeMessage.swift in Sources */,
 				510B4976223517D700BA4706 /* HistoryCell.swift in Sources */,
 				510EA51E222BF94700DB3724 /* ImageBook.swift in Sources */,
 				510EA4B3222BF8B300DB3724 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				5198EF0E2238EF9D008B5E22 /* Message_File.swift in Sources */,
 				510EA54C222BF94700DB3724 /* SimpleNavi.swift in Sources */,
+				5198EEF62238E9EA008B5E22 /* Message_Contact.swift in Sources */,
 				510EA4B4222BF8B300DB3724 /* TPKeyboardAvoidingTableView.m in Sources */,
+				5198EEFF2238EBFD008B5E22 /* Conversation.swift in Sources */,
 				510EA4AD222BF8B300DB3724 /* GreenCheckbox.swift in Sources */,
+				5198EEF82238E9EA008B5E22 /* MessageInstance.swift in Sources */,
 				510B48EA2234DE5F00BA4706 /* UserViewController.swift in Sources */,
 				510EA546222BF94700DB3724 /* UserCell.swift in Sources */,
 				510EA4B5222BF8B300DB3724 /* TPKeyboardAvoidingScrollView.m in Sources */,
@@ -1473,16 +1671,22 @@
 				510EA46B222BF8B300DB3724 /* GreenExtension+UIColor.swift in Sources */,
 				510EA2A9222BF44C00DB3724 /* Services.swift in Sources */,
 				510EA482222BF8B300DB3724 /* GreenTableView.swift in Sources */,
+				5198EF042238EC30008B5E22 /* ConfernceDataStore.swift in Sources */,
 				510EA5DB222BF97200DB3724 /* RegisterViewController.swift in Sources */,
+				5198EF062238EC30008B5E22 /* InterfaceDataStore.swift in Sources */,
 				510EA480222BF8B300DB3724 /* GCleanView.swift in Sources */,
-				510B49662234F60C00BA4706 /* MessageFile.swift in Sources */,
 				510B48F22234DE9C00BA4706 /* UserInfoHeaderView.swift in Sources */,
 				510EA4B1222BF8B300DB3724 /* LandingView.swift in Sources */,
+				51F215B9223B2B3F009FAC97 /* PrintView_DOC.swift in Sources */,
+				51F215BD223B2BC3009FAC97 /* PrintSelectView.swift in Sources */,
+				51F215CE223B4D11009FAC97 /* PrintAddView.swift in Sources */,
 				510EA54A222BF94700DB3724 /* LineView.swift in Sources */,
 				510EA471222BF8B300DB3724 /* GreenExtension+UICollectionView.swift in Sources */,
 				510EA684222E29EB00DB3724 /* MaintenanceViewController.swift in Sources */,
+				5198EF0B2238EC7C008B5E22 /* FormaterInstance.swift in Sources */,
 				510EA294222BE64500DB3724 /* AppDelegate.swift in Sources */,
 				510EA55A222BF94700DB3724 /* ImageSelectCell_Empty.swift in Sources */,
+				51F215C3223B2EBE009FAC97 /* PrintSelectCell.swift in Sources */,
 				510EA4AE222BF8B300DB3724 /* GreenEmptyView.swift in Sources */,
 				510EA476222BF8B300DB3724 /* GreenExtention+UITextField.swift in Sources */,
 				510EA53E222BF94700DB3724 /* MIDropListView.swift in Sources */,
@@ -1491,9 +1695,13 @@
 				510EA401222BF6BF00DB3724 /* Mi.swift in Sources */,
 				510EA3F2222BF6BF00DB3724 /* University.swift in Sources */,
 				510EA479222BF8B300DB3724 /* GreenExtension+Array.swift in Sources */,
+				5198EEF92238E9EA008B5E22 /* MessageON.swift in Sources */,
+				51F215D2223B4DAE009FAC97 /* PrintAddUnitView.swift in Sources */,
 				510EA568222BF94700DB3724 /* MIHud.swift in Sources */,
+				51F215C6223B3C45009FAC97 /* AddFileView.swift in Sources */,
 				510EA53F222BF94700DB3724 /* MIDropListCell.swift in Sources */,
 				510EA473222BF8B300DB3724 /* GreenExtension+UIImage.swift in Sources */,
+				51F215AF223ACE6A009FAC97 /* CloseButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

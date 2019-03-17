@@ -18,7 +18,7 @@ class HomeViewController: MasterViewController
     var file = FileViewController()
     var history = HistoryViewController()
     var user = UserViewController()
-    var conversation = ConversationViewController()
+    var conversation = UIViewController()
 
     
     

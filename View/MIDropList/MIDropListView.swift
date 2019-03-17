@@ -8,36 +8,13 @@
 
 import UIKit
 
-class MIDropListTableView: UITableView {
-    public var dropListView: MIDropListView?
-    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-        
-        if self.point(inside: point, with: event) {
-            return super.hitTest(point, with: event)
-        }
-        guard isUserInteractionEnabled, !isHidden, alpha > 0 else {
-            return nil
-        }
-        
-        let pointInDropdown = self.convert(point, to: dropListView)
-        if (dropListView?.point(inside: pointInDropdown, with: event) == false) {
-            isHidden = true
-        }
-        
-        return nil
-    }
-    
-    deinit {
-        print("Deinit---------")
-    }
-}
 
 class MIDropListView: GreenView , UITableViewDelegate,UITableViewDataSource
 {
-    private let heightCell : CGFloat = 36.0
+    private let heightCell : CGFloat = 40
     private var _targetFrame : CGRect = CGRect.init()
     private var _controller : UIViewController!
-    private var _tbView : MIDropListTableView?
+    private var _dropListTableView: MIDropListTableView?
     private var _showView : UIView!
     private var _value : [String] = []
     private var _selectedValue = ""
@@ -48,7 +25,7 @@ class MIDropListView: GreenView , UITableViewDelegate,UITableViewDataSource
     private var selectedIndexBlock : ((Int)->Void)!
 
     @IBOutlet private var contentView : UIView!
-    @IBOutlet  var tfContent : UITextField!
+    @IBOutlet  var tfContent : UILabel!
 
     var selectedValue : String{
         set {
@@ -109,7 +86,7 @@ class MIDropListView: GreenView , UITableViewDelegate,UITableViewDataSource
         _selectedValue = ""
         _value.removeAll()
         tfContent.text = ""
-        _tbView?.reloadData()
+        _dropListTableView?.tbView?.reloadData()
     }
     
     func setIndex(_ value : [String], inView : UIView?, selectIndexBlock :@escaping ((Int)->Void))
@@ -130,7 +107,7 @@ class MIDropListView: GreenView , UITableViewDelegate,UITableViewDataSource
     {
         self.value.removeAll()
         self.value.append(contentsOf: value)
-        self._tbView?.reloadData()
+        self._dropListTableView?.tbView?.reloadData()
     }
     func updateSelectedValue()
     {
@@ -159,16 +136,11 @@ class MIDropListView: GreenView , UITableViewDelegate,UITableViewDataSource
         NotificationCenter.default.addObserver(self, selector: #selector(dismissView), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
         backgroundColor = UIColor.white
 
-        layer.cornerRadius = 4
-        layer.masksToBounds = true
-        clipsToBounds = true
-        layer.borderWidth = 0.5
-        layer.borderColor = UIColor.lightGray.withAlphaComponent(0.5).cgColor
     }
     
     func updateFrame()
     {
-        if(_tbView != nil)
+        if(_dropListTableView != nil)
         {
             
         }
@@ -184,26 +156,20 @@ class MIDropListView: GreenView , UITableViewDelegate,UITableViewDataSource
         _targetFrame.origin.y = _targetFrame.origin.y + self.frame.size.height
         _targetFrame.size.height = getHeightContent()
         
-        if(_tbView == nil)
+        if(_dropListTableView == nil)
         {
-            _tbView = MIDropListTableView.init(frame: CGRect.init(), style: UITableViewStyle.plain)
-            _tbView?.backgroundColor = UIColor.white
-            _tbView?.delegate = self
-            _tbView?.dataSource = self
-            _tbView?.register(UINib.init(nibName: "MIDropListCell", bundle: Bundle.main), forCellReuseIdentifier: "MIDropListCell")
-            _tbView?.separatorStyle = .none
-            _tbView?.layer.cornerRadius = 5
-            _tbView?.layer.masksToBounds = true
-            _tbView?.clipsToBounds = true
-            _tbView?.layer.borderWidth = 0.5
-            _tbView?.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.5).cgColor
-            _showView.addSubview(_tbView!)
-            _tbView?.dropListView = self
-            _tbView?.isHidden = true
+            _dropListTableView = MIDropListTableView.init(frame: CGRect.init())
+            _dropListTableView?.backgroundColor = UIColor.white
+            _dropListTableView?.tbView?.delegate = self
+            _dropListTableView?.tbView?.dataSource = self
+            _dropListTableView?.tbView?.register(UINib.init(nibName: "MIDropListCell", bundle: Bundle.main), forCellReuseIdentifier: "MIDropListCell")
+            _showView.addSubview(_dropListTableView!)
+            _dropListTableView?.dropListView = self
+            _dropListTableView?.isHidden = true
         }
         
-        _tbView?.frame = _targetFrame
-        _tbView?.isHidden = !(_tbView?.isHidden)!
+        _dropListTableView?.frame = _targetFrame
+        _dropListTableView?.isHidden = !(_dropListTableView!.isHidden)
         reloadData()
     }
     
@@ -213,17 +179,17 @@ class MIDropListView: GreenView , UITableViewDelegate,UITableViewDataSource
     
     @objc func dismissView()
     {
-        _tbView?.isHidden = true
+        _dropListTableView?.isHidden = true
     }
     
     func reloadData()
     {
-        _tbView?.reloadData()
+        _dropListTableView?.tbView?.reloadData()
     }
     
     func getHeightContent()->CGFloat
     {
-        return heightCell * CGFloat(_value.count)
+        return heightCell * CGFloat(_value.count) + 9.0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

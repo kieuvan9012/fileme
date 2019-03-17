@@ -17,10 +17,14 @@ class HistoryViewController: MasterViewController {
                 
         simpleNavi.set("Lịch Sử In")
         
+        view.backgroundColor = template.backgroundColor
+        
     }
 
     @IBOutlet weak var printView: UIView!
     @IBAction func printTtouch(_ sender: Any) {
+        let detail = PrintViewController()
+        push(detail)
         
     }
 

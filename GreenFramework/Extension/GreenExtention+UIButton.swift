@@ -57,7 +57,7 @@ public extension UIButton
     
     public func successType()
     {
-        self.backgroundColor = template.primaryPlusColor
+        self.backgroundColor = template.primaryColor
         self.setTitleColor(UIColor.white, for: .normal)
         drawRadius(4)
     }
@@ -72,7 +72,7 @@ public extension UIButton
     
     public func dangerType()
     {
-        self.backgroundColor = template.dangerColor
+        self.backgroundColor = UIColor.lightGray
         self.setTitleColor(UIColor.white, for: .normal)
         drawRadius(4)
 

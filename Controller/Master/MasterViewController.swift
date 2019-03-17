@@ -33,4 +33,8 @@ class MasterViewController: UIViewController {
         }
     }
 
+    func hideAlertBox()
+    {
+        view.hideAlertBox()
+    }
 }

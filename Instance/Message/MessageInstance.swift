@@ -11,22 +11,39 @@ import UIKit
 import SocketIO
 
 
-enum GeneralNotify : String
+
+enum ConferenceNotify : String
 {
-    
     case userLoginSuccess       = "UserLoginSuccess"
-    
-    
-    
-    
+    case messageSend            = "MessageSend"
+    case messageSendSuccess     = "MessageSendSuccess"
+    case messageReceive         = "MessageReceive"
+    case messageRead            = "MessageRead"
+    case messageDelivery        = "MessageDelivery"
+    case messageHistory         = "MessageHistory"
+    case messageLatest          = "MessageLatest"
+    case messageAfter           = "MessageAfter"
+    case contactReceive         = "ContactReceive"
+    case contactReceiveRequest  = "ContactReceiveRequest"
+    case contactList                = "ContactList"
+    case contactAdd                 = "ContactAdd"
+    case contactDeny                = "ContactDeny"
+    case contactCancel              = "ContactCancel"
+    case contactAccept              = "ContactAccept"
+    case contactOnline              = "ContactOnline"
+    case contactOffline             = "ContactOffline"
+    case contactInfo                = "ContactInfo"
+    case developerRequest           = "DeveloperRequest"
+    case conversationReceive        = "ConversationReceive"
+    case conversationLastMessage    = "ConversationLastMessage"
+    case conversationUpdateItem     = "ConversationUpdateItem"
+    case conversationMarkRead        = "ConversationMarkRead"
+    case bookSearch        = "BookSearch"
+    case newsSearch        = "NewsSearch"
+    case userSearch        = "UserSearch"
+    case bookAuthor        = "BookAuthor"
+    case authorSearch        = "AuthorSearch"
 }
-
-
-
-
-
-
-
 
 
 let  messageInstance = MessageInstance.sharedInstance()
@@ -71,11 +88,16 @@ class MessageInstance: NSObject {
     {
         socket.connect()
         socket.on(clientEvent: .connect) {data, ack in
+            messageInstance.contactList(GeneralMessageRequest())
+            messageInstance.conversationReceive(GeneralMessageRequest())
+            self.registerMessageNotify()
+            self.contactRegister()
         }
         
         socket.on(clientEvent: .disconnect) {data, ack in
             print("disconnect")
         }
+        
     }
     
     func reconnect()
@@ -89,9 +111,11 @@ class MessageInstance: NSObject {
         case .connected:
             print("socket connected")
             break;
+            
         case .connecting:
             print("socket connecting")
             break;
+            
         case .disconnected:
             socket.setReconnecting(reason: "Rec")
             break;
@@ -99,6 +123,7 @@ class MessageInstance: NSObject {
             connectSocket()
             print("socket not connected")
             break;
+            
         }
     }
     

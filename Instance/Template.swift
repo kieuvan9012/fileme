@@ -45,6 +45,8 @@ public let  template = ApplicationTemplaceInstance.sharedInstance()
     
     
     var primaryPlusColor = "E64B3B".hexColor()
+    var primaryMinusMinusColor = "FFB8B0".hexColor()
+
     var primaryMinusColor = "FF9185".hexColor()
 
     var primaryColor = "ff7061".hexColor()

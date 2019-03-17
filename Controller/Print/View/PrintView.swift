@@ -1,0 +1,26 @@
+//
+//  PrintView.swift
+//  File Me
+//
+//  Created by Lê Dũng on 3/16/19.
+//
+
+import UIKit
+
+class PrintView: GreenView {
+
+    /*
+    // Only override draw() if you perform custom drawing.
+    // An empty implementation adversely affects performance during animation.
+    override func draw(_ rect: CGRect) {
+        // Drawing code
+    }
+    */
+    
+    var file : MediaFile!
+
+    func set(_ file : MediaFile)
+    {
+        self.file = file
+    }
+}

@@ -48,6 +48,66 @@ extension StringProtocol where Index == String.Index {
         return result
     }
 }
+
+
+
+
+
+extension String
+{
+    
+    func emojAttributeText(_ generalSize : Bool)->NSAttributedString
+    {
+        let attri = NSMutableAttributedString.init(string: self)
+        if(contains("emj"))
+        {
+            for item in interfaceDataStore.emoj
+            {
+                if(self.contains(item))
+                {
+                    var n = 0
+                    let rang = attri.string.ranges(of:item)
+                    for itemRange in rang
+                    {
+                        var targetName = item.replacingOccurrences(of: "]", with: "")
+                        targetName = targetName.replacingOccurrences(of: "[", with: "")
+                        let image1Attachment = NSTextAttachment()
+                        image1Attachment.image = UIImage(named: targetName)
+                        if((length == 7) && !generalSize )
+                        {
+                            image1Attachment.bounds = CGRect.init(x: 0, y: 0, width: 48, height: 48)
+                        }
+                        else
+                        {
+                            image1Attachment.bounds = CGRect.init(x: 0, y: -4, width: 18, height: 18)
+                        }
+                        let image1String = NSAttributedString(attachment: image1Attachment)
+                        attri.replaceCharacters(in: NSRange.init(location: itemRange.lowerBound.encodedOffset - (n*6), length: 7), with: image1String)
+                        n = n + 1;
+                    }
+                }
+            }
+        }
+        return attri ;
+        
+    }
+    
+    
+    func emojAttributeText()->NSAttributedString
+    {
+        return emojAttributeText(false)
+    }
+    
+}
+
+
+
+
+
+
+
+
+
 public extension String
 {
     
