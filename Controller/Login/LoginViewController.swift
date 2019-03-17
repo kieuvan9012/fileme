@@ -11,6 +11,7 @@ import SwiftHash
 import FBSDKCoreKit
 import FBSDKLoginKit
 import SafariServices
+
 class LoginViewController: MasterViewController,RegisterDelegate {
 
     @IBOutlet weak var passwordField: GreenInfoFieldSymbol!
@@ -32,27 +33,26 @@ class LoginViewController: MasterViewController,RegisterDelegate {
     {
         super.viewDidLoad()
         
-        
         usernameField.setLeft("GPhone".image().tint(UIColor.white))
         usernameField.keyboardType(.numberPad)
 
         passwordField.setLeft("GPassword".image().tint(UIColor.white))
-        
+        passwordField.tfContent.returnKeyType = .done
+        passwordField.tfContent.delegate = self
+        passwordField.setSecurity(security: true)
+
         usernameField.set(placeholder: "Số điện thoại")
         passwordField.set(placeholder: "Mật khẩu")
         
         usernameField.content = ""
         passwordField.content = ""
         
-        
-        passwordField.setSecurity(security: true)
-
         btLogin.setTitleColor(UIColor.white, for: .normal)
         btLogin.drawRadius(4)
         
         btRegister.backgroundColor = UIColor.clear
         
-        view.backgroundColor = UIColor.white;
+        view.backgroundColor = UIColor.white
         
         usernameField.content = userInstance.getUsername()
         passwordField.content = userInstance.getPassword()
@@ -75,10 +75,9 @@ class LoginViewController: MasterViewController,RegisterDelegate {
                 }
             }
         }
-
     }
+    
     func loginFace(_ id : String){
-        
         let request = UserLogin_Request()
         request.username = id
         services.userLoginFacebook(request, success: { (response) in
@@ -102,19 +101,25 @@ class LoginViewController: MasterViewController,RegisterDelegate {
 
     @IBAction func login(_ sender: Any)
     {
-        
         view.endEditing(true)
+        
         if(usernameField.content.length == 0)
         {
-            return ;
+            self.view.error(desc: "Vui lòng nhập số điện thoại")
+            return
         }
-        
-        let user = User()
+        if(passwordField.content.length == 0)
+        {
+            self.view.error(desc: "Vui lòng nhập mật khẩu")
+            return
+        }
+
         self.view.showHud()
+
+        let user = User()
         user.username = usernameField.content.lowercased()
         user.password = passwordField.content
         
-
         let request = UserLogin_Request()
         request.username = user.username
         request.password = MD5(user.password)
@@ -138,7 +143,6 @@ class LoginViewController: MasterViewController,RegisterDelegate {
                 }
             }
             
-
         }) { (error) in
             self.view.dialogView(title: "Lỗ đăng nhập", desc: "Sai tên đăng nhập hoặc mật khẩu", type: .warning, acceptBlock: {
                 
@@ -148,12 +152,20 @@ class LoginViewController: MasterViewController,RegisterDelegate {
             self.view.hideHub()
 
         }
-
     }
     
     func registerDidSuccess(_ username: String, password: String) {
         usernameField.content = username
         passwordField.content = password
+    }
+}
 
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if(textField == passwordField.tfContent) {
+            textField.resignFirstResponder()
+            self.login(btLogin)
+        }
+        return true
     }
 }

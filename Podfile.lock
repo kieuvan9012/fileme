@@ -69,6 +69,7 @@ PODS:
   - GTMSessionFetcher/Core (1.2.1)
   - GTMSessionFetcher/Full (1.2.1):
     - GTMSessionFetcher/Core (= 1.2.1)
+  - IQKeyboardManager (6.2.0)
   - KissXML (5.2.3)
   - libidn (1.35)
   - PureLayout (3.1.4)
@@ -106,6 +107,7 @@ DEPENDENCIES:
   - GoogleMaps
   - GooglePlaces
   - GoogleSignIn (~> 4.1.1)
+  - IQKeyboardManager
   - PureLayout
   - SDWebImage
   - Socket.IO-Client-Swift (~> 13.1.0)
@@ -140,6 +142,7 @@ SPEC REPOS:
     - GoogleToolboxForMac
     - GTMOAuth2
     - GTMSessionFetcher
+    - IQKeyboardManager
     - KissXML
     - libidn
     - PureLayout
@@ -176,6 +179,7 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: ff31605b7d66400dcec09bed5861689aebadda4d
   GTMOAuth2: e8b6512c896235149df975c41d9a36c868ab7fba
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
+  IQKeyboardManager: 6194101620b73af5e67900b8f89707a99de0b804
   KissXML: 09f88ff8161fd058d67b70740b8b516687b52823
   libidn: e4576a956b797c584c77aaedfc6e3dd639b61bdc
   PureLayout: f08c01b8dec00bb14a1fefa3de4c7d9c265df85e
@@ -189,6 +193,6 @@ SPEC CHECKSUMS:
   SwipeableTabBarController: 4706fcc25de25785c87a7d0b9ac63c056e79bda3
   XMPPFramework: 5d31ff9f73dce031b24bc49bcf88093627a3a86e
 
-PODFILE CHECKSUM: 1a458e9b9ecfa726b1a03c16cc94833bbe9ecb1f
+PODFILE CHECKSUM: f35dd2501ecc33be362e2281b8b1f473a140fc78
 
 COCOAPODS: 1.6.1

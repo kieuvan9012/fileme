@@ -15,7 +15,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController" customModule="File_Me" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController" customModule="FileMe" customModuleProvider="target">
             <connections>
                 <outlet property="btBack" destination="iAN-xd-aJf" id="ASb-X2-PRF"/>
                 <outlet property="passwordCFField" destination="vRI-Uu-GrE" id="gSa-xe-gF9"/>
@@ -32,20 +32,20 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackGround" translatesAutoresizingMaskIntoConstraints="NO" id="tPg-jU-20i">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" delaysContentTouches="NO" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="QQZ-9U-8L7" customClass="TPKeyboardAvoidingScrollView">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" delaysContentTouches="NO" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="QQZ-9U-8L7">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
                         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RcD-VJ-vHV">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="drI-7D-Th8" customClass="GreenInfoFieldSymbol" customModule="File_Me" customModuleProvider="target">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="drI-7D-Th8" customClass="GreenInfoFieldSymbol" customModule="FileMe" customModuleProvider="target">
                                     <rect key="frame" x="20" y="312.5" width="335" height="40"/>
                                     <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="uTQ-gX-bs4"/>
                                     </constraints>
                                 </view>
-                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aed-0J-KbR" customClass="ButtonSuccess" customModule="File_Me" customModuleProvider="target">
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aed-0J-KbR" customClass="ButtonSuccess" customModule="FileMe" customModuleProvider="target">
                                     <rect key="frame" x="20" y="472.5" width="335" height="40"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -54,11 +54,11 @@
                                         <action selector="regisTouch:" destination="-1" eventType="touchUpInside" id="i70-gT-ZWV"/>
                                     </connections>
                                 </button>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8dp-Le-Qzc" customClass="GreenInfoFieldSymbol" customModule="File_Me" customModuleProvider="target">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8dp-Le-Qzc" customClass="GreenInfoFieldSymbol" customModule="FileMe" customModuleProvider="target">
                                     <rect key="frame" x="20" y="360.5" width="335" height="40"/>
                                     <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vRI-Uu-GrE" customClass="GreenInfoFieldSymbol" customModule="File_Me" customModuleProvider="target">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vRI-Uu-GrE" customClass="GreenInfoFieldSymbol" customModule="FileMe" customModuleProvider="target">
                                     <rect key="frame" x="20" y="408.5" width="335" height="40"/>
                                     <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>

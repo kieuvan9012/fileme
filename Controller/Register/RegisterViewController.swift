@@ -7,41 +7,44 @@
 //
 
 import UIKit
-
 import SwiftHash
+
 protocol RegisterDelegate {
     func registerDidSuccess(_ username : String, password : String)
 }
 
 class RegisterViewController: MasterViewController {
+    
+    @IBOutlet weak var passwordCFField: GreenInfoFieldSymbol!
+    @IBOutlet weak var passwordField: GreenInfoFieldSymbol!
+    @IBOutlet weak var usernameField: GreenInfoFieldSymbol!
+    @IBOutlet weak var backView: UIView!
     @IBOutlet weak var btBack: UIButton!
     
     var delegate : RegisterDelegate!
     
-    @IBOutlet weak var passwordCFField: GreenInfoFieldSymbol!
-
-    @IBOutlet weak var passwordField: GreenInfoFieldSymbol!
-    @IBOutlet weak var usernameField: GreenInfoFieldSymbol!
-    @IBOutlet weak var backView: UIView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         usernameField.setLeft("GPhone".image().tint(UIColor.white))
         usernameField.keyboardType(.numberPad)
         
-        
         passwordField.setLeft("GPassword".image().tint(UIColor.white))
         passwordCFField.setLeft("GPassword".image().tint(UIColor.white))
-
+        
         usernameField.set(placeholder: "Số điện thoại")
         passwordField.set(placeholder: "Mật khẩu")
         passwordCFField.set(placeholder: "Nhập lại mật khẩu")
         
         passwordField.set(security: true)
         passwordCFField.set(security: true)
-
+        
+        passwordField.tfContent.returnKeyType = .next
+        passwordField.tfContent.delegate = self
+        passwordCFField.tfContent.returnKeyType = .done
+        passwordCFField.tfContent.delegate = self
     }
+    
     @IBAction func back(_ sender: Any) {
         self.pop()
     }
@@ -52,40 +55,40 @@ class RegisterViewController: MasterViewController {
     }
     
     @IBAction func regisTouch(_ sender: Any) {
-        
+        view.endEditing(true)
+
         if(usernameField.content.trim().isEmpty)
         {
             showError("Số điện thoại không được để trống")
-            return ;
+            return
         }
+        
         if(usernameField.content.trim().length < 9)
         {
             showError("Số điện thoại phải lớn hơn 9 ký tự")
-            return ;
+            return
         }
-
+        
         if(passwordField.content.trim().isEmpty)
         {
             showError("Mật khẩu không được để trống")
-            return ;
+            return
         }
-
+        
         if(passwordField.content.length < 6)
         {
             showError("Mật khẩu phải lớn hơn hoặc bằng 6 ký tự.")
-            return ;
+            return
         }
-
+        
         if(passwordField.content != passwordCFField.content)
         {
             showError("Mật khẩu không trùng nhau")
-            return ;
+            return
         }
-
-        registerRequest()
         
+        registerRequest()
     }
-    
     
     func registerRequest()
     {
@@ -97,7 +100,7 @@ class RegisterViewController: MasterViewController {
             self.view.dialog(title: "Thông báo", desc: "Đăng ký thành công", type: .info, acceptBlock: {
                 self.delegate.registerDidSuccess(request.username, password: self.passwordCFField.content)
                 self.pop()
-
+                
             }, cancelBlock: {
                 
             })
@@ -116,3 +119,17 @@ class RegisterViewController: MasterViewController {
         }
     }
 }
+
+extension RegisterViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if(textField == passwordField.tfContent) {
+            textField.resignFirstResponder()
+            passwordCFField.tfContent.becomeFirstResponder()
+        } else if(textField == passwordCFField.tfContent) {
+            textField.resignFirstResponder()
+            self.regisTouch(self)
+        }
+        return true
+    }
+}
+
