@@ -8,7 +8,7 @@
 import UIKit
 import MobileCoreServices
 
-class FileViewController: MasterViewController, UITableViewDelegate, UITableViewDataSource, UIDocumentMenuDelegate, AddFolderViewDelegate, UIDocumentPickerDelegate,FileAddViewDelegate
+class FileViewController: MasterViewController, UITableViewDelegate, UITableViewDataSource, AddFolderViewDelegate,FileAddViewDelegate
 {
     @IBOutlet weak var stackView: UIStackView!
     var files : [MediaFile] = []
@@ -73,7 +73,6 @@ class FileViewController: MasterViewController, UITableViewDelegate, UITableView
     
     func pushGoogleDrive() {
         let view = ListDataGGDriveViewController()
-        
         self.navigationController?.pushViewController(view, animated: false)
     }
     
@@ -85,13 +84,9 @@ class FileViewController: MasterViewController, UITableViewDelegate, UITableView
     
     func pushIcloud()
     {
-        let types: [String] = ["public.jpeg","public.png","com.adobe.pdf ","com.microsoft.word.doc","com.microsoft.excel.xls","org.openxmlformats.wordprocessingml.document","com.microsoft.powerpoint.​ppt","org.openxmlformats.spreadsheetml.sheet"]
-        
-        let importMenu = UIDocumentPickerViewController(documentTypes:types, in: .import)
-        importMenu.delegate = self
-        importMenu.modalPresentationStyle = .formSheet
-        self.present(importMenu, animated: true, completion: nil)
-
+        fileiCloud.callFilePicker { (response) in
+            
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -107,18 +102,7 @@ class FileViewController: MasterViewController, UITableViewDelegate, UITableView
         tbView.reloadData()
     }
     
-    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-        
-        weak var weakself = self;
-        services.uploadFile(file: MediaFile.init(urls[0]), success: { (response) in
-            let media = MediaFile.list(data: response.data as! [Dictionary<String, Any>])[0]
-            weakself?.insertMediaFile(media)
-        }, failure: { (error) in
-            
-        }) { (progress) in
-            
-        }
-    }
+
     
     func insertMediaFile(_ value : MediaFile)
     {
@@ -136,13 +120,6 @@ class FileViewController: MasterViewController, UITableViewDelegate, UITableView
         }) { (error) in
             
         }
-    }
-    
-    func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
-        controller.dismiss(animated: true, completion: nil)
-    }
-    
-    func documentMenu(_ documentMenu: UIDocumentMenuViewController, didPickDocumentPicker documentPicker: UIDocumentPickerViewController) {
     }
     
     @IBAction func createFolderTouch(_ sender: Any) {

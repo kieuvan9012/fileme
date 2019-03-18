@@ -37,12 +37,12 @@ enum ConferenceNotify : String
     case conversationReceive        = "ConversationReceive"
     case conversationLastMessage    = "ConversationLastMessage"
     case conversationUpdateItem     = "ConversationUpdateItem"
-    case conversationMarkRead        = "ConversationMarkRead"
+    case conversationMarkRead       = "ConversationMarkRead"
     case bookSearch        = "BookSearch"
     case newsSearch        = "NewsSearch"
     case userSearch        = "UserSearch"
     case bookAuthor        = "BookAuthor"
-    case authorSearch        = "AuthorSearch"
+    case authorSearch      = "AuthorSearch"
 }
 
 

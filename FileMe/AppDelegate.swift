@@ -9,6 +9,8 @@ import UIKit
 import SwiftyDropbox
 import IQKeyboardManager
 
+
+
 let app = UIApplication.shared.delegate as! AppDelegate
 
 @UIApplicationMain
@@ -18,12 +20,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         DropboxClientsManager.setupWithAppKey("tm7vfvtwq1v3lpe")
-        IQKeyboardManager.shared().isEnabled = true
+//        IQKeyboardManager.shared().isEnabled = true
 
         UIApplication.shared.statusBarStyle = .lightContent
         self.window?.makeKeyAndVisible()
         self.window?.rootViewController = IntroViewController()
 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         return true
     }
     

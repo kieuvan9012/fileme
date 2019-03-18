@@ -15,8 +15,6 @@ class Contact_Request : Mi
 }
 
 extension  MessageInstance {
-
-
     func contactRegister()
     {
         socket.on(ConferenceNotify.contactOnline.rawValue) {data, ack in
@@ -25,14 +23,12 @@ extension  MessageInstance {
                 notifyInstance.postM(.contactOnline, data[0])
             }
         }
-        
         socket.on(ConferenceNotify.contactOffline.rawValue) {data, ack in
             if(data.count > 0)
             {
                 notifyInstance.postM(.contactOffline, data[0])
             }
         }
-        
         socket.on(ConferenceNotify.contactInfo.rawValue) {data, ack in
             if(data.count > 0)
             {

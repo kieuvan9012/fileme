@@ -66,7 +66,6 @@ class IntroViewController: UIViewController {
                 if(response[0].info_success)
                 {
                    app.home()
-
                 }
                 else
                 {
@@ -78,8 +77,6 @@ class IntroViewController: UIViewController {
             userInstance.setPassword("")
             app.login()
             self.view.hideHub()
-            
         }
-
     }
 }

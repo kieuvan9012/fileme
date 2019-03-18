@@ -152,7 +152,7 @@ class Services: NSObject {
             let StringID = String(userInstance.user.id)
             multipartFormData.append("1".data(using: String.Encoding.utf8)!, withName: "brand")
             multipartFormData.append(StringID.data(using: String.Encoding.utf8)!, withName: "user_id")
-            multipartFormData.append(file.data  , withName: "media", fileName: file.name, mimeType: file.fileExtension)
+            multipartFormData.append(file.getEndData()  , withName: "media", fileName: file.name, mimeType: file.fileExtension)
             
         }, to:dataRequest.0,headers:nil)
         { (result) in

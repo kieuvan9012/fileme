@@ -16,17 +16,13 @@ enum UserDefaultsKey : String
     case deviceToken = "LIMERENCEDEVICETOKEN"
     case isLoginFace = "ISLOGINFACEBOOK"
     case isAcceptPostLegancy = "isAcceptPostLegancy"
-
 }
 
-
 import SDWebImage
-
 let  userInstance = UserInstance.sharedInstance()
 
 class UserInstance: NSObject
 {
-
     var user = User()
     var isMatchVersion = true
     var isLogin = false;
@@ -43,7 +39,6 @@ class UserInstance: NSObject
         }
         return self.instance
     }
-    
     
     func setApplicationInfo(_ appInfo : ApplicationInfo)
     {
@@ -100,11 +95,8 @@ class UserInstance: NSObject
         }) { (error) in
             
         }
-
-        
         SDWebImageManager.shared().imageCache?.clearMemory()
         SDWebImageManager.shared().imageCache?.clearDisk(onCompletion: nil)
-
     }
     
     
@@ -150,9 +142,6 @@ class UserInstance: NSObject
         return false ;
     }
 
-
-    
-    
     func setCouting(_ value : Int)
     {
         UserDefaults.standard.set(value, forKey: "Countx")
@@ -163,8 +152,6 @@ class UserInstance: NSObject
         return UserDefaults.standard.value(forKey: "Countx") as! Int
     }
 
-
-    
     func getDeviceToken()->String
     {
         let token = UserDefaults.standard.value(forKey: UserDefaultsKey.deviceToken.rawValue)
@@ -214,12 +201,10 @@ class UserInstance: NSObject
         return ""
     }
     
-    
     func setPassword(_ Password : String)
     {
         UserDefaults.standard.setValue(Password, forKey: UserDefaultsKey.password.rawValue)
     }
-    
     
     func setCustomKey(_ value : String)
     {
@@ -235,5 +220,4 @@ class UserInstance: NSObject
         }
         return ""
     }
-
 }

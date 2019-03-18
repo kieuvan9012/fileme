@@ -30,7 +30,6 @@ class GeneralMessageRequest : Mi
     }
 }
 
-
 class ContactAdd_Request : Mi
 {
     @objc dynamic var user_id = userInstance.user.id ;
@@ -137,7 +136,6 @@ extension   MessageInstance {
     {
         socket.emit(ConferenceNotify.bookSearch.rawValue, with: [request.dictionary()])
     }
-    
     
     func userSearch(_ request : UserSearch_Request)
     {

@@ -18,7 +18,7 @@ class HomeViewController: MasterViewController
     var file = FileViewController()
     var history = HistoryViewController()
     var user = UserViewController()
-    var conversation = UIViewController() // test test fix tạm
+    var conversation = TestViewController() // test test fix tạm
 
     
     

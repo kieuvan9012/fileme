@@ -57,7 +57,6 @@ class PrintSelectViewController: MasterViewController, UITableViewDelegate, UITa
         }
     }
 
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return files[indexPath.row].getHeightDisplay();
     }

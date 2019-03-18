@@ -30,5 +30,4 @@ pod 'GoogleSignIn', '~> 4.1.1'
 pod 'Google/SignIn', '~> 3.0.3'
 pod 'SwiftyDropbox'
 pod 'IQKeyboardManager'
-
 end

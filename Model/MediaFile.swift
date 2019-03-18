@@ -61,37 +61,41 @@ class MediaFile: Mi {
     @objc dynamic var originalname = "";
     @objc dynamic var path = "";
     @objc dynamic var id = 0;
-
     @objc dynamic var size = 1;
     @objc dynamic var parent_id = 1;
+    @objc dynamic var name = "";
+    @objc dynamic var fileExtension = "";
+    @objc dynamic var data : Data!;
+    @objc dynamic var isExpand = false;
+    @objc dynamic var content : Any? ;
+    @objc dynamic var active = false;
+    @objc dynamic var isDowload = false ;
+    var url : URL!
 
     
     
+    var fileType  = FileType.folder;
+    var media_type = MediaType.image;
     @objc dynamic var child : [MediaFile] = [];
     @objc dynamic var parent : MediaFile! ;
-    @objc dynamic var isExpand = false;
-    var fileType  = FileType.folder;
-    @objc dynamic var isDowload = false ;
-    var media_type = MediaType.image;
-    @objc dynamic var content : Any? ;
-    
-    @objc dynamic var active = false;
 
     
-    var url : URL!
     
-    var name :String!
+    func getNameFromURL() ->String
     {
-        return  url.lastPathComponent
+        return url.lastPathComponent
     }
-    var fileExtension : String
+    
+    func getFilExtensionFromURL()->String
     {
         return  url.pathExtension
     }
-    var data : Data
+    
+    func getDataFromURL()->Data
     {
         return try! Data.init(contentsOf: url!, options: [])
     }
+
     var level : Int{
         set{
             
@@ -109,12 +113,17 @@ class MediaFile: Mi {
     }
 
     
-    init(_ url : URL) {
-        super.init()
-        self.url = url
+    func getEndData()->Data
+    {
+        if(url != nil)
+        {
+            return getDataFromURL()
+        }
+        else
+        {
+            return data
+        }
     }
-
-    
     override init(dictionary: NSDictionary) {
         super.init(dictionary: dictionary)
         processFileType()
@@ -129,9 +138,7 @@ class MediaFile: Mi {
         case "png","jpg","jpeg" : fileType = .image;
         default : fileType = .folder;
         }
-
     }
-    
     
     class func  list(data : [Dictionary<String, Any>]) -> [MediaFile]
     {
@@ -143,7 +150,6 @@ class MediaFile: Mi {
         }
         return output
     }
-    
     
     required init() {
         super.init()
