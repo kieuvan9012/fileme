@@ -19,7 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        DropboxClientsManager.setupWithAppKey("tm7vfvtwq1v3lpe")
+        FileGoogleDriveInstance.sharedInstance()
+        FileDropboxInstance.sharedInstance()
+        
 //        IQKeyboardManager.shared().isEnabled = true
 
         UIApplication.shared.statusBarStyle = .lightContent

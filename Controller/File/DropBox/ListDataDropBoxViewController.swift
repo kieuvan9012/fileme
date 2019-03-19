@@ -19,8 +19,8 @@ class ListDataDropBoxViewController: MasterViewController {
     private var downRequest : DownloadRequestMemory<Files.FileMetadataSerializer, Files.DownloadErrorSerializer>?
     var clientDropbox: DropboxClient!
 
-    private var lstData: [Files.Metadata] = []
-    private var folderId = ""
+    private var lstData: [MediaFile] = []
+    private var folderId = "" // default "" - get all data
     private var folderName = ""
 
     override func viewDidLoad() {
@@ -30,7 +30,7 @@ class ListDataDropBoxViewController: MasterViewController {
     }
     
     @IBAction func signOutButtonPressed(_ sender: Any) {
-        DropboxClientsManager.unlinkClients()
+        dropboxInstance.sighOut()
         self.navigationController?.popViewController(animated: false)
     }
     
@@ -50,20 +50,10 @@ class ListDataDropBoxViewController: MasterViewController {
         tbContent.setIdentifier("ListDataFileTableViewCell")
     }
     
-    @objc func refresh(_ sender: Any) {
-        self.connectDropbox()
-    }
-    
     func connectDropbox() {
-        if let _ = DropboxClientsManager.authorizedClient {
-            clientDropbox = DropboxClientsManager.authorizedClient
-            self.loadData()
-        } else {
-            DropboxClientsManager.authorizeFromController(UIApplication.shared,
-                                                          controller: self,
-                                                          openURL: { (url: URL) -> Void in
-                                                            UIApplication.shared.openURL(url)
-            })
+        dropboxInstance.connectDropbox(folderId, vc: self) { (response) in
+            self.lstData = response
+            self.tbContent.reloadData()
         }
     }
     
@@ -76,17 +66,6 @@ class ListDataDropBoxViewController: MasterViewController {
         super.viewDidAppear(animated)
         
         self.connectDropbox()
-    }
-
-    func loadData() {
-        let listFolders = DropboxClientsManager.authorizedClient!.files.listFolder(path: folderId)
-        listFolders.response{ response, error in
-            guard let result = response else{
-                return
-            }
-            self.lstData = result.entries
-            self.tbContent.reloadData()
-        }
     }
     
     @IBAction func actionCancelDownloadFile() {
@@ -112,7 +91,7 @@ extension ListDataDropBoxViewController: UITableViewDataSource {
         
         let fileData = lstData[indexPath.row]
         
-        cell.processDropboxFileData(fileData)
+        cell.processGGDriveFileData(fileData)
         
         return cell
     }
@@ -123,10 +102,10 @@ extension ListDataDropBoxViewController: UITableViewDelegate {
         weak var weakSelf = self
 
         let fileData = lstData[indexPath.row]
-        if(fileData is Files.FolderMetadata) {
+        if(fileData.fileType == .folder) {
             let view = ListDataDropBoxViewController()
-            view.folderId = (fileData as! Files.FolderMetadata).id
-            view.folderName = (fileData as! Files.FolderMetadata).name
+            view.folderId = fileData.identifier
+            view.folderName = fileData.name
             
             weakSelf?.navigationController?.pushViewController(view, animated: false)
         } else {
@@ -135,7 +114,7 @@ extension ListDataDropBoxViewController: UITableViewDelegate {
                 return
             }
 
-            weakSelf?.downloadFile(fileData)
+//            weakSelf?.downloadFile(fileData)
         }
     }
     

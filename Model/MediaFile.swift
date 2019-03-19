@@ -70,11 +70,15 @@ class MediaFile: Mi {
     @objc dynamic var content : Any? ;
     @objc dynamic var active = false;
     @objc dynamic var isDowload = false ;
+    
+    @objc dynamic var identifier = ""
+    @objc dynamic var rev = "" // parameter rev: Please specify revision in path instead - dropbox
+    
     var url : URL!
 
     
     
-    var fileType  = FileType.folder;
+    var fileType  = FileType.none;
     var media_type = MediaType.image;
     @objc dynamic var child : [MediaFile] = [];
     @objc dynamic var parent : MediaFile! ;
