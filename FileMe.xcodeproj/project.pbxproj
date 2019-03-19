@@ -15,6 +15,8 @@
 		4F0C6229223E1DA200DBD254 /* ListDataFileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0C6220223E1DA200DBD254 /* ListDataFileTableViewCell.swift */; };
 		4F0C622A223E1DA200DBD254 /* DownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0C6222223E1DA200DBD254 /* DownloadViewController.swift */; };
 		4F0C622B223E1DA200DBD254 /* DownloadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F0C6223223E1DA200DBD254 /* DownloadViewController.xib */; };
+		4F3A10D3223FC16A004E1F65 /* FileGoogleDriveInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3A10D2223FC16A004E1F65 /* FileGoogleDriveInstance.swift */; };
+		4F3A10D5223FC17A004E1F65 /* FileDropboxInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3A10D4223FC17A004E1F65 /* FileDropboxInstance.swift */; };
 		510B48EA2234DE5F00BA4706 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B48E82234DE5F00BA4706 /* UserViewController.swift */; };
 		510B48EB2234DE5F00BA4706 /* UserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 510B48E92234DE5F00BA4706 /* UserViewController.xib */; };
 		510B48EE2234DE6A00BA4706 /* UserDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B48EC2234DE6A00BA4706 /* UserDetailCell.swift */; };
@@ -424,6 +426,8 @@
 		4F0C6220223E1DA200DBD254 /* ListDataFileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDataFileTableViewCell.swift; sourceTree = "<group>"; };
 		4F0C6222223E1DA200DBD254 /* DownloadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadViewController.swift; sourceTree = "<group>"; };
 		4F0C6223223E1DA200DBD254 /* DownloadViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DownloadViewController.xib; sourceTree = "<group>"; };
+		4F3A10D2223FC16A004E1F65 /* FileGoogleDriveInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileGoogleDriveInstance.swift; sourceTree = "<group>"; };
+		4F3A10D4223FC17A004E1F65 /* FileDropboxInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDropboxInstance.swift; sourceTree = "<group>"; };
 		510B48E82234DE5F00BA4706 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		510B48E92234DE5F00BA4706 /* UserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserViewController.xib; sourceTree = "<group>"; };
 		510B48EC2234DE6A00BA4706 /* UserDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailCell.swift; sourceTree = "<group>"; };
@@ -1072,6 +1076,8 @@
 				510EA40D222BF7F000DB3724 /* Template.swift */,
 				510EA40F222BF7F100DB3724 /* UserInstance.swift */,
 				51463C04223EBA3E00841276 /* FileICloudInstance.swift */,
+				4F3A10D2223FC16A004E1F65 /* FileGoogleDriveInstance.swift */,
+				4F3A10D4223FC17A004E1F65 /* FileDropboxInstance.swift */,
 			);
 			path = Instance;
 			sourceTree = "<group>";
@@ -2207,7 +2213,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-FileMe/Pods-FileMe-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-FileMe/Pods-FileMe-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ALCameraViewController/ALCameraViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
@@ -2268,7 +2274,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FileMe/Pods-FileMe-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FileMe/Pods-FileMe-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		10768346F59FEC2DECDC1F0A /* [CP] Check Pods Manifest.lock */ = {
@@ -2295,7 +2301,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-FileMe/Pods-FileMe-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-FileMe/Pods-FileMe-resources.sh",
 				"${PODS_ROOT}/AccountKit/AccountKitStrings.bundle",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
@@ -2310,7 +2316,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FileMe/Pods-FileMe-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FileMe/Pods-FileMe-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2359,6 +2365,7 @@
 				4F0C6227223E1DA200DBD254 /* ListDataGGDriveViewController.swift in Sources */,
 				5198EF0A2238EC7C008B5E22 /* NotifyInstance.swift in Sources */,
 				510EA46D222BF8B300DB3724 /* GreenExtention+UITextView.swift in Sources */,
+				4F3A10D5223FC17A004E1F65 /* FileDropboxInstance.swift in Sources */,
 				51463C00223EB5BD00841276 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				510EA3FC222BF6BF00DB3724 /* User.swift in Sources */,
 				510EA400222BF6BF00DB3724 /* MasterRequest.swift in Sources */,
@@ -2408,6 +2415,7 @@
 				51463C05223EBA3E00841276 /* FileICloudInstance.swift in Sources */,
 				510EA482222BF8B300DB3724 /* GreenTableView.swift in Sources */,
 				5198EF042238EC30008B5E22 /* ConfernceDataStore.swift in Sources */,
+				4F3A10D3223FC16A004E1F65 /* FileGoogleDriveInstance.swift in Sources */,
 				510EA5DB222BF97200DB3724 /* RegisterViewController.swift in Sources */,
 				4F0C622A223E1DA200DBD254 /* DownloadViewController.swift in Sources */,
 				5198EF062238EC30008B5E22 /* InterfaceDataStore.swift in Sources */,
