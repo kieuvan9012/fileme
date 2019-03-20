@@ -82,7 +82,7 @@ class FileViewController: MasterViewController, UITableViewDelegate, UITableView
     func pushIcloud()
     {
         fileiCloud.callFilePicker { (response) in
-//            insertMediaFile(MediaFile.initurl ???)
+            
         }
     }
     
@@ -175,7 +175,15 @@ class FileViewController: MasterViewController, UITableViewDelegate, UITableView
 
 extension FileViewController: DriveDropBoxViewControllerDelegate {
     func successDownloadFile(_ data: MediaFile) {
-        self.insertMediaFile(data)
-    }
-    
+        services.uploadFile(file: data, success: { (resposen) in
+            
+            self.insertMediaFile(MediaFile.init(dictionary: (resposen.data as! [NSDictionary])[0]))
+            
+            // insert
+        }, failure: { (error) in
+            
+        }) { (process) in
+            
+        }
+    }    
 }
