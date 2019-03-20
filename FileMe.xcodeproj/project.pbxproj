@@ -7,14 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4F0C6224223E1DA200DBD254 /* ListDataDropBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0C6219223E1DA200DBD254 /* ListDataDropBoxViewController.swift */; };
-		4F0C6225223E1DA200DBD254 /* ListDataDropBoxViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F0C621A223E1DA200DBD254 /* ListDataDropBoxViewController.xib */; };
-		4F0C6226223E1DA200DBD254 /* ListDataGGDriveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F0C621C223E1DA200DBD254 /* ListDataGGDriveViewController.xib */; };
-		4F0C6227223E1DA200DBD254 /* ListDataGGDriveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0C621D223E1DA200DBD254 /* ListDataGGDriveViewController.swift */; };
-		4F0C6228223E1DA200DBD254 /* ListDataFileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F0C621F223E1DA200DBD254 /* ListDataFileTableViewCell.xib */; };
-		4F0C6229223E1DA200DBD254 /* ListDataFileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0C6220223E1DA200DBD254 /* ListDataFileTableViewCell.swift */; };
-		4F0C622A223E1DA200DBD254 /* DownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0C6222223E1DA200DBD254 /* DownloadViewController.swift */; };
-		4F0C622B223E1DA200DBD254 /* DownloadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F0C6223223E1DA200DBD254 /* DownloadViewController.xib */; };
+		4F0C6224223E1DA200DBD254 /* DriveDropBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0C6219223E1DA200DBD254 /* DriveDropBoxViewController.swift */; };
+		4F0C6225223E1DA200DBD254 /* DriveDropBoxViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F0C621A223E1DA200DBD254 /* DriveDropBoxViewController.xib */; };
+		4F0C6228223E1DA200DBD254 /* DriveDropBoxTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F0C621F223E1DA200DBD254 /* DriveDropBoxTableViewCell.xib */; };
+		4F0C6229223E1DA200DBD254 /* DriveDropBoxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0C6220223E1DA200DBD254 /* DriveDropBoxTableViewCell.swift */; };
+		4F0DE49B224144BC00A65C6F /* DownloadFileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0DE49A224144BC00A65C6F /* DownloadFileView.swift */; };
+		4F0DE49D224144C500A65C6F /* DownloadFileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F0DE49C224144C500A65C6F /* DownloadFileView.xib */; };
 		4F3A10D3223FC16A004E1F65 /* FileGoogleDriveInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3A10D2223FC16A004E1F65 /* FileGoogleDriveInstance.swift */; };
 		4F3A10D5223FC17A004E1F65 /* FileDropboxInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3A10D4223FC17A004E1F65 /* FileDropboxInstance.swift */; };
 		510B48EA2234DE5F00BA4706 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B48E82234DE5F00BA4706 /* UserViewController.swift */; };
@@ -418,14 +416,12 @@
 
 /* Begin PBXFileReference section */
 		4903824D5EC5C045F4B81446 /* Pods-FileMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FileMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-FileMe/Pods-FileMe.release.xcconfig"; sourceTree = "<group>"; };
-		4F0C6219223E1DA200DBD254 /* ListDataDropBoxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDataDropBoxViewController.swift; sourceTree = "<group>"; };
-		4F0C621A223E1DA200DBD254 /* ListDataDropBoxViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListDataDropBoxViewController.xib; sourceTree = "<group>"; };
-		4F0C621C223E1DA200DBD254 /* ListDataGGDriveViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListDataGGDriveViewController.xib; sourceTree = "<group>"; };
-		4F0C621D223E1DA200DBD254 /* ListDataGGDriveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDataGGDriveViewController.swift; sourceTree = "<group>"; };
-		4F0C621F223E1DA200DBD254 /* ListDataFileTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListDataFileTableViewCell.xib; sourceTree = "<group>"; };
-		4F0C6220223E1DA200DBD254 /* ListDataFileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDataFileTableViewCell.swift; sourceTree = "<group>"; };
-		4F0C6222223E1DA200DBD254 /* DownloadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadViewController.swift; sourceTree = "<group>"; };
-		4F0C6223223E1DA200DBD254 /* DownloadViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DownloadViewController.xib; sourceTree = "<group>"; };
+		4F0C6219223E1DA200DBD254 /* DriveDropBoxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriveDropBoxViewController.swift; sourceTree = "<group>"; };
+		4F0C621A223E1DA200DBD254 /* DriveDropBoxViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DriveDropBoxViewController.xib; sourceTree = "<group>"; };
+		4F0C621F223E1DA200DBD254 /* DriveDropBoxTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DriveDropBoxTableViewCell.xib; sourceTree = "<group>"; };
+		4F0C6220223E1DA200DBD254 /* DriveDropBoxTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriveDropBoxTableViewCell.swift; sourceTree = "<group>"; };
+		4F0DE49A224144BC00A65C6F /* DownloadFileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadFileView.swift; sourceTree = "<group>"; };
+		4F0DE49C224144C500A65C6F /* DownloadFileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DownloadFileView.xib; sourceTree = "<group>"; };
 		4F3A10D2223FC16A004E1F65 /* FileGoogleDriveInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileGoogleDriveInstance.swift; sourceTree = "<group>"; };
 		4F3A10D4223FC17A004E1F65 /* FileDropboxInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDropboxInstance.swift; sourceTree = "<group>"; };
 		510B48E82234DE5F00BA4706 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
@@ -843,42 +839,33 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		4F0C6218223E1DA200DBD254 /* DropBox */ = {
+		4F0C621B223E1DA200DBD254 /* GoogleDrive - Dropbox */ = {
 			isa = PBXGroup;
 			children = (
-				4F0C6219223E1DA200DBD254 /* ListDataDropBoxViewController.swift */,
-				4F0C621A223E1DA200DBD254 /* ListDataDropBoxViewController.xib */,
-			);
-			path = DropBox;
-			sourceTree = "<group>";
-		};
-		4F0C621B223E1DA200DBD254 /* GGDrive */ = {
-			isa = PBXGroup;
-			children = (
-				4F0C621D223E1DA200DBD254 /* ListDataGGDriveViewController.swift */,
-				4F0C621C223E1DA200DBD254 /* ListDataGGDriveViewController.xib */,
+				4F0C6219223E1DA200DBD254 /* DriveDropBoxViewController.swift */,
+				4F0C621A223E1DA200DBD254 /* DriveDropBoxViewController.xib */,
 				4F0C621E223E1DA200DBD254 /* Cell */,
-				4F0C6221223E1DA200DBD254 /* DownloadView */,
+				4F0C6221223E1DA200DBD254 /* DownloadFile */,
 			);
-			path = GGDrive;
+			path = "GoogleDrive - Dropbox";
 			sourceTree = "<group>";
 		};
 		4F0C621E223E1DA200DBD254 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				4F0C6220223E1DA200DBD254 /* ListDataFileTableViewCell.swift */,
-				4F0C621F223E1DA200DBD254 /* ListDataFileTableViewCell.xib */,
+				4F0C6220223E1DA200DBD254 /* DriveDropBoxTableViewCell.swift */,
+				4F0C621F223E1DA200DBD254 /* DriveDropBoxTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		4F0C6221223E1DA200DBD254 /* DownloadView */ = {
+		4F0C6221223E1DA200DBD254 /* DownloadFile */ = {
 			isa = PBXGroup;
 			children = (
-				4F0C6222223E1DA200DBD254 /* DownloadViewController.swift */,
-				4F0C6223223E1DA200DBD254 /* DownloadViewController.xib */,
+				4F0DE49A224144BC00A65C6F /* DownloadFileView.swift */,
+				4F0DE49C224144C500A65C6F /* DownloadFileView.xib */,
 			);
-			path = DownloadView;
+			path = DownloadFile;
 			sourceTree = "<group>";
 		};
 		510B48FA2234E34500BA4706 /* Conversation */ = {
@@ -1771,8 +1758,7 @@
 				51C638602231248800E05D65 /* FileViewController.xib */,
 				510B49692234F8A700BA4706 /* Cell */,
 				51F215A7223AC90C009FAC97 /* AddMyFile */,
-				4F0C621B223E1DA200DBD254 /* GGDrive */,
-				4F0C6218223E1DA200DBD254 /* DropBox */,
+				4F0C621B223E1DA200DBD254 /* GoogleDrive - Dropbox */,
 			);
 			path = File;
 			sourceTree = "<group>";
@@ -2003,6 +1989,7 @@
 				510EA541222BF94700DB3724 /* MIDropListView.xib in Resources */,
 				510EA487222BF8B300DB3724 /* ic_unCheck.png in Resources */,
 				51463D00223F3BA300841276 /* quotes-provider.js in Resources */,
+				4F0DE49D224144C500A65C6F /* DownloadFileView.xib in Resources */,
 				510EA48D222BF8B300DB3724 /* GPlus.png in Resources */,
 				51463D12223F3BA300841276 /* udf-compatible-datafeed-base.ts in Resources */,
 				51463CD7223F3BA300841276 /* prediction-success-white.png in Resources */,
@@ -2044,7 +2031,6 @@
 				510EA524222BF94700DB3724 /* ReactUserView.xib in Resources */,
 				510B48EF2234DE6A00BA4706 /* UserDetailCell.xib in Resources */,
 				510EA544222BF94700DB3724 /* NavigationView.xib in Resources */,
-				4F0C622B223E1DA200DBD254 /* DownloadViewController.xib in Resources */,
 				51463CF1223F3BA300841276 /* sv-tv-chart.3b8c4a74b10d42915047.html in Resources */,
 				510EA4A5222BF8B300DB3724 /* GClover.png in Resources */,
 				51463C9F223F3BA300841276 /* 10.0b4b80ce7284d28083f7.js in Resources */,
@@ -2065,7 +2051,6 @@
 				510EA48C222BF8B300DB3724 /* GGuita.png in Resources */,
 				51463CB6223F3BA300841276 /* vendors.79baf9158bc9da7d21ae.js in Resources */,
 				51463D02223F3BA300841276 /* requester.js in Resources */,
-				4F0C6226223E1DA200DBD254 /* ListDataGGDriveViewController.xib in Resources */,
 				51463CBF223F3BA300841276 /* fa-tv-chart.3b8c4a74b10d42915047.html in Resources */,
 				51463CCD223F3BA300841276 /* delayed.png in Resources */,
 				51463CD2223F3BA300841276 /* opacity-slider.png in Resources */,
@@ -2144,13 +2129,13 @@
 				510EA562222BF94700DB3724 /* MasterFooterView.xib in Resources */,
 				510EA54B222BF94700DB3724 /* LineView.xib in Resources */,
 				510EA5DA222BF97200DB3724 /* RegisterViewController.xib in Resources */,
-				4F0C6225223E1DA200DBD254 /* ListDataDropBoxViewController.xib in Resources */,
+				4F0C6225223E1DA200DBD254 /* DriveDropBoxViewController.xib in Resources */,
 				51463CB4223F3BA300841276 /* take-chart-image-dialog-impl.45288e052b450c5e2d11.js in Resources */,
 				51463CC0223F3BA300841276 /* fontawesome-webfont.svg in Resources */,
 				51C638622231248800E05D65 /* FileViewController.xib in Resources */,
 				51463CFE223F3BA300841276 /* history-provider.js in Resources */,
 				51463D0B223F3BA300841276 /* history-provider.ts in Resources */,
-				4F0C6228223E1DA200DBD254 /* ListDataFileTableViewCell.xib in Resources */,
+				4F0C6228223E1DA200DBD254 /* DriveDropBoxTableViewCell.xib in Resources */,
 				51463CAD223F3BA300841276 /* lazy-velocity.6843186d1d19426e2f3c.js in Resources */,
 				510EA3CB222BF48A00DB3724 /* aurora.mp3 in Resources */,
 				51463CB5223F3BA300841276 /* vendors.59ff1ebdd70a95182a5ec39dd8b9e816.css in Resources */,
@@ -2362,7 +2347,6 @@
 				510EA54E222BF94700DB3724 /* NavigationView.swift in Sources */,
 				510EA67E222E29D700DB3724 /* HomeNaviView.swift in Sources */,
 				510EA410222BF7F100DB3724 /* AppInstance.swift in Sources */,
-				4F0C6227223E1DA200DBD254 /* ListDataGGDriveViewController.swift in Sources */,
 				5198EF0A2238EC7C008B5E22 /* NotifyInstance.swift in Sources */,
 				510EA46D222BF8B300DB3724 /* GreenExtention+UITextView.swift in Sources */,
 				4F3A10D5223FC17A004E1F65 /* FileDropboxInstance.swift in Sources */,
@@ -2399,13 +2383,14 @@
 				5198EEFE2238EBFD008B5E22 /* LimeMessage.swift in Sources */,
 				510B4976223517D700BA4706 /* HistoryCell.swift in Sources */,
 				510EA51E222BF94700DB3724 /* ImageBook.swift in Sources */,
-				4F0C6224223E1DA200DBD254 /* ListDataDropBoxViewController.swift in Sources */,
+				4F0C6224223E1DA200DBD254 /* DriveDropBoxViewController.swift in Sources */,
 				5198EF0E2238EF9D008B5E22 /* Message_File.swift in Sources */,
 				510EA54C222BF94700DB3724 /* SimpleNavi.swift in Sources */,
 				5198EEF62238E9EA008B5E22 /* Message_Contact.swift in Sources */,
 				5198EEFF2238EBFD008B5E22 /* Conversation.swift in Sources */,
 				510EA4AD222BF8B300DB3724 /* GreenCheckbox.swift in Sources */,
 				5198EEF82238E9EA008B5E22 /* MessageInstance.swift in Sources */,
+				4F0DE49B224144BC00A65C6F /* DownloadFileView.swift in Sources */,
 				51463C01223EB5BD00841276 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				510B48EA2234DE5F00BA4706 /* UserViewController.swift in Sources */,
 				510EA546222BF94700DB3724 /* UserCell.swift in Sources */,
@@ -2417,7 +2402,6 @@
 				5198EF042238EC30008B5E22 /* ConfernceDataStore.swift in Sources */,
 				4F3A10D3223FC16A004E1F65 /* FileGoogleDriveInstance.swift in Sources */,
 				510EA5DB222BF97200DB3724 /* RegisterViewController.swift in Sources */,
-				4F0C622A223E1DA200DBD254 /* DownloadViewController.swift in Sources */,
 				5198EF062238EC30008B5E22 /* InterfaceDataStore.swift in Sources */,
 				510EA480222BF8B300DB3724 /* GCleanView.swift in Sources */,
 				510B48F22234DE9C00BA4706 /* UserInfoHeaderView.swift in Sources */,
@@ -2430,7 +2414,7 @@
 				510EA684222E29EB00DB3724 /* MaintenanceViewController.swift in Sources */,
 				5198EF0B2238EC7C008B5E22 /* FormaterInstance.swift in Sources */,
 				510EA294222BE64500DB3724 /* AppDelegate.swift in Sources */,
-				4F0C6229223E1DA200DBD254 /* ListDataFileTableViewCell.swift in Sources */,
+				4F0C6229223E1DA200DBD254 /* DriveDropBoxTableViewCell.swift in Sources */,
 				510EA55A222BF94700DB3724 /* ImageSelectCell_Empty.swift in Sources */,
 				51F215C3223B2EBE009FAC97 /* PrintSelectCell.swift in Sources */,
 				510EA4AE222BF8B300DB3724 /* GreenEmptyView.swift in Sources */,

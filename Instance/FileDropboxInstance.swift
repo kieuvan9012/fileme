@@ -11,8 +11,11 @@ import SwiftyDropbox
 let dropboxInstance = FileDropboxInstance.sharedInstance()
 
 class FileDropboxInstance: NSObject {
-    var clientDropbox: DropboxClient!
-    var getMediaBlock : (([MediaFile])->Void)!
+     var clientDropbox: DropboxClient!
+    private var getMediaBlock : (([MediaFile])->Void)!
+    private var getSuccessDownBlock : ((Float, Data?, String?)->Void)!
+
+    private var downRequest : DownloadRequestMemory<Files.FileMetadataSerializer, Files.DownloadErrorSerializer>?
 
     static var instance: FileDropboxInstance!
     class func sharedInstance() -> FileDropboxInstance
@@ -39,6 +42,36 @@ class FileDropboxInstance: NSObject {
                                                             UIApplication.shared.canOpenURL(url)
             })
         }
+    }
+    
+    func cancelDownload() {
+        downRequest?.cancel()
+    }
+    
+    func downloadFile(_ fileData: MediaFile, success: @escaping ((Float, Data?, String?)-> Void)) {
+        self.getSuccessDownBlock = success
+        
+        let patch = "/" + fileData.name
+        
+        // Download to Data
+        downRequest = clientDropbox!.files.download(path: patch, rev: fileData.rev)
+            .response { response, error in
+                if let response = response {
+                    let responseMetadata = response.0
+                    print("responseMetadata :", responseMetadata)
+                    let fileContents = response.1
+                    print("fileContents :", fileContents)
+                    self.getSuccessDownBlock(1, fileContents, nil)
+                } else if let error = error {
+                    print("lỗi :", error)
+                    self.getSuccessDownBlock(0, nil, error.description)
+                }
+            }
+            .progress { progressData in
+                self.getSuccessDownBlock(Float(progressData.fractionCompleted), nil, nil)
+                print("progressData:", progressData)
+        }
+
     }
     
     public func sighOut() {

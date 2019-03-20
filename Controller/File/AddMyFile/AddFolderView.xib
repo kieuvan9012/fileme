@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddFolderView" customModule="File_Me" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddFolderView" customModule="FileMe" customModuleProvider="target">
             <connections>
                 <outlet property="tfContent" destination="X9u-S4-jU6" id="XIx-yy-w9G"/>
                 <outlet property="view" destination="iN0-l3-epB" id="B8z-W7-dTo"/>
@@ -32,7 +32,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ekc-1Z-Do6" customClass="ButtonSuccess" customModule="File_Me" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ekc-1Z-Do6" customClass="ButtonSuccess" customModule="FileMe" customModuleProvider="target">
                             <rect key="frame" x="287" y="52" width="80" height="32"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="32" id="6ct-pE-qyG"/>
@@ -44,7 +44,7 @@
                                 <action selector="createAction:" destination="-1" eventType="touchUpInside" id="gFk-SN-IOY"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pq7-Hy-rpW" customClass="ButtonDanger" customModule="File_Me" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pq7-Hy-rpW" customClass="ButtonDanger" customModule="FileMe" customModuleProvider="target">
                             <rect key="frame" x="199" y="52" width="80" height="32"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="80" id="cWj-oS-HDy"/>
@@ -72,13 +72,13 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yh6-WL-a3b">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tạo Mới Thư Mục" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0L-ph-bD5" customClass="HeaderLabel" customModule="File_Me" customModuleProvider="target">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tạo Mới Thư Mục" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0L-ph-bD5" customClass="HeaderLabel" customModule="FileMe" customModuleProvider="target">
                             <rect key="frame" x="8" y="0.0" width="359" height="40"/>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vxb-EE-bse" customClass="LineView" customModule="File_Me" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vxb-EE-bse" customClass="LineView" customModule="FileMe" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="39.5" width="375" height="0.5"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>

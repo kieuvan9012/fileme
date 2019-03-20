@@ -64,6 +64,15 @@ public extension UIViewController
             competion()
         }
     }
+    
+    func popToViewControllerCustomClass(_ viewC: AnyClass) {
+        for data in (self.navigationController?.viewControllers)! {
+            if (data.isKind(of: viewC)) {
+                self.navigationController?.popToViewController(data, animated: false)
+                break
+            }
+        }
+    }
 
     func endEdit()
     {

@@ -20,6 +20,7 @@ class FileGoogleDriveInstance: NSObject {
     var serviceGGDrive : GTLRDriveService!
     var fetcher: GTMSessionFetcher! = GTMSessionFetcher()
     var getMediaBlock : (([MediaFile])->Void)!
+    private var getSuccessDownBlock : ((Float, Data?, String?)->Void)!
 
     static var instance: FileGoogleDriveInstance!
     class func sharedInstance() -> FileGoogleDriveInstance
@@ -80,6 +81,66 @@ class FileGoogleDriveInstance: NSObject {
         serviceGGDrive = GTLRDriveService()
         GTMOAuth2ViewControllerTouch.removeAuthFromKeychain(forName: kKeychainItemName)
     }
+    
+    func cancelDownload() {
+        self.fetcher.stopFetching()
+    }
+    
+    func downloadFile(_ fileData: MediaFile, success: @escaping ((Float, Data?, String?)-> Void)) {
+        self.getSuccessDownBlock = success
+
+        // start config download
+        if(self.fetcher.isFetching) {
+            self.fetcher.stopFetching()
+        }
+        
+        var downloadRequest: URLRequest
+        if (fileData.fileExtension == nil) {
+            // Google Spread Sheet like googles own format can be downloaded via this query
+            // https://developers.google.com/drive/v3/web/manage-downloads
+            let query = GTLRDriveQuery_FilesExport.queryForMedia(withFileId: fileData.identifier, mimeType: "application/pdf")
+            downloadRequest = self.serviceGGDrive.request(for: query) as URLRequest
+        } else {
+            let query = GTLRDriveQuery_FilesGet.queryForMedia(withFileId: fileData.identifier)
+            downloadRequest = self.serviceGGDrive.request(for: query) as URLRequest
+        }
+        if(downloadRequest == nil) {
+            return
+        }
+        
+        self.fetcher = self.serviceGGDrive.fetcherService.fetcher(with: downloadRequest)
+        
+        // Progress
+        self.fetcher.receivedProgressBlock = { bytesWritten, totalBytesWritten in
+            let progress = Float(totalBytesWritten) / Float(fileData.size)
+            print("progressData:", progress)
+
+            self.getSuccessDownBlock(progress, nil, nil)
+        }
+        
+        self.fetcher.beginFetch(completionHandler: { (data, fetchError) in
+            if fetchError == nil {
+                self.getSuccessDownBlock(1, data, nil)
+            } else {
+                self.getSuccessDownBlock(0, nil, fetchError.debugDescription)
+            }
+        })
+        
+        // cách download khác - k có progress
+        
+        //        let query = GTLRDriveQuery_FilesGet.queryForMedia(withFileId: fileData.identifier!)
+        //        serviceGGDrive.executeQuery(query) { (ticket, file , error) in
+        //            if (error == nil) {
+        //                print(ticket)
+        //                print(error as Any)
+        //                print((file as! GTLRDataObject))
+        //                print((file as! GTLRDataObject).data)
+        //            } else {
+        //
+        //            }
+        //        }
+    }
+
     
     public func loadListData(_ folderId: String){
         var lstData: [MediaFile] = []

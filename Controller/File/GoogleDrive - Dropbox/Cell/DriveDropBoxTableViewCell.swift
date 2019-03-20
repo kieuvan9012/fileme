@@ -1,5 +1,5 @@
 //
-//  ListDataFileTableViewCell.swift
+//  DriveDropBoxTableViewCell.swift
 //  FileMe
 //
 //  Created by trang.le on 3/13/19.
@@ -9,7 +9,7 @@ import UIKit
 import GoogleAPIClientForREST
 import SwiftyDropbox
 
-class ListDataFileTableViewCell: UITableViewCell {
+class DriveDropBoxTableViewCell: UITableViewCell {
     @IBOutlet weak var imgFileType: UIImageView!
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblSubTitle: UILabel!
@@ -28,38 +28,7 @@ class ListDataFileTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-//    func processDropboxFileData(_ file: Files.Metadata) {
-//        var fileSize = ""
-//        var fileType = ""
-//        
-//        self.accessoryType = .none
-//        self.imgDownload.showView()
-//        
-//        lblTitle.text = file.name
-//        if(file is Files.FolderMetadata) {
-//            self.accessoryType = .disclosureIndicator
-//            imgDownload.hiddenView()
-//            fileType = "folder"
-//            
-//        } else {
-//            fileSize = ByteCountFormatter.string(fromByteCount: Int64((file as! Files.FileMetadata).size), countStyle: .file)
-//            fileType = (file.name as NSString).pathExtension // URL path của String k detect dc .pdf và .txt
-//        }
-//        
-//        if(fileType.isEmpty) {
-//            fileType = "file"
-//        }
-//        
-//        if(!ConfigFileType.isSupportFile(fileType)) {
-//            imgDownload.hiddenView()
-//        }
-//        
-//        let image = UIImage.init(named: fileType)
-//        imgFileType.image = image ?? "file".image()
-//        lblSubTitle.text = fileType == "folder" ? fileType : fileType + "  " + fileSize
-//    }
-    
-    func processGGDriveFileData(_ file: MediaFile) {
+    func processFileData(_ file: MediaFile) {
         var fileSize = ""
         let fileType = file.fileExtension
         
