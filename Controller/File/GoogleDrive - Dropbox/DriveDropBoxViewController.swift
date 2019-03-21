@@ -14,7 +14,7 @@ protocol DriveDropBoxViewControllerDelegate: class {
 
 class DriveDropBoxViewController: MasterViewController {
     @IBOutlet weak var tbContent: UITableView!
-    @IBOutlet weak var btnSignOut: UIButton!
+    @IBOutlet weak var viewLogout: UIView!
     var fileType: FileStore = FileStore.fileMe
     weak var actionDelegate: DriveDropBoxViewControllerDelegate?
     
@@ -29,16 +29,16 @@ class DriveDropBoxViewController: MasterViewController {
     }
     
     private func setUpView() {
-        self.navigationView.bringSubview(toFront: btnSignOut)
-        setTitleWithBackAction(folderName.isEmpty ? "Dropbox": folderName)
+        self.navigationView.bringSubview(toFront: viewLogout)
+        setTitleWithBackAction(folderName.isEmpty ? getTypeName() : folderName)
         tbContent.setIdentifier("DriveDropBoxTableViewCell")
         
-        if(fileType == .drive && folderId.count == 0) { // default của drive là root, dropbox rỗng
+        if(isGGDriveMode() && folderId.count == 0) { // default của drive là root, dropbox rỗng
             folderId = "root"
         }
     }
     
-    private func loadDropboxData() {
+    @objc private func loadDropboxData() {
         dropboxInstance.connectDropbox(folderId, vc: self) { (response) in
             self.lstData = response
             self.tbContent.reloadData()
@@ -54,23 +54,46 @@ class DriveDropBoxViewController: MasterViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // Reference after programmatic auth flow
-        if(fileType == .drive) {
+
+        if(isGGDriveMode()) {
             self.loadGGDriveData()
         }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        if(fileType == .dropbox) { // dropbox nên load viewDidAppear
+
+        if(!isGGDriveMode()) { // dropbox nên load viewDidAppear
             self.loadDropboxData()
         }
     }
     
+    func isGGDriveMode() -> Bool {
+        if(fileType == .drive) {
+            return true
+        }
+        return false
+    }
+    
+    func getTypeName() -> String {
+        if(isGGDriveMode()) {
+            return "Google Drive"
+        } else {
+            return "Dropbox"
+        }
+    }
+    
     @IBAction func signOutButtonPressed(_ sender: Any) {
-        dropboxInstance.sighOut()
-        self.navigationController?.popViewController(animated: false)
+        view.dialog(title: "Xác nhận", desc: String(format: "Bạn có muốn đăng xuất %@ ?", getTypeName()), type: .infoConfirm, acceptBlock: {
+            if(self.isGGDriveMode()) {
+                ggDriveInstance.sighOut()
+            } else {
+                dropboxInstance.sighOut()
+            }
+            
+            self.navigationController?.popViewController(animated: false)
+        }) {
+        }
     }
 }
 
@@ -104,24 +127,25 @@ extension DriveDropBoxViewController: UITableViewDelegate {
             
             weakSelf?.navigationController?.pushViewController(view, animated: false)
         } else {
-            if(!ConfigFileType.isSupportFile((fileData.name as NSString).pathExtension)) {
+            if(!ConfigFileType.isSupportFile(fileData.fileExtension)) {
                 weakSelf?.view.warning(title: "Lỗi", desc: "Không thể tải tập tin này")
                 return
             }
             
             let add = DownloadFileView()
             add.fileData = fileData
-            view.alertBox(add, ratio: 0.7)
+            add.actionDelegate = self
+            weakSelf?.view.alertBox(add, ratio: 0.7)
             
-            if(fileType == .dropbox) {
-                dropboxInstance.downloadFile(fileData) { (progress, data, error)  in
-                    add.setProcess(progress)
-                    self.processDownload(progress, data, error, fileData)
-                }
-            } else {
+            if(isGGDriveMode()) {
                 ggDriveInstance.downloadFile(fileData) { (progress, data, error) in
                     add.setProcess(progress)
-                    self.processDownload(progress, data, error, fileData)
+                    weakSelf?.processDownload(progress, data, error, fileData)
+                }
+            } else {
+                dropboxInstance.downloadFile(fileData) { (progress, data, error)  in
+                    add.setProcess(progress)
+                    weakSelf?.processDownload(progress, data, error, fileData)
                 }
             }
         }
@@ -138,9 +162,22 @@ extension DriveDropBoxViewController: UITableViewDelegate {
                 actionDelegate?.successDownloadFile(dto) // 123123
             }
         } else if(error != nil) {
-            self.view.error(desc: error!)
             self.view.hideAlertBox()
+            if(!(error?.contains("Code=-999"))!) { // cancelled dropbox
+                self.view.error(desc: error!)
+            }
         }
     }
+}
 
+extension DriveDropBoxViewController: DownloadFileViewDelegate {
+    func cancelledDownloadFile() {
+        if(self.isGGDriveMode()) {
+            ggDriveInstance.cancelDownload()
+        } else {
+            dropboxInstance.cancelDownload()
+        }
+        
+        self.view.hideAlertBox()
+    }
 }

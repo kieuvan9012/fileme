@@ -23,6 +23,7 @@ class FileDropboxInstance: NSObject {
         if(self.instance == nil)
         {
             self.instance = (self.instance ?? FileDropboxInstance())
+            
             DropboxClientsManager.setupWithAppKey("tm7vfvtwq1v3lpe")
         }
         

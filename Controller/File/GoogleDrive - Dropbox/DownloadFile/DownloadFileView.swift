@@ -7,12 +7,17 @@
 
 import UIKit
 
+protocol DownloadFileViewDelegate : class {
+    func cancelledDownloadFile()
+}
+
 class DownloadFileView: GreenView {
     @IBOutlet weak var lblFileName: UILabel!
     @IBOutlet weak var imgFile: UIImageView!
     @IBOutlet weak var progressView: UIProgressView!
     var fileData: MediaFile!
-    
+    weak var actionDelegate : DownloadFileViewDelegate?
+
     override func initStyle() {
         drawRadius(4)
 
@@ -30,7 +35,8 @@ class DownloadFileView: GreenView {
     }
     
     @IBAction func cancelDownloadPressed(_ sender: Any) {
-        dropboxInstance.cancelDownload()
-        superview!.hideAlertBox()
-    }    
+        if(actionDelegate != nil) {
+            actionDelegate?.cancelledDownloadFile()
+        }
+    }
 }
