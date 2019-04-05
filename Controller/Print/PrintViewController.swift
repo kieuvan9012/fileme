@@ -32,6 +32,11 @@ class PrintViewController: MasterViewController,PrintAddViewDelegate , PrintSele
         addView.delegate = self;
     }
 
+    @IBAction func printSelect(_ sender: Any) {
+        let printSelect = PrintSelectViewController()
+        push(printSelect)
+    }
+    
     func printAddViewSelect(_ storeType: FileStore) {
         hideAlertBox()
         if(storeType == .fileMe)

@@ -362,6 +362,11 @@
 		51463D16223F3BA300841276 /* mobile_black.html in Resources */ = {isa = PBXBuildFile; fileRef = 51463C97223F3BA300841276 /* mobile_black.html */; };
 		51463D17223F3BA300841276 /* mobile_white.html in Resources */ = {isa = PBXBuildFile; fileRef = 51463C98223F3BA300841276 /* mobile_white.html */; };
 		51463D19223F3BA300841276 /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = 51463C9A223F3BA300841276 /* test.html */; };
+		515BEEEE2240E4450042EA85 /* PrintStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515BEEED2240E4450042EA85 /* PrintStore.swift */; };
+		515BEEF22240ED6C0042EA85 /* PrintStoreListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515BEEF02240ED6B0042EA85 /* PrintStoreListViewController.swift */; };
+		515BEEF32240ED6C0042EA85 /* PrintStoreListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 515BEEF12240ED6C0042EA85 /* PrintStoreListViewController.xib */; };
+		515BEEF72240EE3D0042EA85 /* PrintStoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515BEEF52240EE3D0042EA85 /* PrintStoreCell.swift */; };
+		515BEEF82240EE3D0042EA85 /* PrintStoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 515BEEF62240EE3D0042EA85 /* PrintStoreCell.xib */; };
 		5198EEF62238E9EA008B5E22 /* Message_Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5198EEF22238E9EA008B5E22 /* Message_Contact.swift */; };
 		5198EEF72238E9EA008B5E22 /* MessageEMIT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5198EEF32238E9EA008B5E22 /* MessageEMIT.swift */; };
 		5198EEF82238E9EA008B5E22 /* MessageInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5198EEF42238E9EA008B5E22 /* MessageInstance.swift */; };
@@ -780,6 +785,11 @@
 		51463C97223F3BA300841276 /* mobile_black.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = mobile_black.html; sourceTree = "<group>"; };
 		51463C98223F3BA300841276 /* mobile_white.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = mobile_white.html; sourceTree = "<group>"; };
 		51463C9A223F3BA300841276 /* test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
+		515BEEED2240E4450042EA85 /* PrintStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintStore.swift; sourceTree = "<group>"; };
+		515BEEF02240ED6B0042EA85 /* PrintStoreListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintStoreListViewController.swift; sourceTree = "<group>"; };
+		515BEEF12240ED6C0042EA85 /* PrintStoreListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrintStoreListViewController.xib; sourceTree = "<group>"; };
+		515BEEF52240EE3D0042EA85 /* PrintStoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintStoreCell.swift; sourceTree = "<group>"; };
+		515BEEF62240EE3D0042EA85 /* PrintStoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrintStoreCell.xib; sourceTree = "<group>"; };
 		5198EEF22238E9EA008B5E22 /* Message_Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message_Contact.swift; sourceTree = "<group>"; };
 		5198EEF32238E9EA008B5E22 /* MessageEMIT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageEMIT.swift; sourceTree = "<group>"; };
 		5198EEF42238E9EA008B5E22 /* MessageInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageInstance.swift; sourceTree = "<group>"; };
@@ -959,6 +969,7 @@
 		510EA2E4222BF46200DB3724 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				515BEEEF2240ED550042EA85 /* PrintStoreList */,
 				51463BE6223D5A8F00841276 /* PrintSelect */,
 				51F215B2223B29FB009FAC97 /* Print */,
 				510B48FA2234E34500BA4706 /* Conversation */,
@@ -1050,6 +1061,7 @@
 				5198EEFC2238EBFC008B5E22 /* Conversation.swift */,
 				5198EEFA2238EBFA008B5E22 /* LimeContact.swift */,
 				5198EEFB2238EBFB008B5E22 /* LimeMessage.swift */,
+				515BEEED2240E4450042EA85 /* PrintStore.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1742,6 +1754,25 @@
 			path = src;
 			sourceTree = "<group>";
 		};
+		515BEEEF2240ED550042EA85 /* PrintStoreList */ = {
+			isa = PBXGroup;
+			children = (
+				515BEEF42240EDDD0042EA85 /* Cell */,
+				515BEEF02240ED6B0042EA85 /* PrintStoreListViewController.swift */,
+				515BEEF12240ED6C0042EA85 /* PrintStoreListViewController.xib */,
+			);
+			path = PrintStoreList;
+			sourceTree = "<group>";
+		};
+		515BEEF42240EDDD0042EA85 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				515BEEF52240EE3D0042EA85 /* PrintStoreCell.swift */,
+				515BEEF62240EE3D0042EA85 /* PrintStoreCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		5198EEF12238E9EA008B5E22 /* Message */ = {
 			isa = PBXGroup;
 			children = (
@@ -1960,6 +1991,7 @@
 				510EA685222E29EB00DB3724 /* MaintenanceViewController.xib in Resources */,
 				51463CA3223F3BA300841276 /* crosshair.6c091f7d5427d0c5e6d9dc3a90eb2b20.cur in Resources */,
 				510EA4A8222BF8B300DB3724 /* Start.png in Resources */,
+				515BEEF32240ED6C0042EA85 /* PrintStoreListViewController.xib in Resources */,
 				510EA48A222BF8B300DB3724 /* GUser.png in Resources */,
 				510EA3C4222BF48A00DB3724 /* Quicksand-Regular.otf in Resources */,
 				510EA3C2222BF48A00DB3724 /* Comfortaa-Regular.ttf in Resources */,
@@ -2103,6 +2135,7 @@
 				510EA560222BF94700DB3724 /* ImageDisplayView.xib in Resources */,
 				510EA4A2222BF8B300DB3724 /* Trash.png in Resources */,
 				51463CB2223F3BA300841276 /* propertypagesfactory.88d1e4b5f0c82c2d9b43.js in Resources */,
+				515BEEF82240EE3D0042EA85 /* PrintStoreCell.xib in Resources */,
 				510EA4A3222BF8B300DB3724 /* GMenu.png in Resources */,
 				51463CB7223F3BA300841276 /* zoom.e21f24dd632c7069139bc47ae89c54b5.cur in Resources */,
 				51463D0A223F3BA300841276 /* helpers.ts in Resources */,
@@ -2378,6 +2411,7 @@
 				510EA2AB222BF44C00DB3724 /* ServicesFunction.swift in Sources */,
 				51F215A9223AC926009FAC97 /* AddFolderView.swift in Sources */,
 				51463BEC223D7ED900841276 /* MIDropListTableView.swift in Sources */,
+				515BEEF22240ED6C0042EA85 /* PrintStoreListViewController.swift in Sources */,
 				510EA472222BF8B300DB3724 /* MD5Digest.swift in Sources */,
 				510B48EE2234DE6A00BA4706 /* UserDetailCell.swift in Sources */,
 				510EA559222BF94700DB3724 /* ImageSelectCell.swift in Sources */,
@@ -2420,6 +2454,7 @@
 				4F0C622A223E1DA200DBD254 /* DownloadViewController.swift in Sources */,
 				5198EF062238EC30008B5E22 /* InterfaceDataStore.swift in Sources */,
 				510EA480222BF8B300DB3724 /* GCleanView.swift in Sources */,
+				515BEEF72240EE3D0042EA85 /* PrintStoreCell.swift in Sources */,
 				510B48F22234DE9C00BA4706 /* UserInfoHeaderView.swift in Sources */,
 				510EA4B1222BF8B300DB3724 /* LandingView.swift in Sources */,
 				51F215B9223B2B3F009FAC97 /* PrintView_DOC.swift in Sources */,
@@ -2438,6 +2473,7 @@
 				510EA53E222BF94700DB3724 /* MIDropListView.swift in Sources */,
 				510EA563222BF94700DB3724 /* MasterHeaderView.swift in Sources */,
 				510EA566222BF94700DB3724 /* RadioView.swift in Sources */,
+				515BEEEE2240E4450042EA85 /* PrintStore.swift in Sources */,
 				510EA401222BF6BF00DB3724 /* Mi.swift in Sources */,
 				51463C03223EB5BD00841276 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				510EA3F2222BF6BF00DB3724 /* University.swift in Sources */,

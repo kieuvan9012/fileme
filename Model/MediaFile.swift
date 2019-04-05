@@ -331,8 +331,9 @@ class MediaFileInsert_Request : Mi
     @objc dynamic var originalname = "";
     @objc dynamic var path = "";
     @objc dynamic var parent_id = 0;
-
     @objc dynamic var size = 1;
+    
+    
     
      init(_ media : MediaFile)
     {
