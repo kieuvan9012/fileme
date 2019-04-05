@@ -65,19 +65,16 @@ class FileViewController: MasterViewController, UITableViewDelegate, UITableView
         hideAlertBox()
         switch storeType {
         case .icloud : pushIcloud() ; break;
-        case .dropbox : pushDropbox() ; break;
-        case .drive : pushGoogleDrive() ; break;
+        case .dropbox : pushGGDriveDropbox(storeType) ; break;
+        case .drive : pushGGDriveDropbox(storeType) ; break;
         case .fileMe : pushIcloud() ; break;
         }
     }
     
-    func pushGoogleDrive() {
-        let view = ListDataGGDriveViewController()
-        self.navigationController?.pushViewController(view, animated: false)
-    }
-    
-    func pushDropbox() {
-        let view = ListDataDropBoxViewController()
+    func pushGGDriveDropbox(_ storeType: FileStore) {
+        let view = DriveDropBoxViewController()
+        view.fileType = storeType
+        view.actionDelegate = self
         
         self.navigationController?.pushViewController(view, animated: false)
     }
@@ -109,14 +106,12 @@ class FileViewController: MasterViewController, UITableViewDelegate, UITableView
         let request = MediaFileInsert_Request.init(value)
         request.parent_id = getActiveId()
         
-        let parent = files.index{$0.id == getActiveId()}
-        files[parent!].addChild([value])
-        files.removeAll()
-        generatorProcessing(item: root)
-        tbView.reloadData()
-        
         services.fileInsert(request, success: {response in
-            
+            let parent = self.files.index{$0.id == self.getActiveId()}
+            self.files[parent!].addChild([value])
+            self.files.removeAll()
+            self.generatorProcessing(item: self.root)
+            self.tbView.reloadData()
         }) { (error) in
             
         }
@@ -176,4 +171,19 @@ class FileViewController: MasterViewController, UITableViewDelegate, UITableView
             
         }
     }
+}
+
+extension FileViewController: DriveDropBoxViewControllerDelegate {
+    func successDownloadFile(_ data: MediaFile) {
+        services.uploadFile(file: data, success: { (resposen) in
+            
+            self.insertMediaFile(MediaFile.init(dictionary: (resposen.data as! [NSDictionary])[0]))
+            
+            // insert
+        }, failure: { (error) in
+            
+        }) { (process) in
+            
+        }
+    }    
 }

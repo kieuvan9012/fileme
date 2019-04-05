@@ -9,8 +9,6 @@ import UIKit
 import SwiftyDropbox
 import IQKeyboardManager
 
-
-
 let app = UIApplication.shared.delegate as! AppDelegate
 
 @UIApplicationMain
@@ -19,24 +17,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        FileGoogleDriveInstance.sharedInstance()
-        FileDropboxInstance.sharedInstance()
-        
-//        IQKeyboardManager.shared().isEnabled = true
+        IQKeyboardManager.shared().isEnabled = true
+        IQKeyboardManager.shared().isEnableAutoToolbar = false
 
+        _ = FileGoogleDriveInstance.sharedInstance()
+        _ = FileDropboxInstance.sharedInstance()
+        
+        
         UIApplication.shared.statusBarStyle = .lightContent
         self.window?.makeKeyAndVisible()
         self.window?.rootViewController = IntroViewController()
-
-        
-        
-        
-        
         
         return true
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        print("success response")
+        
         if let authResult = DropboxClientsManager.handleRedirectURL(url) {
             switch authResult {
             case .success:
@@ -48,8 +45,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
             case .error(_, let description):
                 print("Error: \(description)")
-//                let mainController = self.window!.rootViewController as! UINavigationController
-//                mainController.popViewController(animated: false)
+                //                let mainController = self.window!.rootViewController as! UINavigationController
+                //                mainController.popViewController(animated: false)
             }
         }
         
