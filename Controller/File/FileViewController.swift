@@ -22,20 +22,30 @@ class FileViewController: MasterViewController, UITableViewDelegate, UITableView
         tbView.setIdentifier("FileListCell")
         simpleNavi.bringSubview(toFront: stackView)
         loadData()
+        tbView.es.addPullToRefresh {
+            self.loadData()
+        }
     }
     
     func loadData()
     {
-        weak var weakself = self;
+        weak var weakself = self
         files.removeAll()
         
         services.fileList(success: { (response) in
             weakself?.root = response
             weakself?.generatorProcessing(item: response)
-            weakself?.tbView.reloadData()
+            weakself?.updateData()
         }) { (error) in
             
         }
+    }
+    
+    func updateData() {
+        weak var weakself = self
+
+        weakself?.tbView.reloadData()
+        weakself?.tbView.es.stopPullToRefresh()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

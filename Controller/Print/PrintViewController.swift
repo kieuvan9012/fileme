@@ -26,6 +26,20 @@ class PrintViewController: MasterViewController,PrintAddViewDelegate , PrintSele
         selectView.delegate = self
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated) // test123
+        
+        let media = MediaFile.init()
+        media.mimetype = "docx"
+        media.originalname = "test.docx"
+        media.fileType = .word
+        let pView = PrintView_DOC.init(frame: CGRect.init())
+        pView.set(media)
+        data.append((media,pView))
+        self.selectView.counting = data.count
+        drawView()
+    }
+    
     func printSelectViewAdd() {
         let addView = PrintAddView()
         view.alertBox(addView, ratio: 0.90)

@@ -33,6 +33,14 @@ class DriveDropBoxViewController: MasterViewController {
         setTitleWithBackAction(folderName.isEmpty ? getTypeName() : folderName)
         tbContent.setIdentifier("DriveDropBoxTableViewCell")
         
+        tbContent.es.addPullToRefresh {
+            if(self.isGGDriveMode()) {
+                self.loadGGDriveData()
+            } else {
+                self.loadDropboxData()
+            }
+        }
+        
         if(isGGDriveMode() && folderId.count == 0) { // default của drive là root, dropbox rỗng
             folderId = "root"
         }
@@ -41,14 +49,19 @@ class DriveDropBoxViewController: MasterViewController {
     @objc private func loadDropboxData() {
         dropboxInstance.connectDropbox(folderId, vc: self) { (response) in
             self.lstData = response
-            self.tbContent.reloadData()
+            self.updateData()
         }
+    }
+    
+    func updateData() {
+        self.tbContent.reloadData()
+        self.tbContent.es.stopPullToRefresh()
     }
     
     private func loadGGDriveData() {
         ggDriveInstance.connectGGDrive(folderId) { (response) in
             self.lstData = response
-            self.tbContent.reloadData()
+            self.updateData()
         }
     }
     

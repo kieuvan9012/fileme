@@ -61,7 +61,7 @@ class MediaFile: Mi {
     @objc dynamic var originalname = "";
     @objc dynamic var path = "";
     @objc dynamic var id = 0;
-    @objc dynamic var size = 1;
+    @objc dynamic var size = 0
     @objc dynamic var parent_id = 1;
     @objc dynamic var name = "";
     @objc dynamic var fileExtension = "";

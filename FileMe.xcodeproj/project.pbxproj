@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BC43B3E2259E4D200C11CD0 /* ESPullToRefresh+Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC43B302259E4D200C11CD0 /* ESPullToRefresh+Manager.swift */; };
+		0BC43B3F2259E4D200C11CD0 /* ESRefreshAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC43B312259E4D200C11CD0 /* ESRefreshAnimator.swift */; };
+		0BC43B402259E4D200C11CD0 /* ESRefreshComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC43B322259E4D200C11CD0 /* ESRefreshComponent.swift */; };
+		0BC43B412259E4D200C11CD0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0BC43B342259E4D200C11CD0 /* Localizable.strings */; };
+		0BC43B422259E4D200C11CD0 /* ESRefreshHeaderAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC43B382259E4D200C11CD0 /* ESRefreshHeaderAnimator.swift */; };
+		0BC43B432259E4D200C11CD0 /* icon_pull_to_refresh_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BC43B392259E4D200C11CD0 /* icon_pull_to_refresh_arrow@2x.png */; };
+		0BC43B442259E4D200C11CD0 /* ESRefreshFooterAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC43B3A2259E4D200C11CD0 /* ESRefreshFooterAnimator.swift */; };
+		0BC43B452259E4D200C11CD0 /* ESRefreshProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC43B3B2259E4D200C11CD0 /* ESRefreshProtocol.swift */; };
+		0BC43B462259E4D200C11CD0 /* ES.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC43B3C2259E4D200C11CD0 /* ES.swift */; };
+		0BC43B472259E4D200C11CD0 /* ESPullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC43B3D2259E4D200C11CD0 /* ESPullToRefresh.swift */; };
+		0BC43B50225A01C800C11CD0 /* MIStepView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BC43B4E225A01C800C11CD0 /* MIStepView.xib */; };
+		0BC43B51225A01C800C11CD0 /* MIStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC43B4F225A01C800C11CD0 /* MIStepView.swift */; };
+		0BC43B5D225A076D00C11CD0 /* MIStepNumberView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BC43B5B225A076D00C11CD0 /* MIStepNumberView.xib */; };
+		0BC43B5E225A076D00C11CD0 /* MIStepNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC43B5C225A076D00C11CD0 /* MIStepNumberView.swift */; };
+		0BC43B61225A0E0000C11CD0 /* MIDropListTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BC43B5F225A0DFF00C11CD0 /* MIDropListTableView.xib */; };
+		0BC43B62225A0E0000C11CD0 /* MIDropListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC43B60225A0E0000C11CD0 /* MIDropListTableView.swift */; };
 		4F3A10D3223FC16A004E1F65 /* FileGoogleDriveInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3A10D2223FC16A004E1F65 /* FileGoogleDriveInstance.swift */; };
 		4F3A10D5223FC17A004E1F65 /* FileDropboxInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3A10D4223FC17A004E1F65 /* FileDropboxInstance.swift */; };
 		510B48EA2234DE5F00BA4706 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B48E82234DE5F00BA4706 /* UserViewController.swift */; };
@@ -18,8 +34,6 @@
 		510B48F62234DEE300BA4706 /* UserImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 510B48F42234DEE300BA4706 /* UserImageView.xib */; };
 		510B48F72234DEE300BA4706 /* UserImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B48F52234DEE300BA4706 /* UserImageView.swift */; };
 		510B48F92234E14C00BA4706 /* user_header.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 510B48F82234E14B00BA4706 /* user_header.jpg */; };
-		510B494C2234EEA600BA4706 /* LimeMessage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 510B494B2234EEA500BA4706 /* LimeMessage.framework */; };
-		510B494D2234EEA600BA4706 /* LimeMessage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 510B494B2234EEA500BA4706 /* LimeMessage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		510B496C2234F8D800BA4706 /* FileListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B496A2234F8D800BA4706 /* FileListCell.swift */; };
 		510B496D2234F8D800BA4706 /* FileListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 510B496B2234F8D800BA4706 /* FileListCell.xib */; };
 		510B49712234FA9F00BA4706 /* Excel.ico in Resources */ = {isa = PBXBuildFile; fileRef = 510B496E2234FA9F00BA4706 /* Excel.ico */; };
@@ -216,8 +230,6 @@
 		51463BE5223D59F900841276 /* PrintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51463BE4223D59F900841276 /* PrintView.swift */; };
 		51463BE9223D5AB200841276 /* PrintSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51463BE7223D5AB200841276 /* PrintSelectViewController.swift */; };
 		51463BEA223D5AB200841276 /* PrintSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51463BE8223D5AB200841276 /* PrintSelectViewController.xib */; };
-		51463BEC223D7ED900841276 /* MIDropListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51463BEB223D7ED900841276 /* MIDropListTableView.swift */; };
-		51463BEE223D7EE300841276 /* MIDropListTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51463BED223D7EE300841276 /* MIDropListTableView.xib */; };
 		51463BF0223D8FEE00841276 /* CoutingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51463BEF223D8FEE00841276 /* CoutingView.swift */; };
 		51463BF2223D900100841276 /* CoutingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51463BF1223D900100841276 /* CoutingView.xib */; };
 		51463BF5223E12F600841276 /* FileAddView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51463BF3223E12F500841276 /* FileAddView.xib */; };
@@ -289,7 +301,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				510B494D2234EEA600BA4706 /* LimeMessage.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,6 +308,24 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0BC43B302259E4D200C11CD0 /* ESPullToRefresh+Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ESPullToRefresh+Manager.swift"; sourceTree = "<group>"; };
+		0BC43B312259E4D200C11CD0 /* ESRefreshAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESRefreshAnimator.swift; sourceTree = "<group>"; };
+		0BC43B322259E4D200C11CD0 /* ESRefreshComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESRefreshComponent.swift; sourceTree = "<group>"; };
+		0BC43B352259E4D200C11CD0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		0BC43B362259E4D200C11CD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0BC43B372259E4D200C11CD0 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		0BC43B382259E4D200C11CD0 /* ESRefreshHeaderAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESRefreshHeaderAnimator.swift; sourceTree = "<group>"; };
+		0BC43B392259E4D200C11CD0 /* icon_pull_to_refresh_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_pull_to_refresh_arrow@2x.png"; sourceTree = "<group>"; };
+		0BC43B3A2259E4D200C11CD0 /* ESRefreshFooterAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESRefreshFooterAnimator.swift; sourceTree = "<group>"; };
+		0BC43B3B2259E4D200C11CD0 /* ESRefreshProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESRefreshProtocol.swift; sourceTree = "<group>"; };
+		0BC43B3C2259E4D200C11CD0 /* ES.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ES.swift; sourceTree = "<group>"; };
+		0BC43B3D2259E4D200C11CD0 /* ESPullToRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESPullToRefresh.swift; sourceTree = "<group>"; };
+		0BC43B4E225A01C800C11CD0 /* MIStepView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MIStepView.xib; sourceTree = "<group>"; };
+		0BC43B4F225A01C800C11CD0 /* MIStepView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MIStepView.swift; sourceTree = "<group>"; };
+		0BC43B5B225A076D00C11CD0 /* MIStepNumberView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MIStepNumberView.xib; sourceTree = "<group>"; };
+		0BC43B5C225A076D00C11CD0 /* MIStepNumberView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MIStepNumberView.swift; sourceTree = "<group>"; };
+		0BC43B5F225A0DFF00C11CD0 /* MIDropListTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MIDropListTableView.xib; sourceTree = "<group>"; };
+		0BC43B60225A0E0000C11CD0 /* MIDropListTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MIDropListTableView.swift; sourceTree = "<group>"; };
 		4903824D5EC5C045F4B81446 /* Pods-FileMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FileMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-FileMe/Pods-FileMe.release.xcconfig"; sourceTree = "<group>"; };
 		4F3A10D2223FC16A004E1F65 /* FileGoogleDriveInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileGoogleDriveInstance.swift; sourceTree = "<group>"; };
 		4F3A10D4223FC17A004E1F65 /* FileDropboxInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDropboxInstance.swift; sourceTree = "<group>"; };
@@ -309,7 +338,6 @@
 		510B48F42234DEE300BA4706 /* UserImageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserImageView.xib; sourceTree = "<group>"; };
 		510B48F52234DEE300BA4706 /* UserImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserImageView.swift; sourceTree = "<group>"; };
 		510B48F82234E14B00BA4706 /* user_header.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = user_header.jpg; sourceTree = "<group>"; };
-		510B494B2234EEA500BA4706 /* LimeMessage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LimeMessage.framework; sourceTree = "<group>"; };
 		510B496A2234F8D800BA4706 /* FileListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileListCell.swift; sourceTree = "<group>"; };
 		510B496B2234F8D800BA4706 /* FileListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FileListCell.xib; sourceTree = "<group>"; };
 		510B496E2234FA9F00BA4706 /* Excel.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = Excel.ico; sourceTree = "<group>"; };
@@ -510,8 +538,6 @@
 		51463BE4223D59F900841276 /* PrintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintView.swift; sourceTree = "<group>"; };
 		51463BE7223D5AB200841276 /* PrintSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintSelectViewController.swift; sourceTree = "<group>"; };
 		51463BE8223D5AB200841276 /* PrintSelectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrintSelectViewController.xib; sourceTree = "<group>"; };
-		51463BEB223D7ED900841276 /* MIDropListTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIDropListTableView.swift; sourceTree = "<group>"; };
-		51463BED223D7EE300841276 /* MIDropListTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MIDropListTableView.xib; sourceTree = "<group>"; };
 		51463BEF223D8FEE00841276 /* CoutingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoutingView.swift; sourceTree = "<group>"; };
 		51463BF1223D900100841276 /* CoutingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoutingView.xib; sourceTree = "<group>"; };
 		51463BF3223E12F500841276 /* FileAddView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FileAddView.xib; sourceTree = "<group>"; };
@@ -587,13 +613,56 @@
 			buildActionMask = 2147483647;
 			files = (
 				B39BEB2D688BAEFD6A8E657A /* Pods_FileMe.framework in Frameworks */,
-				510B494C2234EEA600BA4706 /* LimeMessage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0BC43B2F2259E4D200C11CD0 /* ESPullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				0BC43B302259E4D200C11CD0 /* ESPullToRefresh+Manager.swift */,
+				0BC43B312259E4D200C11CD0 /* ESRefreshAnimator.swift */,
+				0BC43B322259E4D200C11CD0 /* ESRefreshComponent.swift */,
+				0BC43B332259E4D200C11CD0 /* Animator */,
+				0BC43B3B2259E4D200C11CD0 /* ESRefreshProtocol.swift */,
+				0BC43B3C2259E4D200C11CD0 /* ES.swift */,
+				0BC43B3D2259E4D200C11CD0 /* ESPullToRefresh.swift */,
+			);
+			name = ESPullToRefresh;
+			path = "../../../Desktop/Inno Project/MTS_POC/Library/ESPullToRefresh";
+			sourceTree = "<group>";
+		};
+		0BC43B332259E4D200C11CD0 /* Animator */ = {
+			isa = PBXGroup;
+			children = (
+				0BC43B342259E4D200C11CD0 /* Localizable.strings */,
+				0BC43B382259E4D200C11CD0 /* ESRefreshHeaderAnimator.swift */,
+				0BC43B392259E4D200C11CD0 /* icon_pull_to_refresh_arrow@2x.png */,
+				0BC43B3A2259E4D200C11CD0 /* ESRefreshFooterAnimator.swift */,
+			);
+			path = Animator;
+			sourceTree = "<group>";
+		};
+		0BC43B4D225A01C800C11CD0 /* MIStepView */ = {
+			isa = PBXGroup;
+			children = (
+				0BC43B4F225A01C800C11CD0 /* MIStepView.swift */,
+				0BC43B4E225A01C800C11CD0 /* MIStepView.xib */,
+			);
+			path = MIStepView;
+			sourceTree = "<group>";
+		};
+		0BC43B5A225A076D00C11CD0 /* MIStepNumberView */ = {
+			isa = PBXGroup;
+			children = (
+				0BC43B5C225A076D00C11CD0 /* MIStepNumberView.swift */,
+				0BC43B5B225A076D00C11CD0 /* MIStepNumberView.xib */,
+			);
+			path = MIStepNumberView;
+			sourceTree = "<group>";
+		};
 		43D6C5678B216EF90A02CE69 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -632,7 +701,6 @@
 			isa = PBXGroup;
 			children = (
 				510B49792235701E00BA4706 /* File Me.entitlements */,
-				510B494B2234EEA500BA4706 /* LimeMessage.framework */,
 				510EA4B6222BF94500DB3724 /* View */,
 				510EA415222BF8B200DB3724 /* GreenFramework */,
 				510EA414222BF7F500DB3724 /* Instance */,
@@ -912,8 +980,10 @@
 				510EA45D222BF8B200DB3724 /* GreenCheckbox.swift */,
 				510EA45E222BF8B200DB3724 /* GreenEmptyView.swift */,
 				510EA45F222BF8B200DB3724 /* GreenButtonCenter.xib */,
-				510EA460222BF8B200DB3724 /* LandingView */,
 				510EA463222BF8B200DB3724 /* GreenButtonCenter.swift */,
+				0BC43B5A225A076D00C11CD0 /* MIStepNumberView */,
+				0BC43B4D225A01C800C11CD0 /* MIStepView */,
+				510EA460222BF8B200DB3724 /* LandingView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -921,8 +991,8 @@
 		510EA460222BF8B200DB3724 /* LandingView */ = {
 			isa = PBXGroup;
 			children = (
-				510EA461222BF8B200DB3724 /* LandingView.xib */,
 				510EA462222BF8B200DB3724 /* LandingView.swift */,
+				510EA461222BF8B200DB3724 /* LandingView.xib */,
 			);
 			path = LandingView;
 			sourceTree = "<group>";
@@ -932,6 +1002,7 @@
 			children = (
 				5166BF582257120E00A08B97 /* NavigationView.swift */,
 				5166BF592257120E00A08B97 /* NavigationView.xib */,
+				0BC43B2F2259E4D200C11CD0 /* ESPullToRefresh */,
 				510EA4B7222BF94500DB3724 /* ImageBook */,
 				510EA4BA222BF94500DB3724 /* BookImageView */,
 				510EA4BD222BF94500DB3724 /* MIDialog */,
@@ -995,11 +1066,11 @@
 			isa = PBXGroup;
 			children = (
 				510EA4E3222BF94600DB3724 /* MIDropListView.swift */,
-				51463BEB223D7ED900841276 /* MIDropListTableView.swift */,
-				51463BED223D7EE300841276 /* MIDropListTableView.xib */,
+				510EA4E6222BF94600DB3724 /* MIDropListView.xib */,
+				0BC43B60225A0E0000C11CD0 /* MIDropListTableView.swift */,
+				0BC43B5F225A0DFF00C11CD0 /* MIDropListTableView.xib */,
 				510EA4E4222BF94600DB3724 /* MIDropListCell.swift */,
 				510EA4E5222BF94600DB3724 /* MIDropListCell.xib */,
-				510EA4E6222BF94600DB3724 /* MIDropListView.xib */,
 			);
 			path = MIDropList;
 			sourceTree = "<group>";
@@ -1221,10 +1292,10 @@
 		5166BF5C2257128300A08B97 /* GoogleDrive - Dropbox */ = {
 			isa = PBXGroup;
 			children = (
-				5166BF5D2257128300A08B97 /* Cell */,
-				5166BF602257128300A08B97 /* DownloadFile */,
 				5166BF632257128300A08B97 /* DriveDropBoxViewController.swift */,
 				5166BF642257128300A08B97 /* DriveDropBoxViewController.xib */,
+				5166BF5D2257128300A08B97 /* Cell */,
+				5166BF602257128300A08B97 /* DownloadFile */,
 			);
 			path = "GoogleDrive - Dropbox";
 			sourceTree = "<group>";
@@ -1272,11 +1343,11 @@
 		51C6385B2231233800E05D65 /* File */ = {
 			isa = PBXGroup;
 			children = (
-				5166BF5C2257128300A08B97 /* GoogleDrive - Dropbox */,
 				51C6385F2231248800E05D65 /* FileViewController.swift */,
 				51C638602231248800E05D65 /* FileViewController.xib */,
 				510B49692234F8A700BA4706 /* Cell */,
 				51F215A7223AC90C009FAC97 /* AddMyFile */,
+				5166BF5C2257128300A08B97 /* GoogleDrive - Dropbox */,
 			);
 			path = File;
 			sourceTree = "<group>";
@@ -1423,6 +1494,8 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
+				"zh-Hant",
 			);
 			mainGroup = 510EA287222BE64500DB3724;
 			productRefGroup = 510EA291222BE64500DB3724 /* Products */;
@@ -1486,8 +1559,8 @@
 				510EA3BB222BF48A00DB3724 /* bg1.jpg in Resources */,
 				510EA29B222BE65B00DB3724 /* Assets.xcassets in Resources */,
 				510B48F92234E14C00BA4706 /* user_header.jpg in Resources */,
+				0BC43B5D225A076D00C11CD0 /* MIStepNumberView.xib in Resources */,
 				510EA3C1222BF48A00DB3724 /* Quicksand-Italic.otf in Resources */,
-				51463BEE223D7EE300841276 /* MIDropListTableView.xib in Resources */,
 				51F215C8223B3C4E009FAC97 /* AddFileView.xib in Resources */,
 				510EA569222BF94700DB3724 /* MIHud.xib in Resources */,
 				510EA4A9222BF8B300DB3724 /* Refresh.png in Resources */,
@@ -1519,6 +1592,7 @@
 				510EA48C222BF8B300DB3724 /* GGuita.png in Resources */,
 				510EA3BA222BF48A00DB3724 /* PinyonScript-Regular.ttf in Resources */,
 				510EA3D0222BF48A00DB3724 /* keys.mp3 in Resources */,
+				0BC43B412259E4D200C11CD0 /* Localizable.strings in Resources */,
 				510B48F32234DE9C00BA4706 /* UserInfoHeaderView.xib in Resources */,
 				510EA4AF222BF8B300DB3724 /* GreenButtonCenter.xib in Resources */,
 				510EA51F222BF94700DB3724 /* ImageBook.xib in Resources */,
@@ -1543,6 +1617,7 @@
 				510B496D2234F8D800BA4706 /* FileListCell.xib in Resources */,
 				51F215C4223B2EBE009FAC97 /* PrintSelectCell.xib in Resources */,
 				510EA485222BF8B300DB3724 /* GStart.png in Resources */,
+				0BC43B432259E4D200C11CD0 /* icon_pull_to_refresh_arrow@2x.png in Resources */,
 				510B48F62234DEE300BA4706 /* UserImageView.xib in Resources */,
 				510EA520222BF94700DB3724 /* BookImageView.xib in Resources */,
 				510EA299222BE64500DB3724 /* Main.storyboard in Resources */,
@@ -1556,6 +1631,7 @@
 				510EA4AC222BF8B300DB3724 /* GreenCheckbox.xib in Resources */,
 				510EA567222BF94700DB3724 /* RadioView.xib in Resources */,
 				510EA48E222BF8B300DB3724 /* GUser_1.png in Resources */,
+				0BC43B50225A01C800C11CD0 /* MIStepView.xib in Resources */,
 				510EA562222BF94700DB3724 /* MasterFooterView.xib in Resources */,
 				510EA54B222BF94700DB3724 /* LineView.xib in Resources */,
 				510EA5DA222BF97200DB3724 /* RegisterViewController.xib in Resources */,
@@ -1566,6 +1642,7 @@
 				510EA3B8222BF48A00DB3724 /* userbackground.jpg in Resources */,
 				510EA558222BF94700DB3724 /* ImageSelectCell.xib in Resources */,
 				510EA48B222BF8B300DB3724 /* GGrid.png in Resources */,
+				0BC43B61225A0E0000C11CD0 /* MIDropListTableView.xib in Resources */,
 				510EA3B4222BF48A00DB3724 /* Legancy.png in Resources */,
 				510EA5DC222BF97200DB3724 /* GreenInfoFieldSymbol.xib in Resources */,
 				510EA3AF222BF48A00DB3724 /* SVN-Sharpen.otf in Resources */,
@@ -1595,13 +1672,11 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FileMe/Pods-FileMe-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-FileMe/Pods-FileMe-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ALCameraViewController/ALCameraViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
-				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
-				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/DeviceUtil/DeviceUtil.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
@@ -1611,17 +1686,13 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
-				"${BUILT_PRODUCTS_DIR}/KissXML/KissXML.framework",
 				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
 				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftHash/SwiftHash.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyDropbox/SwiftyDropbox.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyStarRatingView/SwiftyStarRatingView.framework",
 				"${BUILT_PRODUCTS_DIR}/SwipeableTabBarController/SwipeableTabBarController.framework",
-				"${BUILT_PRODUCTS_DIR}/XMPPFramework/XMPPFramework.framework",
-				"${BUILT_PRODUCTS_DIR}/libidn/libidn.framework",
 				"${BUILT_PRODUCTS_DIR}/swiftScan/swiftScan.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -1630,8 +1701,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DeviceUtil.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
@@ -1641,22 +1710,18 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KissXML.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftHash.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyDropbox.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyStarRatingView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeableTabBarController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XMPPFramework.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libidn.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/swiftScan.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FileMe/Pods-FileMe-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FileMe/Pods-FileMe-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		10768346F59FEC2DECDC1F0A /* [CP] Check Pods Manifest.lock */ = {
@@ -1683,7 +1748,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FileMe/Pods-FileMe-resources.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-FileMe/Pods-FileMe-resources.sh",
 				"${PODS_ROOT}/AccountKit/AccountKitStrings.bundle",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
@@ -1698,7 +1763,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FileMe/Pods-FileMe-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FileMe/Pods-FileMe-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1708,6 +1773,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BC43B3E2259E4D200C11CD0 /* ESPullToRefresh+Manager.swift in Sources */,
 				51463C08223F3B5000841276 /* TestViewController.swift in Sources */,
 				510EA403222BF6BF00DB3724 /* MediaFile.swift in Sources */,
 				510EA680222E29D700DB3724 /* MainTabbarViewController.swift in Sources */,
@@ -1717,6 +1783,7 @@
 				510EA296222BE64500DB3724 /* ViewController.swift in Sources */,
 				510EA543222BF94700DB3724 /* AccessoryEmojView.swift in Sources */,
 				51463BE9223D5AB200841276 /* PrintSelectViewController.swift in Sources */,
+				0BC43B402259E4D200C11CD0 /* ESRefreshComponent.swift in Sources */,
 				510EA47F222BF8B300DB3724 /* GreenButton.swift in Sources */,
 				51F215AD223ACC02009FAC97 /* HeaderLabel.swift in Sources */,
 				510EA477222BF8B300DB3724 /* GreenExtention+UITableView.swift in Sources */,
@@ -1727,6 +1794,7 @@
 				510EA407222BF6BF00DB3724 /* DeviceInfo.swift in Sources */,
 				510EA478222BF8B300DB3724 /* GreenExtension+NSAttributeString.swift in Sources */,
 				510EA481222BF8B300DB3724 /* GreenTextField.swift in Sources */,
+				0BC43B3F2259E4D200C11CD0 /* ESRefreshAnimator.swift in Sources */,
 				510EA3F1222BF6BF00DB3724 /* ApplicationInfo.swift in Sources */,
 				5166BF5A2257120E00A08B97 /* NavigationView.swift in Sources */,
 				51F215B5223B2A13009FAC97 /* PrintViewController.swift in Sources */,
@@ -1740,12 +1808,15 @@
 				510EA634222BF99D00DB3724 /* IntroViewController.swift in Sources */,
 				510EA411222BF7F100DB3724 /* Template.swift in Sources */,
 				510EA561222BF94700DB3724 /* ImageDisplayView.swift in Sources */,
+				0BC43B422259E4D200C11CD0 /* ESRefreshHeaderAnimator.swift in Sources */,
+				0BC43B462259E4D200C11CD0 /* ES.swift in Sources */,
 				510EA475222BF8B300DB3724 /* GreenExtention+UIButton.swift in Sources */,
 				5166BF652257128300A08B97 /* DriveDropBoxTableViewCell.swift in Sources */,
 				51C638652231249D00E05D65 /* HistoryViewController.swift in Sources */,
 				510EA67E222E29D700DB3724 /* HomeNaviView.swift in Sources */,
 				510EA410222BF7F100DB3724 /* AppInstance.swift in Sources */,
 				5198EF0A2238EC7C008B5E22 /* NotifyInstance.swift in Sources */,
+				0BC43B472259E4D200C11CD0 /* ESPullToRefresh.swift in Sources */,
 				510EA46D222BF8B300DB3724 /* GreenExtention+UITextView.swift in Sources */,
 				4F3A10D5223FC17A004E1F65 /* FileDropboxInstance.swift in Sources */,
 				51463C00223EB5BD00841276 /* TPKeyboardAvoidingCollectionView.m in Sources */,
@@ -1761,13 +1832,13 @@
 				51F215A9223AC926009FAC97 /* AddFolderView.swift in Sources */,
 				5166BF672257128300A08B97 /* DownloadFileView.swift in Sources */,
 				5166BF692257128300A08B97 /* DriveDropBoxViewController.swift in Sources */,
-				51463BEC223D7ED900841276 /* MIDropListTableView.swift in Sources */,
 				515BEEF22240ED6C0042EA85 /* PrintStoreListViewController.swift in Sources */,
 				510EA472222BF8B300DB3724 /* MD5Digest.swift in Sources */,
 				510B48EE2234DE6A00BA4706 /* UserDetailCell.swift in Sources */,
 				510EA559222BF94700DB3724 /* ImageSelectCell.swift in Sources */,
 				51463BF0223D8FEE00841276 /* CoutingView.swift in Sources */,
 				510EA47A222BF8B300DB3724 /* GreenExtension+UITableViewCell.swift in Sources */,
+				0BC43B442259E4D200C11CD0 /* ESRefreshFooterAnimator.swift in Sources */,
 				510EA3FD222BF6BF00DB3724 /* District.swift in Sources */,
 				5198EEFD2238EBFD008B5E22 /* LimeContact.swift in Sources */,
 				510EA633222BF99D00DB3724 /* InitInfoViewController.swift in Sources */,
@@ -1796,6 +1867,7 @@
 				510EA521222BF94700DB3724 /* BookImageView.swift in Sources */,
 				510EA46B222BF8B300DB3724 /* GreenExtension+UIColor.swift in Sources */,
 				510EA2A9222BF44C00DB3724 /* Services.swift in Sources */,
+				0BC43B5E225A076D00C11CD0 /* MIStepNumberView.swift in Sources */,
 				51463C05223EBA3E00841276 /* FileICloudInstance.swift in Sources */,
 				510EA482222BF8B300DB3724 /* GreenTableView.swift in Sources */,
 				5198EF042238EC30008B5E22 /* ConfernceDataStore.swift in Sources */,
@@ -1810,6 +1882,7 @@
 				51F215BD223B2BC3009FAC97 /* PrintSelectView.swift in Sources */,
 				51F215CE223B4D11009FAC97 /* PrintAddView.swift in Sources */,
 				510EA54A222BF94700DB3724 /* LineView.swift in Sources */,
+				0BC43B452259E4D200C11CD0 /* ESRefreshProtocol.swift in Sources */,
 				510EA471222BF8B300DB3724 /* GreenExtension+UICollectionView.swift in Sources */,
 				510EA684222E29EB00DB3724 /* MaintenanceViewController.swift in Sources */,
 				5198EF0B2238EC7C008B5E22 /* FormaterInstance.swift in Sources */,
@@ -1826,6 +1899,7 @@
 				51463C03223EB5BD00841276 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				510EA3F2222BF6BF00DB3724 /* University.swift in Sources */,
 				510EA479222BF8B300DB3724 /* GreenExtension+Array.swift in Sources */,
+				0BC43B51225A01C800C11CD0 /* MIStepView.swift in Sources */,
 				5198EEF92238E9EA008B5E22 /* MessageON.swift in Sources */,
 				51F215D2223B4DAE009FAC97 /* PrintAddUnitView.swift in Sources */,
 				510EA568222BF94700DB3724 /* MIHud.swift in Sources */,
@@ -1833,6 +1907,7 @@
 				510EA53F222BF94700DB3724 /* MIDropListCell.swift in Sources */,
 				51463BF6223E12F600841276 /* FileAddView.swift in Sources */,
 				510EA473222BF8B300DB3724 /* GreenExtension+UIImage.swift in Sources */,
+				0BC43B62225A0E0000C11CD0 /* MIDropListTableView.swift in Sources */,
 				51F215AF223ACE6A009FAC97 /* CloseButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1840,6 +1915,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		0BC43B342259E4D200C11CD0 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0BC43B352259E4D200C11CD0 /* zh-Hans */,
+				0BC43B362259E4D200C11CD0 /* Base */,
+				0BC43B372259E4D200C11CD0 /* zh-Hant */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		510EA297222BE64500DB3724 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

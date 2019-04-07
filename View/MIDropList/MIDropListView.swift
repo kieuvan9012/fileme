@@ -19,6 +19,7 @@ class MIDropListView: GreenView , UITableViewDelegate,UITableViewDataSource
     private var _value : [String] = []
     private var _selectedValue = ""
     private var _selectedIndex = 0
+    
     @IBOutlet weak var rightWidth: NSLayoutConstraint!
     
     private var selectedBlock : ((String)->Void)!
@@ -155,6 +156,7 @@ class MIDropListView: GreenView , UITableViewDelegate,UITableViewDataSource
         _targetFrame = _showView.convert(self.bounds, from: self)
         _targetFrame.origin.y = _targetFrame.origin.y + self.frame.size.height
         _targetFrame.size.height = getHeightContent()
+        _targetFrame.size.width = _targetFrame.size.width + 30
         
         if(_dropListTableView == nil)
         {
@@ -215,7 +217,13 @@ class MIDropListView: GreenView , UITableViewDelegate,UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MIDropListCell") as! MIDropListCell
+        
+        cell.imgCheckMark.isHidden = true
+        if (_selectedIndex == indexPath.row) {
+            cell.imgCheckMark.isHidden = false
+        }
         cell.set(_value[indexPath.row])
+        
         return cell
     }
     

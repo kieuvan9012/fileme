@@ -8,7 +8,6 @@
 
 import UIKit
 import SwipeableTabBarController
-import LimeMessage
 
 class HomeViewController: MasterViewController
 {

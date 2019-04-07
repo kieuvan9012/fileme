@@ -8,16 +8,11 @@
 import UIKit
 
 class PrintView_DOC: PrintView {
-
-    
-    
     @IBOutlet weak var pageCountingView: MIDropListView!
-    
     
     @IBOutlet weak var colorView: MIDropListView!
     
     @IBOutlet weak var typeView: MIDropListView!
-    
     
     
     @IBOutlet weak var layoutView: MIDropListView!
@@ -31,34 +26,15 @@ class PrintView_DOC: PrintView {
     @IBOutlet weak var radioF1: RadioView!
     @IBOutlet weak var radioLimitPage: RadioView!
     @IBOutlet weak var radioFullPage: RadioView!
-    
-    
-    
-    
+    @IBOutlet weak var numberCopiesView: MIStepNumberView!
     
     @IBOutlet weak var radioBinding: RadioView!
     @IBOutlet weak var radioStandartView: RadioView!
     @IBOutlet weak var radioCover: RadioView!
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
 
     override func initStyle() {
-        
+        numberCopiesView.value = 1
+        numberCopiesView.min = 1
         
         pageCountingView.setIndex(["Toàn bộ","Giới hạn số trang"], inView: self) { (response) in
             
@@ -79,11 +55,8 @@ class PrintView_DOC: PrintView {
         radioBinding.set(false, "Bìa nilong")
         radioStandartView.set(false, "Tinh chỉnh văn bản")
         radioCover.set(false, "Đóng bìa")
-
         
         backgroundColor = .white
-        
-
     }
     
     override func set(_ file: MediaFile) {

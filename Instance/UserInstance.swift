@@ -54,7 +54,6 @@ class UserInstance: NSObject
         userLoginSuccess()
     }
     
-    
     func updateUser(_ value : User)
     {
         user.aliasname = value.aliasname
@@ -70,12 +69,11 @@ class UserInstance: NSObject
         user.province_name = value.province_name
         user.district_id = value.district_id
         user.district_name = value.district_name
-
     }
     
     func logout()
     {
-        userInstance.user.id = -1;
+        userInstance.user.id = -1
         userInstance.user.aliasname = ""
         setAlreadyLogin(false)
         setUsername("")
@@ -95,8 +93,6 @@ class UserInstance: NSObject
         }) { (error) in
             
         }
-        SDWebImageManager.shared().imageCache?.clearMemory()
-        SDWebImageManager.shared().imageCache?.clearDisk(onCompletion: nil)
     }
     
     
@@ -126,7 +122,6 @@ class UserInstance: NSObject
         UserDefaults.standard.synchronize()
     }
     
-    
     func acceptLagency(_ value : Bool)
     {
         UserDefaults.standard.set(value, forKey: UserDefaultsKey.isAcceptPostLegancy.rawValue)
@@ -139,7 +134,7 @@ class UserInstance: NSObject
         {
             return islgf as! Bool
         }
-        return false ;
+        return false
     }
 
     func setCouting(_ value : Int)
@@ -147,6 +142,7 @@ class UserInstance: NSObject
         UserDefaults.standard.set(value, forKey: "Countx")
         UserDefaults.standard.synchronize()
     }
+    
     func getCouting() -> Int
     {
         return UserDefaults.standard.value(forKey: "Countx") as! Int

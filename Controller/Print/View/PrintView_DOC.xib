@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,6 +15,7 @@
                 <outlet property="imgView" destination="p0o-fZ-E0q" id="4QC-PF-kbm"/>
                 <outlet property="layoutView" destination="VQf-Hw-tnA" id="5Il-X2-lj7"/>
                 <outlet property="lbName" destination="EBV-u5-UWK" id="nqq-nh-4UY"/>
+                <outlet property="numberCopiesView" destination="4Ln-0K-NKT" id="bNh-hD-wK7"/>
                 <outlet property="pageCountingView" destination="zbd-gD-p7F" id="851-j5-HOw"/>
                 <outlet property="radioBinding" destination="IuE-nX-I3Z" id="HaK-ML-sVE"/>
                 <outlet property="radioCover" destination="ML4-C0-d6O" id="Y5T-4a-qEc"/>
@@ -27,7 +28,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="532"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qya-y1-qzV">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qya-y1-qzV" userLabel="vHeader">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="68"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Word" translatesAutoresizingMaskIntoConstraints="NO" id="p0o-fZ-E0q">
@@ -63,8 +64,35 @@
                         <constraint firstItem="EBV-u5-UWK" firstAttribute="leading" secondItem="p0o-fZ-E0q" secondAttribute="trailing" constant="8" id="qPd-FT-rUu"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4mK-HO-HZv">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Qo-yw-UsB" userLabel="v1">
                     <rect key="frame" x="0.0" y="68" width="320" height="40"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Số lượng" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J8b-LL-WVi">
+                            <rect key="frame" x="12" y="11.5" width="57.5" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ln-0K-NKT" customClass="MIStepNumberView" customModule="FileMe" customModuleProvider="target">
+                            <rect key="frame" x="148" y="4" width="150" height="32"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="32" id="k8g-GU-khE"/>
+                                <constraint firstAttribute="width" priority="1" constant="150" id="ohq-RL-VTA"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="J8b-LL-WVi" firstAttribute="leading" secondItem="2Qo-yw-UsB" secondAttribute="leading" constant="12" id="0t7-kq-uFO"/>
+                        <constraint firstItem="4Ln-0K-NKT" firstAttribute="leading" secondItem="2Qo-yw-UsB" secondAttribute="leading" constant="148" id="3KP-eY-Sls"/>
+                        <constraint firstAttribute="height" constant="40" id="TjX-lF-FzB"/>
+                        <constraint firstItem="J8b-LL-WVi" firstAttribute="centerY" secondItem="2Qo-yw-UsB" secondAttribute="centerY" id="eAZ-xe-bdd"/>
+                        <constraint firstItem="4Ln-0K-NKT" firstAttribute="centerY" secondItem="J8b-LL-WVi" secondAttribute="centerY" id="tR5-wd-zSS"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4mK-HO-HZv">
+                    <rect key="frame" x="0.0" y="108" width="320" height="40"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Khổ giấy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R39-lG-hSa">
                             <rect key="frame" x="12" y="11.5" width="56" height="17"/>
@@ -72,7 +100,7 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VQf-Hw-tnA" customClass="MIDropListView" customModule="File_Me" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VQf-Hw-tnA" customClass="MIDropListView" customModule="FileMe" customModuleProvider="target">
                             <rect key="frame" x="148" y="4" width="120" height="32"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
@@ -91,7 +119,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ELd-WW-epK">
-                    <rect key="frame" x="0.0" y="108" width="320" height="40"/>
+                    <rect key="frame" x="0.0" y="148" width="320" height="40"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mặt in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdW-Ei-xfu">
                             <rect key="frame" x="12" y="11.5" width="40" height="17"/>
@@ -99,7 +127,7 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bje-7O-VoB" customClass="MIDropListView" customModule="File_Me" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bje-7O-VoB" customClass="MIDropListView" customModule="FileMe" customModuleProvider="target">
                             <rect key="frame" x="148" y="4" width="120" height="32"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
@@ -115,7 +143,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8dg-tw-WbA">
-                    <rect key="frame" x="0.0" y="148" width="320" height="40"/>
+                    <rect key="frame" x="0.0" y="188" width="320" height="40"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lượng trang in " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LzF-WO-DOE">
                             <rect key="frame" x="12" y="12" width="98" height="17"/>
@@ -123,7 +151,7 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zbd-gD-p7F" customClass="MIDropListView" customModule="File_Me" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zbd-gD-p7F" customClass="MIDropListView" customModule="FileMe" customModuleProvider="target">
                             <rect key="frame" x="148" y="4.5" width="120" height="32"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
@@ -139,7 +167,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b1f-3Z-uy6">
-                    <rect key="frame" x="0.0" y="188" width="320" height="40"/>
+                    <rect key="frame" x="0.0" y="228" width="320" height="40"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Màu sắc" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5n2-sO-2AL">
                             <rect key="frame" x="12" y="11.5" width="54" height="17"/>
@@ -147,7 +175,7 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ix5-3Y-ID9" customClass="MIDropListView" customModule="File_Me" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ix5-3Y-ID9" customClass="MIDropListView" customModule="FileMe" customModuleProvider="target">
                             <rect key="frame" x="148" y="4" width="120" height="32"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
@@ -163,7 +191,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BBV-8a-I36">
-                    <rect key="frame" x="0.0" y="228" width="320" height="112"/>
+                    <rect key="frame" x="0.0" y="268" width="320" height="112"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dịch vụ khác" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pvH-jN-edH">
                             <rect key="frame" x="12" y="12" width="84" height="8"/>
@@ -171,21 +199,21 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WJh-gL-acr" customClass="RadioView" customModule="File_Me" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WJh-gL-acr" customClass="RadioView" customModule="FileMe" customModuleProvider="target">
                             <rect key="frame" x="148" y="0.0" width="164" height="32"/>
                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="32" id="Wv2-r5-uq5"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ML4-C0-d6O" customClass="RadioView" customModule="File_Me" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ML4-C0-d6O" customClass="RadioView" customModule="FileMe" customModuleProvider="target">
                             <rect key="frame" x="148" y="36" width="164" height="32"/>
                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="32" id="3wX-0B-Ilk"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IuE-nX-I3Z" customClass="RadioView" customModule="File_Me" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IuE-nX-I3Z" customClass="RadioView" customModule="FileMe" customModuleProvider="target">
                             <rect key="frame" x="148" y="72" width="164" height="32"/>
                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
@@ -210,57 +238,21 @@
                         <constraint firstItem="IuE-nX-I3Z" firstAttribute="height" secondItem="WJh-gL-acr" secondAttribute="height" id="yMy-iw-lh4"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dTV-Bg-lE8">
-                    <rect key="frame" x="0.0" y="340" width="320" height="40"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Số lượng bản photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B18-Nn-dLv">
-                            <rect key="frame" x="12" y="11.5" width="127" height="17"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4hG-EY-nhi">
-                            <rect key="frame" x="148" y="4" width="164" height="32"/>
-                            <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nhập số lượng" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mm2-aa-aFI">
-                                    <rect key="frame" x="4" y="0.0" width="160" height="32"/>
-                                    <nil key="textColor"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
-                                </textField>
-                            </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstItem="Mm2-aa-aFI" firstAttribute="top" secondItem="4hG-EY-nhi" secondAttribute="top" id="g0s-mN-ybz"/>
-                                <constraint firstAttribute="bottom" secondItem="Mm2-aa-aFI" secondAttribute="bottom" id="j7D-DJ-sxG"/>
-                                <constraint firstItem="Mm2-aa-aFI" firstAttribute="leading" secondItem="4hG-EY-nhi" secondAttribute="leading" constant="4" id="og7-FM-GPd"/>
-                                <constraint firstAttribute="height" constant="32" id="uSG-yK-Ik1"/>
-                                <constraint firstAttribute="trailing" secondItem="Mm2-aa-aFI" secondAttribute="trailing" id="yFM-y1-a17"/>
-                            </constraints>
-                        </view>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstItem="4hG-EY-nhi" firstAttribute="centerY" secondItem="B18-Nn-dLv" secondAttribute="centerY" id="31b-OA-Bbk"/>
-                        <constraint firstItem="B18-Nn-dLv" firstAttribute="centerY" secondItem="dTV-Bg-lE8" secondAttribute="centerY" id="OZd-z3-mvo"/>
-                        <constraint firstAttribute="trailing" secondItem="4hG-EY-nhi" secondAttribute="trailing" constant="8" id="WoR-Em-Rft"/>
-                    </constraints>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kts-3s-OQz" userLabel="line" customClass="LineView" customModule="File_Me" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kts-3s-OQz" userLabel="line" customClass="LineView" customModule="FileMe" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="1" height="532"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="1" id="6Ul-4R-tH2"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s37-yF-cWv" userLabel="line" customClass="LineView" customModule="File_Me" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s37-yF-cWv" userLabel="line" customClass="LineView" customModule="FileMe" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="531" width="320" height="1"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="4K5-gp-Pmc"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="liI-kS-t2V" userLabel="line" customClass="LineView" customModule="File_Me" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="liI-kS-t2V" userLabel="line" customClass="LineView" customModule="FileMe" customModuleProvider="target">
                     <rect key="frame" x="319" y="0.0" width="1" height="532"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -307,8 +299,8 @@
             </subviews>
             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="2Qo-yw-UsB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="1k0-yc-xVd"/>
                 <constraint firstItem="qya-y1-qzV" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="26l-vv-E0r"/>
-                <constraint firstItem="4mK-HO-HZv" firstAttribute="top" secondItem="qya-y1-qzV" secondAttribute="bottom" id="2uY-ed-vm0"/>
                 <constraint firstItem="BBV-8a-I36" firstAttribute="leading" secondItem="4mK-HO-HZv" secondAttribute="leading" id="3Zi-Mj-PFm"/>
                 <constraint firstItem="s37-yF-cWv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="5nS-3w-MWE"/>
                 <constraint firstItem="s37-yF-cWv" firstAttribute="top" secondItem="tQH-ng-g2p" secondAttribute="bottom" id="5ts-Cb-khv"/>
@@ -317,12 +309,10 @@
                 <constraint firstItem="WJh-gL-acr" firstAttribute="leading" secondItem="VQf-Hw-tnA" secondAttribute="leading" id="8JU-RF-GQj"/>
                 <constraint firstItem="b1f-3Z-uy6" firstAttribute="width" secondItem="4mK-HO-HZv" secondAttribute="width" id="8UA-ds-42a"/>
                 <constraint firstItem="8dg-tw-WbA" firstAttribute="top" secondItem="ELd-WW-epK" secondAttribute="bottom" id="9R6-E4-9tI"/>
+                <constraint firstItem="2Qo-yw-UsB" firstAttribute="top" secondItem="qya-y1-qzV" secondAttribute="bottom" id="9mx-kN-pe1"/>
                 <constraint firstItem="LzF-WO-DOE" firstAttribute="leading" secondItem="R39-lG-hSa" secondAttribute="leading" id="BA2-A0-P3S"/>
                 <constraint firstItem="zbd-gD-p7F" firstAttribute="leading" secondItem="VQf-Hw-tnA" secondAttribute="leading" id="BWJ-WP-uhZ"/>
-                <constraint firstItem="dTV-Bg-lE8" firstAttribute="width" secondItem="4mK-HO-HZv" secondAttribute="width" id="Clv-Ua-jcl"/>
                 <constraint firstItem="tBk-ZN-I88" firstAttribute="leading" secondItem="VQf-Hw-tnA" secondAttribute="leading" id="EDN-6o-CMu"/>
-                <constraint firstItem="dTV-Bg-lE8" firstAttribute="top" secondItem="BBV-8a-I36" secondAttribute="bottom" id="EgD-S1-nzI"/>
-                <constraint firstItem="dTV-Bg-lE8" firstAttribute="leading" secondItem="4mK-HO-HZv" secondAttribute="leading" id="G8Z-Gn-IUx"/>
                 <constraint firstItem="8dg-tw-WbA" firstAttribute="height" secondItem="4mK-HO-HZv" secondAttribute="height" id="HWW-0e-gpm"/>
                 <constraint firstItem="liI-kS-t2V" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="JDa-sG-z9y"/>
                 <constraint firstItem="ELd-WW-epK" firstAttribute="height" secondItem="4mK-HO-HZv" secondAttribute="height" id="K2B-MF-dJw"/>
@@ -332,7 +322,6 @@
                 <constraint firstItem="b1f-3Z-uy6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="TEr-8l-bWZ"/>
                 <constraint firstAttribute="trailing" secondItem="s37-yF-cWv" secondAttribute="trailing" id="TN9-DI-OIS"/>
                 <constraint firstAttribute="bottom" secondItem="kts-3s-OQz" secondAttribute="bottom" id="U2j-eV-LiU"/>
-                <constraint firstItem="dTV-Bg-lE8" firstAttribute="height" secondItem="4mK-HO-HZv" secondAttribute="height" id="Wed-k3-VwB"/>
                 <constraint firstAttribute="trailing" secondItem="liI-kS-t2V" secondAttribute="trailing" id="Wxh-FO-pSq"/>
                 <constraint firstItem="BBV-8a-I36" firstAttribute="top" secondItem="b1f-3Z-uy6" secondAttribute="bottom" id="Z3r-eF-DGR"/>
                 <constraint firstAttribute="trailing" secondItem="4mK-HO-HZv" secondAttribute="trailing" id="aGT-h7-mwc"/>
@@ -342,20 +331,20 @@
                 <constraint firstItem="ELd-WW-epK" firstAttribute="width" secondItem="4mK-HO-HZv" secondAttribute="width" id="dll-ZG-FIX"/>
                 <constraint firstItem="8dg-tw-WbA" firstAttribute="width" secondItem="ELd-WW-epK" secondAttribute="width" id="eNs-Tf-Y7V"/>
                 <constraint firstItem="kts-3s-OQz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="fdu-75-tcT"/>
+                <constraint firstItem="tQH-ng-g2p" firstAttribute="top" secondItem="BBV-8a-I36" secondAttribute="bottom" id="hJ1-aM-Hrh"/>
                 <constraint firstItem="8dg-tw-WbA" firstAttribute="leading" secondItem="ELd-WW-epK" secondAttribute="leading" id="jrG-Qh-ldl"/>
+                <constraint firstItem="4mK-HO-HZv" firstAttribute="top" secondItem="2Qo-yw-UsB" secondAttribute="bottom" id="jvW-OI-pbh"/>
                 <constraint firstItem="5n2-sO-2AL" firstAttribute="leading" secondItem="R39-lG-hSa" secondAttribute="leading" id="kBV-oB-wLf"/>
                 <constraint firstItem="kts-3s-OQz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="kjX-i0-5ig"/>
                 <constraint firstItem="bje-7O-VoB" firstAttribute="leading" secondItem="VQf-Hw-tnA" secondAttribute="leading" id="kvN-yF-ufN"/>
+                <constraint firstAttribute="trailing" secondItem="2Qo-yw-UsB" secondAttribute="trailing" id="lAD-lN-08D"/>
                 <constraint firstItem="ELd-WW-epK" firstAttribute="leading" secondItem="4mK-HO-HZv" secondAttribute="leading" id="lj5-YG-lHC"/>
                 <constraint firstItem="liI-kS-t2V" firstAttribute="leading" secondItem="tQH-ng-g2p" secondAttribute="trailing" id="ljp-ik-Oa2"/>
-                <constraint firstItem="4hG-EY-nhi" firstAttribute="leading" secondItem="VQf-Hw-tnA" secondAttribute="leading" id="pcs-Ro-NGF"/>
                 <constraint firstItem="ix5-3Y-ID9" firstAttribute="leading" secondItem="VQf-Hw-tnA" secondAttribute="leading" id="pkh-0A-xJB"/>
                 <constraint firstItem="EAS-8n-w2N" firstAttribute="leading" secondItem="R39-lG-hSa" secondAttribute="leading" id="rAt-KV-6dc"/>
                 <constraint firstItem="b1f-3Z-uy6" firstAttribute="top" secondItem="8dg-tw-WbA" secondAttribute="bottom" id="tv9-00-5ah"/>
                 <constraint firstItem="pvH-jN-edH" firstAttribute="leading" secondItem="R39-lG-hSa" secondAttribute="leading" id="ubX-t8-JUM"/>
-                <constraint firstItem="B18-Nn-dLv" firstAttribute="leading" secondItem="R39-lG-hSa" secondAttribute="leading" id="v43-dD-mnf"/>
                 <constraint firstItem="qya-y1-qzV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="wpl-py-1EV"/>
-                <constraint firstItem="tQH-ng-g2p" firstAttribute="top" secondItem="dTV-Bg-lE8" secondAttribute="bottom" id="xJp-JW-a0b"/>
                 <constraint firstItem="kdW-Ei-xfu" firstAttribute="leading" secondItem="R39-lG-hSa" secondAttribute="leading" id="xYQ-XZ-npZ"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -400,7 +389,7 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rXF-qi-1Dr" customClass="RadioView" customModule="File_Me" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rXF-qi-1Dr" customClass="RadioView" customModule="FileMe" customModuleProvider="target">
                             <rect key="frame" x="16" y="37" width="240" height="34"/>
                             <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
@@ -408,7 +397,7 @@
                                 <constraint firstAttribute="height" constant="34" id="qzF-vt-fIa"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TbR-Pc-kcn" customClass="RadioView" customModule="File_Me" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TbR-Pc-kcn" customClass="RadioView" customModule="FileMe" customModuleProvider="target">
                             <rect key="frame" x="16" y="75" width="160" height="34"/>
                             <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
@@ -448,7 +437,7 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jyb-PC-UeK" customClass="MIDropListView" customModule="File_Me" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jyb-PC-UeK" customClass="MIDropListView" customModule="FileMe" customModuleProvider="target">
                             <rect key="frame" x="88" y="4.5" width="208" height="32"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
@@ -487,7 +476,7 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FHv-mY-l9L" customClass="RadioView" customModule="File_Me" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FHv-mY-l9L" customClass="RadioView" customModule="FileMe" customModuleProvider="target">
                             <rect key="frame" x="16" y="37" width="240" height="34"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
@@ -495,7 +484,7 @@
                                 <constraint firstAttribute="height" constant="34" id="Wl2-XF-YAa"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MKa-tF-NO3" customClass="RadioView" customModule="File_Me" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MKa-tF-NO3" customClass="RadioView" customModule="FileMe" customModuleProvider="target">
                             <rect key="frame" x="16" y="75" width="240" height="34"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
@@ -525,7 +514,7 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4BR-mC-MD4" customClass="RadioView" customModule="File_Me" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4BR-mC-MD4" customClass="RadioView" customModule="FileMe" customModuleProvider="target">
                             <rect key="frame" x="16" y="37" width="240" height="34"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
@@ -533,7 +522,7 @@
                                 <constraint firstAttribute="height" constant="34" id="TIX-XO-lwS"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lOp-pj-BfP" customClass="RadioView" customModule="File_Me" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lOp-pj-BfP" customClass="RadioView" customModule="FileMe" customModuleProvider="target">
                             <rect key="frame" x="16" y="75" width="240" height="34"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
@@ -554,21 +543,21 @@
                         <constraint firstItem="z6n-tn-rYE" firstAttribute="leading" secondItem="eXv-5Y-uVc" secondAttribute="leading" constant="8" id="lrE-Qj-wcf"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f7d-b4-Hnl" userLabel="line" customClass="LineView" customModule="File_Me" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f7d-b4-Hnl" userLabel="line" customClass="LineView" customModule="FileMe" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="1" height="667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="1" id="vA4-RW-Fmb"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ip6-Qo-BPu" userLabel="line" customClass="LineView" customModule="File_Me" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ip6-Qo-BPu" userLabel="line" customClass="LineView" customModule="FileMe" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="666" width="320" height="1"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="XJv-XA-iyb"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SQP-5J-0mt" userLabel="line" customClass="LineView" customModule="File_Me" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SQP-5J-0mt" userLabel="line" customClass="LineView" customModule="FileMe" customModuleProvider="target">
                     <rect key="frame" x="319" y="0.0" width="1" height="667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>

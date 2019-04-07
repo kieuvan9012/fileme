@@ -9,8 +9,9 @@
 import UIKit
 
 class MIDropListCell: UITableViewCell {
-
+    @IBOutlet weak var imgCheckMark: UIImageView!
     @IBOutlet weak var lbTitle: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
