@@ -49,7 +49,7 @@ class HomeViewController: MasterViewController
         
         
 
-        self.addChildViewController(mainTabar)
+        self.addChild(mainTabar)
         contentView.addSubview(mainTabar.view)
         contentView.setLayout(mainTabar.view)
         

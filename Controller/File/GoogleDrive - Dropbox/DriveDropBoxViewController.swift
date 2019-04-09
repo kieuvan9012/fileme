@@ -29,7 +29,7 @@ class DriveDropBoxViewController: MasterViewController {
     }
     
     private func setUpView() {
-        self.navigationView.bringSubview(toFront: viewLogout)
+        self.navigationView.bringSubviewToFront(viewLogout)
         setTitleWithBackAction(folderName.isEmpty ? getTypeName() : folderName)
         tbContent.setIdentifier("DriveDropBoxTableViewCell")
         

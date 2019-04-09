@@ -28,23 +28,23 @@ public extension UIViewController
     func push(_ target : UIViewController)
     {
         
-        let transition = CATransition()
-        transition.duration = 0.24
-        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        transition.type = kCATransitionFade
-        transition.subtype = kCATransitionFade
-        self.navigationController!.view.layer.add(transition, forKey: nil)
+//        let transition = CATransition()
+//        transition.duration = 0.24
+//        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+//        transition.type = kCATransitionFade
+//        transition.subtype = kCATransitionFade
+//        self.navigationController!.view.layer.add(transition, forKey: nil)
         navigationController?.pushViewController(target, animated: false)
     }
     
     func pop()
     {
-        let transition = CATransition()
-        transition.duration = 0.24
-        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        transition.type = kCATransitionFade
-        transition.subtype = kCATransitionFade
-        self.navigationController!.view.layer.add(transition, forKey: nil)
+//        let transition = CATransition()
+//        transition.duration = 0.24
+//        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+//        transition.type = kCATransitionFade
+//        transition.subtype = kCATransitionFade
+//        self.navigationController!.view.layer.add(transition, forKey: nil)
         navigationController?.popViewController(animated: false)
 
     }

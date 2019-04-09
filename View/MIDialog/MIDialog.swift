@@ -156,6 +156,26 @@ extension UIView
         }
     }
     
+    func noticeDialog(desc : String , type : MIDialogType ,acceptBlock : @escaping (()->Void),cancelBlock : @escaping (()->Void))
+    {
+        let dialog = MIDialog.init(title: "Thông báo", desc: desc, type: type, acceptBlock: { () in
+            acceptBlock()
+        }) { () in
+            cancelBlock()
+        }
+        
+        app.window?.rootViewController?.view.addSubview(dialog)
+        app.window?.rootViewController?.view.setLayout(dialog)
+        
+        dialog.alpha = 0.0
+        
+        dialog.contentView.drawRadius(4)
+        UIView.animate(withDuration: 0.25) { () -> Void in
+            dialog.alpha = 1.0
+        }
+    }
+
+    
     func warning(title : String ,desc : String )
     {
         let dialog = MIDialog.init(title: title, desc: desc, type: .warning, acceptBlock: { () in

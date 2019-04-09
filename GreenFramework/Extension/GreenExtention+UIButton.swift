@@ -22,7 +22,7 @@ public extension UIButton
     
     func image(_ image : UIImage, _ color : UIColor)
     {
-        setImage(image.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: .normal)
+        setImage(image.withRenderingMode(UIImage.RenderingMode.alwaysTemplate), for: .normal)
         tintColor = color
     }
     

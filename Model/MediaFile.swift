@@ -237,7 +237,7 @@ class MediaFile: Mi {
         }
         if(isOpen())
         {
-            return UITableViewAutomaticDimension
+            return UITableView.automaticDimension
         }
         else
         {

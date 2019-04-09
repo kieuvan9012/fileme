@@ -23,6 +23,9 @@
 		0BC43B5E225A076D00C11CD0 /* MIStepNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC43B5C225A076D00C11CD0 /* MIStepNumberView.swift */; };
 		0BC43B61225A0E0000C11CD0 /* MIDropListTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BC43B5F225A0DFF00C11CD0 /* MIDropListTableView.xib */; };
 		0BC43B62225A0E0000C11CD0 /* MIDropListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC43B60225A0E0000C11CD0 /* MIDropListTableView.swift */; };
+		0BC43B67225A314F00C11CD0 /* MIActionSheetUnitActionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BC43B64225A314F00C11CD0 /* MIActionSheetUnitActionView.xib */; };
+		0BC43B68225A314F00C11CD0 /* MIActionSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BC43B65225A314F00C11CD0 /* MIActionSheet.xib */; };
+		0BC43B69225A314F00C11CD0 /* MIActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC43B66225A314F00C11CD0 /* MIActionSheet.swift */; };
 		4F3A10D3223FC16A004E1F65 /* FileGoogleDriveInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3A10D2223FC16A004E1F65 /* FileGoogleDriveInstance.swift */; };
 		4F3A10D5223FC17A004E1F65 /* FileDropboxInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3A10D4223FC17A004E1F65 /* FileDropboxInstance.swift */; };
 		510B48EA2234DE5F00BA4706 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B48E82234DE5F00BA4706 /* UserViewController.swift */; };
@@ -326,6 +329,9 @@
 		0BC43B5C225A076D00C11CD0 /* MIStepNumberView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MIStepNumberView.swift; sourceTree = "<group>"; };
 		0BC43B5F225A0DFF00C11CD0 /* MIDropListTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MIDropListTableView.xib; sourceTree = "<group>"; };
 		0BC43B60225A0E0000C11CD0 /* MIDropListTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MIDropListTableView.swift; sourceTree = "<group>"; };
+		0BC43B64225A314F00C11CD0 /* MIActionSheetUnitActionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MIActionSheetUnitActionView.xib; sourceTree = "<group>"; };
+		0BC43B65225A314F00C11CD0 /* MIActionSheet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MIActionSheet.xib; sourceTree = "<group>"; };
+		0BC43B66225A314F00C11CD0 /* MIActionSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MIActionSheet.swift; sourceTree = "<group>"; };
 		4903824D5EC5C045F4B81446 /* Pods-FileMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FileMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-FileMe/Pods-FileMe.release.xcconfig"; sourceTree = "<group>"; };
 		4F3A10D2223FC16A004E1F65 /* FileGoogleDriveInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileGoogleDriveInstance.swift; sourceTree = "<group>"; };
 		4F3A10D4223FC17A004E1F65 /* FileDropboxInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDropboxInstance.swift; sourceTree = "<group>"; };
@@ -661,6 +667,16 @@
 				0BC43B5B225A076D00C11CD0 /* MIStepNumberView.xib */,
 			);
 			path = MIStepNumberView;
+			sourceTree = "<group>";
+		};
+		0BC43B63225A314F00C11CD0 /* MIActionSheet */ = {
+			isa = PBXGroup;
+			children = (
+				0BC43B66225A314F00C11CD0 /* MIActionSheet.swift */,
+				0BC43B65225A314F00C11CD0 /* MIActionSheet.xib */,
+				0BC43B64225A314F00C11CD0 /* MIActionSheetUnitActionView.xib */,
+			);
+			path = MIActionSheet;
 			sourceTree = "<group>";
 		};
 		43D6C5678B216EF90A02CE69 /* Pods */ = {
@@ -1002,6 +1018,7 @@
 			children = (
 				5166BF582257120E00A08B97 /* NavigationView.swift */,
 				5166BF592257120E00A08B97 /* NavigationView.xib */,
+				0BC43B63225A314F00C11CD0 /* MIActionSheet */,
 				0BC43B2F2259E4D200C11CD0 /* ESPullToRefresh */,
 				510EA4B7222BF94500DB3724 /* ImageBook */,
 				510EA4BA222BF94500DB3724 /* BookImageView */,
@@ -1602,6 +1619,7 @@
 				510EA49E222BF8B300DB3724 /* GBack.png in Resources */,
 				510EA3C9222BF48A00DB3724 /* hello.mp3 in Resources */,
 				510EA4A4222BF8B300DB3724 /* GCheck.png in Resources */,
+				0BC43B67225A314F00C11CD0 /* MIActionSheetUnitActionView.xib in Resources */,
 				510EA4A0222BF8B300DB3724 /* ic_check.png in Resources */,
 				510EA4A1222BF8B300DB3724 /* GDashboard.png in Resources */,
 				510EA49F222BF8B300DB3724 /* GSearch.png in Resources */,
@@ -1638,6 +1656,7 @@
 				51C638622231248800E05D65 /* FileViewController.xib in Resources */,
 				510EA3CB222BF48A00DB3724 /* aurora.mp3 in Resources */,
 				510EA3D2222BF48A00DB3724 /* Quicksand_Dash.otf in Resources */,
+				0BC43B68225A314F00C11CD0 /* MIActionSheet.xib in Resources */,
 				510EA49D222BF8B300DB3724 /* GLeftArrow.png in Resources */,
 				510EA3B8222BF48A00DB3724 /* userbackground.jpg in Resources */,
 				510EA558222BF94700DB3724 /* ImageSelectCell.xib in Resources */,
@@ -1809,6 +1828,7 @@
 				510EA411222BF7F100DB3724 /* Template.swift in Sources */,
 				510EA561222BF94700DB3724 /* ImageDisplayView.swift in Sources */,
 				0BC43B422259E4D200C11CD0 /* ESRefreshHeaderAnimator.swift in Sources */,
+				0BC43B69225A314F00C11CD0 /* MIActionSheet.swift in Sources */,
 				0BC43B462259E4D200C11CD0 /* ES.swift in Sources */,
 				510EA475222BF8B300DB3724 /* GreenExtention+UIButton.swift in Sources */,
 				5166BF652257128300A08B97 /* DriveDropBoxTableViewCell.swift in Sources */,
@@ -2082,7 +2102,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = KieuVan.FileMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -2107,7 +2127,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = KieuVan.FileMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

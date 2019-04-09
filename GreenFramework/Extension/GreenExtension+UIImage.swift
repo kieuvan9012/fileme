@@ -25,7 +25,7 @@ extension UIImage {
     
     func logSize()
     {
-        var imgData: NSData = NSData(data: UIImageJPEGRepresentation((self), 1)!)
+        let imgData: NSData = NSData(data: UIImage.jpegData(self)(compressionQuality: 1.0)!)
         var imageSize: Int = imgData.length
         print("size of image in KB: %f ", Double(imageSize) / 1024.0)
     }
@@ -62,23 +62,20 @@ extension UIImage {
 }
 
 public extension  UIImage {
-
-
-    public func dataValue() -> Data
+    func dataValue() -> Data
     {
         
         if(isPNG())
         {
-            return UIImagePNGRepresentation(self)!
+            return self.pngData()!
         }
         else
         {
-            return UIImageJPEGRepresentation(self, 1)!
-            
-            
+            return UIImage.jpegData(self)(compressionQuality: 1.0)!
         }
     }
-    public func resizeImage() -> UIImage
+    
+    func resizeImage() -> UIImage
     {
         var actualHeight:Float = Float(self.size.height)
         var actualWidth:Float = Float(self.size.width)
@@ -123,12 +120,12 @@ public extension  UIImage {
         self.draw(in: rect)
         
         let img:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-        let imageData:Data = UIImagePNGRepresentation(img)!
+        let imageData:Data = img.pngData()!
         UIGraphicsEndImageContext()
         return UIImage(data: imageData)!
     }
     
-    public func tint(_ color:UIColor)->UIImage {
+    func tint(_ color:UIColor)->UIImage {
         
         UIGraphicsBeginImageContext(self.size)
         let context = UIGraphicsGetCurrentContext()
@@ -147,7 +144,7 @@ public extension  UIImage {
         
     }
     
-    public func isPNG() -> Bool
+    func isPNG() -> Bool
     {
         if(imageType() == ".png")
         {
@@ -159,7 +156,7 @@ public extension  UIImage {
         }
         
     }
-    public func imageWithColor(_ color1: UIColor) -> UIImage {
+    func imageWithColor(_ color1: UIColor) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
         color1.setFill()
         
@@ -177,11 +174,11 @@ public extension  UIImage {
         
         return newImage
     }
-    public func imageType() -> String
+    func imageType() -> String
     {
         
         
-        let imageData: Foundation.Data = UIImagePNGRepresentation(self)!
+        let imageData: Foundation.Data = self.pngData()!
         var c = [UInt8](repeating: 0, count: 1)
         (imageData as NSData).getBytes(&c, length: 1)
         
@@ -202,19 +199,18 @@ public extension  UIImage {
         return ext
     }
     
-    public func imageData () -> Foundation.Data
+    func imageData () -> Foundation.Data
     {
-        return  UIImagePNGRepresentation(self)!
+        return self.pngData()!
     }
     
-    public func imageBase64() -> String!
+    func imageBase64() -> String!
     {
-        let imageData : Foundation.Data = UIImagePNGRepresentation(self)!
+        let imageData : Foundation.Data = self.pngData()!
         return imageData.base64EncodedString(options: Foundation.Data.Base64EncodingOptions(rawValue: 0))
     }
     
-    
-    public func getImageWithColor(_ color: UIColor, size: CGSize) -> UIImage {
+    func getImageWithColor(_ color: UIColor, size: CGSize) -> UIImage {
         let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         UIGraphicsBeginImageContextWithOptions(size, false, 0)
         color.setFill()
@@ -223,16 +219,15 @@ public extension  UIImage {
         UIGraphicsEndImageContext()
         return image
     }
-
 }
 
 extension UIImage
 {
-    var highestQualityJPEGNSData: Data { return UIImageJPEGRepresentation(self, 1.0)! }
-    var highQualityJPEGNSData: Data    { return UIImageJPEGRepresentation(self, 0.75)! }
-    var mediumQualityJPEGNSData: Data  { return UIImageJPEGRepresentation(self, 0.5)!  }
-    var lowQualityJPEGNSData: Data     { return UIImageJPEGRepresentation(self, 0.25)!}
-    var lowestQualityJPEGNSData: Data  { return UIImageJPEGRepresentation(self, 0.0)!  }
+    var highestQualityJPEGNSData: Data { return UIImage.jpegData(self)(compressionQuality: 1.0)!}
+    var highQualityJPEGNSData: Data    { return UIImage.jpegData(self)(compressionQuality: 0.75)!}
+    var mediumQualityJPEGNSData: Data  { return UIImage.jpegData(self)(compressionQuality: 0.5)!}
+    var lowQualityJPEGNSData: Data     { return UIImage.jpegData(self)(compressionQuality: 0.25)!}
+    var lowestQualityJPEGNSData: Data  { return UIImage.jpegData(self)(compressionQuality: 0.0)!}
 }
 
 

@@ -20,7 +20,7 @@ class FileViewController: MasterViewController, UITableViewDelegate, UITableView
         
         simpleNavi.set("My File")
         tbView.setIdentifier("FileListCell")
-        simpleNavi.bringSubview(toFront: stackView)
+        simpleNavi.bringSubviewToFront(stackView)
         loadData()
         tbView.es.addPullToRefresh {
             self.loadData()
@@ -105,7 +105,22 @@ class FileViewController: MasterViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        files[indexPath.row].toggle()
+        let data = files[indexPath.row]
+        if(data.fileType != .folder) {
+            //                let add = PrintViewController()
+            //                add.data.append()
+            //
+            //                self.push(add)
+
+            
+            _ = MIActionSheet("title", "des", action: [("a", UIColor.red), ("2", UIColor.green)], actionBlock: { (index) in
+                
+            })
+            
+            return
+        }
+        
+        data.toggle()
         tbView.reloadData()
     }
     
@@ -157,7 +172,7 @@ class FileViewController: MasterViewController, UITableViewDelegate, UITableView
         return 0
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             deleteFile(files[indexPath.row])
         }

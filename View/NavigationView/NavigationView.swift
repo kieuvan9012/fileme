@@ -81,7 +81,7 @@ class NavigationView: GreenView , UITextFieldDelegate{
         contentView.backgroundColor = template.primaryColor
         lbTitle.textColor = .white
         
-        NotificationCenter.default.addObserver(self, selector: #selector(rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(rotated), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
     
     @IBAction func rightTouch(_ sender: Any)

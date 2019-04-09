@@ -22,7 +22,7 @@ public extension UITextField
     func placeHolderText(text : String, color : UIColor)
     {
         self.attributedPlaceholder = NSAttributedString(string: text,
-                                                               attributes: [NSAttributedStringKey.foregroundColor: color])
+                                                        attributes: [NSAttributedString.Key.foregroundColor: color])
 
     }
     

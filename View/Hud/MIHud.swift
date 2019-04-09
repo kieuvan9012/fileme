@@ -90,7 +90,7 @@ extension NSObject
         let hud = MIHud()
         targetView.addSubview(hud)
         targetView.setLayout(hud)
-        targetView.bringSubview(toFront: hud)
+        targetView.bringSubviewToFront(hud)
         hud.alpha = 0.0
         UIView.animate(withDuration: 0.24) { () -> Void in
             hud.alpha = 1.0

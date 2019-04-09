@@ -116,7 +116,7 @@ class LimeMessage: Mi {
         
         attri = NSMutableAttributedString(
             string: content,
-            attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 16)])
+            attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16)])
 
         
         if(self.content.contains("emj"))

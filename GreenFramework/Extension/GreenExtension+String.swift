@@ -110,15 +110,9 @@ extension String
 
 public extension String
 {
-    
-    
-    
-
-    
-    
     static func random(_ length: Int) -> String {
         let allowedChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-        let allowedCharsCount = UInt32(allowedChars.characters.count)
+        let allowedCharsCount = UInt32(allowedChars.count)
         var randomString = ""
         
         for _ in 0..<length {
@@ -137,7 +131,7 @@ public extension String
         return removeSpace
     }
 
-    public func hexColor() -> UIColor {
+    func hexColor() -> UIColor {
         let hexint = Int(intFromHexString(self))
         let red = CGFloat((hexint & 0xff0000) >> 16) / 255.0
         let green = CGFloat((hexint & 0xff00) >> 8) / 255.0
@@ -155,7 +149,7 @@ public extension String
     }
     
     
-    public func image() -> UIImage
+    func image() -> UIImage
     {
         if(self.length == 0)
         {
@@ -168,13 +162,13 @@ public extension String
         return UIImage.init()
     }
     
-    public func imageTint(_ color : UIColor) -> UIImage
+    func imageTint(_ color : UIColor) -> UIImage
     {
         return image().tint(color)
     }
     
     
-    public func translate() -> String
+    func translate() -> String
     {
         
         return NSLocalizedString(self, tableName: nil, bundle: Bundle.main, value: "", comment: "")
@@ -188,12 +182,12 @@ public extension String
     }
     
     
-    public func dataValue() -> Data
+    func dataValue() -> Data
     {
         return self.data(using:String.Encoding.utf8, allowLossyConversion: true)!
     }
     
-    public func doubleValue() -> Double
+    func doubleValue() -> Double
     {
         let numberFormater = NumberFormatter()
         numberFormater.groupingSeparator = "."
@@ -206,14 +200,14 @@ public extension String
         return 0.0
     }
 
-    public func acsiiDataValue() -> Data
+    func acsiiDataValue() -> Data
     {
         var searchText = self.lowercased()
         searchText = searchText.replacingOccurrences(of: "đ", with: "d")
         return searchText.data(using:String.Encoding.ascii, allowLossyConversion: true)!
     }
     
-    public func lossyValue() -> String
+    func lossyValue() -> String
     {
         
 
@@ -223,11 +217,11 @@ public extension String
     
     public var length: Int
     {
-        return self.characters.count
+        return self.count
     }
     
     
-    public func intValue()-> Int
+    func intValue()-> Int
     {
         if(self.length == 0 || self == "")
         {
@@ -238,7 +232,7 @@ public extension String
     }
     
     
-    public func toBool() -> Bool
+    func toBool() -> Bool
     {
         switch self.uppercased()
         {

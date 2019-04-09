@@ -125,7 +125,7 @@ public extension UIView
     {
         self.frame = CGRect(x: 0, y: 0, width: view.bounds.size.width, height: view.bounds.size.height)
         view.addSubview(self)
-        self.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight,UIViewAutoresizing.flexibleLeftMargin,UIViewAutoresizing.flexibleRightMargin,UIViewAutoresizing.flexibleTopMargin,UIViewAutoresizing.flexibleBottomMargin ]
+        self.autoresizingMask = [UIView.AutoresizingMask.flexibleWidth, UIView.AutoresizingMask.flexibleHeight,UIView.AutoresizingMask.flexibleLeftMargin,UIView.AutoresizingMask.flexibleRightMargin,UIView.AutoresizingMask.flexibleTopMargin,UIView.AutoresizingMask.flexibleBottomMargin ]
     }
     
     public func removeSubsView()
@@ -295,35 +295,35 @@ public extension UIView
                 targetView = views [targtIndex]
             }
             limeUnit.translatesAutoresizingMaskIntoConstraints = false
-            self.addConstraint(NSLayoutConstraint(item: limeUnit, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.top, multiplier: 1.0, constant: 0))
+            self.addConstraint(NSLayoutConstraint(item: limeUnit, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 0))
             
-            self.addConstraint(NSLayoutConstraint(item: limeUnit, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.bottom, multiplier: 1.0, constant: 0))
+            self.addConstraint(NSLayoutConstraint(item: limeUnit, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: 0))
             if(i == 0 )
             {
-                self.addConstraint(NSLayoutConstraint(item: limeUnit, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.leading, multiplier: 1.0, constant: 0))
+                self.addConstraint(NSLayoutConstraint(item: limeUnit, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 0))
             }
             else if (i == views.count - 1)
             {
-                self.addConstraint(NSLayoutConstraint(item: limeUnit, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.trailing, multiplier: 1.0, constant: 0))
+                self.addConstraint(NSLayoutConstraint(item: limeUnit, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: 0))
                 
-                let verticalSpacing1 = NSLayoutConstraint(item: previousXView, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: limeUnit, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 0)
+                let verticalSpacing1 = NSLayoutConstraint(item: previousXView, attribute: .trailing, relatedBy: .equal, toItem: limeUnit, attribute: .leading, multiplier: 1, constant: 0)
                 NSLayoutConstraint.activate([verticalSpacing1])
             }
                 
             else
             {
-                let verticalSpacing1 = NSLayoutConstraint(item: previousXView, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: limeUnit, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 0)
+                let verticalSpacing1 = NSLayoutConstraint(item: previousXView, attribute: .trailing, relatedBy: .equal, toItem: limeUnit, attribute: .leading, multiplier: 1, constant: 0)
                 NSLayoutConstraint.activate([verticalSpacing1])
             }
             if(views.count == 1)
             {
-                let widthContrain  = NSLayoutConstraint(item: limeUnit, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.width, multiplier: 1, constant: 0)
+                let widthContrain  = NSLayoutConstraint(item: limeUnit, attribute: .width, relatedBy: .equal, toItem: self, attribute: .width, multiplier: 1, constant: 0)
                 NSLayoutConstraint.activate([widthContrain])
             }
             
             if(targtIndex != -1 )
             {
-                let widthContrain  = NSLayoutConstraint(item: limeUnit, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: targetView, attribute: NSLayoutAttribute.width, multiplier: 1, constant: 0)
+                let widthContrain  = NSLayoutConstraint(item: limeUnit, attribute: .width, relatedBy: .equal, toItem: targetView, attribute: .width, multiplier: 1, constant: 0)
                 NSLayoutConstraint.activate([widthContrain])
                 
             }
@@ -343,13 +343,13 @@ public extension UIView
     func setLayout(_ view : UIView) // full layout for sub view
     {
         view.translatesAutoresizingMaskIntoConstraints = false
-        self.addConstraint(NSLayoutConstraint(item: view, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.top, multiplier: 1.0, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: view, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 0))
         
-        self.addConstraint(NSLayoutConstraint(item: view, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.bottom, multiplier: 1.0, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: view, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: 0))
         
-        self.addConstraint(NSLayoutConstraint(item: view, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.trailing, multiplier: 1.0, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: view, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: 0))
         
-        self.addConstraint(NSLayoutConstraint(item: view, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.leading, multiplier: 1.0, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: view, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 0))
     }
     
     

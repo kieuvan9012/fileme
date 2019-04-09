@@ -134,7 +134,7 @@ class MIDropListView: GreenView , UITableViewDelegate,UITableViewDataSource
     
     override func initStyle() {
         tfContent.textAlignment = .center
-        NotificationCenter.default.addObserver(self, selector: #selector(dismissView), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(dismissView), name: UIDevice.orientationDidChangeNotification, object: nil)
         backgroundColor = UIColor.white
 
     }

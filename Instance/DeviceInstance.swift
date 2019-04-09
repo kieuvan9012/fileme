@@ -11,8 +11,8 @@ import DeviceUtil
 import SystemConfiguration
 let isIpad  : Bool = UIDevice.current.userInterfaceIdiom == .pad
 let isIphone  : Bool = !isIpad
-let isPortrait : Bool = UIDeviceOrientationIsPortrait(UIDevice.current.orientation)
-let isLandscape:Bool = !isPortrait
+//let isPortrait : Bool = UIDeviceOrientationIsPortrait(UIDevice.current.orientation)
+//let isLandscape:Bool = !isPortrait //test123
 
 let isStatusBarPortrait:Bool = (UIApplication.shared.statusBarOrientation.isPortrait)
 let isStatusBarLandscape:Bool = !isStatusBarPortrait

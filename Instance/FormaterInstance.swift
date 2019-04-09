@@ -38,7 +38,7 @@ class FormaterInstance: NSObject
     {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
-        formatter.locale = NSLocale(localeIdentifier: "es_ES") as Locale!
+        formatter.locale = NSLocale(localeIdentifier: "es_ES") as Locale?
         formatter.maximumFractionDigits = 0 ;
         return formatter.string(from: value as NSNumber)!.appending(" đ")
     }

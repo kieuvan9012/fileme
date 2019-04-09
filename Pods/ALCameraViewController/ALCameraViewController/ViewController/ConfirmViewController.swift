@@ -278,7 +278,7 @@ public class ConfirmViewController: UIViewController, UIScrollViewDelegate {
 		spinner.startAnimating()
 		
 		view.addSubview(spinner)
-		view.bringSubview(toFront: spinner)
+        view.bringSubview(toFront: spinner)
 		
 		return spinner
 	}
