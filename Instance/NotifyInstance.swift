@@ -10,12 +10,14 @@ import UIKit
 
 public enum NotifyType : String
 {
-    case reloadContactList       = "ReloadContactList"
-    case updateLocation          = "updateLocation"
-    case reloadConversation      = "ReloadConversation"
-    case reloadMessageList       = "reloadMessageList"
-    case insertMessageRow           = "insertMessageRow"
-    case cartUpdateItem             = "cartUpadteItem"    
+    case reloadContactList           = "ReloadContactList"
+    case updateLocation              = "updateLocation"
+    case reloadConversation          = "ReloadConversation"
+    case reloadMessageList           = "reloadMessageList"
+    case insertMessageRow            = "insertMessageRow"
+    case cartUpdateItem              = "cartUpadteItem"
+    case hitOutsideCell                  = "hitOutsideCell"
+
 }
 
 let notifyInstance = NotifyInstance.sharedInstance()
@@ -41,6 +43,11 @@ class NotifyInstance: NSObject
     func post(_ type : NotifyType, _ object : Any?)
     {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: type.rawValue), object: object, userInfo: nil)
+    }
+    
+    func post(_ type : NotifyType)
+    {
+        post(type, nil)
     }
     
     func remove (_ target : Any)

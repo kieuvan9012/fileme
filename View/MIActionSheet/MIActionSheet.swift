@@ -51,10 +51,6 @@ class MIActionSheetUnitView: UIView
         self.miActionSheetLayout(view)
     }
     
-    deinit {
-        print("-----------------Enđialog")
-    }
-    
     override open func awakeFromNib() {
         super.awakeFromNib()
         initStyle()
@@ -187,10 +183,6 @@ class MIActionSheet: MIActionSheetUnitView, MIActionSheetUnitActionViewDelegate 
         lbTitle.text = ""
         lbDescription.text = ""
         tag = MIACTIONSHEETTAG
-        self.backgroundColor = .groupTableViewBackground
-    }
-    
-    deinit {
     }
     
     init(_ title : String, _ des : Any ,action : [Any], actionBlockValue : @escaping ((String)->Void)) // trả về value

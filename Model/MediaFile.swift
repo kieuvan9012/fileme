@@ -53,7 +53,7 @@ enum MediaBrand : Int
 }
 
 class MediaFile: Mi {
-
+    
     
     @objc dynamic var destination = "";
     @objc dynamic var filename = "";
@@ -75,14 +75,14 @@ class MediaFile: Mi {
     @objc dynamic var rev = "" // parameter rev: Please specify revision in path instead - dropbox
     
     var url : URL!
-
+    
     
     
     var fileType  = FileType.none;
     var media_type = MediaType.image;
     @objc dynamic var child : [MediaFile] = [];
     @objc dynamic var parent : MediaFile! ;
-
+    
     
     
     func getNameFromURL() ->String
@@ -99,7 +99,7 @@ class MediaFile: Mi {
     {
         return try! Data.init(contentsOf: url!, options: [])
     }
-
+    
     var level : Int{
         set{
             
@@ -115,7 +115,7 @@ class MediaFile: Mi {
             }
         }
     }
-
+    
     
     func getEndData()->Data
     {
@@ -192,7 +192,7 @@ class MediaFile: Mi {
         {
             item.parent = self;
         }
-       child.append(contentsOf: value)
+        child.append(contentsOf: value)
     }
     
     func imageDisplay()->UIImage
@@ -294,11 +294,11 @@ class MediaFile: Mi {
         result.append(id)
         for item in child
         {
-          result.append(contentsOf: item.grossIds())
+            result.append(contentsOf: item.grossIds())
         }
         return result
     }
-
+    
     func searchParent(_ value : Int)->MediaFile
     {
         var result : MediaFile!
@@ -307,13 +307,13 @@ class MediaFile: Mi {
             if(item.id == value)
             {
                 result = item
-                break ;
+                break
             }else
             {
                 result = item.searchParent(value)
                 if(result != nil)
                 {
-                    break ;
+                    break
                 }
             }
         }
@@ -321,21 +321,18 @@ class MediaFile: Mi {
     }
 }
 
-
 class MediaFileInsert_Request : Mi
 {
-    @objc dynamic var destination = "";
-    @objc dynamic var filename = "";
+    @objc dynamic var destination = ""
+    @objc dynamic var filename = ""
     @objc dynamic var user_id = userInstance.user.id;
-    @objc dynamic var mimetype = "";
-    @objc dynamic var originalname = "";
-    @objc dynamic var path = "";
+    @objc dynamic var mimetype = ""
+    @objc dynamic var originalname = ""
+    @objc dynamic var path = ""
     @objc dynamic var parent_id = 0;
     @objc dynamic var size = 1;
     
-    
-    
-     init(_ media : MediaFile)
+    init(_ media : MediaFile)
     {
         super.init()
         self.destination = media.destination
@@ -344,7 +341,6 @@ class MediaFileInsert_Request : Mi
         self.originalname = media.originalname
         self.path = media.path
         self.size = media.size
-        
     }
     
     required public init() {
@@ -388,7 +384,7 @@ extension Services
             
         }
     }
-
+    
     
     func fileList(success :@escaping ((MediaFile)->Void), failure: @escaping ((String)->Void))
     {
@@ -418,3 +414,4 @@ extension Services
         }
     }
 }
+

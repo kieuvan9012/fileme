@@ -8,23 +8,70 @@
 import UIKit
 import MobileCoreServices
 
+class TableView: UITableView
+{
+    var stackView :UIStackView?
+    
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView?
+    {
+        if let hitView = super.hitTest(point, with: event) , hitView != self
+        {
+            return hitView
+        }
+        
+        let indexPath: IndexPath? = indexPathForRow(at: point)
+        let pointButton = self.convert(point, to: stackView)
+
+        if (indexPath == nil && stackView?.point(inside: pointButton, with: event) == false) {
+            notifyInstance.post(.hitOutsideCell)
+        }
+        
+        return nil
+    }
+}
+
 class FileViewController: MasterViewController, UITableViewDelegate, UITableViewDataSource, AddFolderViewDelegate,FileAddViewDelegate
 {
     @IBOutlet weak var stackView: UIStackView!
     var files : [MediaFile] = []
     var root : MediaFile!
-    @IBOutlet weak var tbView: UITableView!
+    @IBOutlet weak var tbView: TableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         simpleNavi.set("My File")
         tbView.setIdentifier("FileListCell")
+        
+        self.tbView.stackView = stackView
         simpleNavi.bringSubviewToFront(stackView)
         loadData()
+        
         tbView.es.addPullToRefresh {
             self.loadData()
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        notifyInstance.add(self, .hitOutsideCell, selector: #selector(hitOutsideCell))
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        notifyInstance.remove(self)
+    }
+    
+    @objc func hitOutsideCell(){
+        self.files = files.map({ (data) -> MediaFile in
+            data.active = false
+            
+            return data
+        })
+        
+        tbView.reloadData()
     }
     
     func loadData()
@@ -124,8 +171,6 @@ class FileViewController: MasterViewController, UITableViewDelegate, UITableView
         tbView.reloadData()
     }
     
-
-    
     func insertMediaFile(_ value : MediaFile)
     {
         let request = MediaFileInsert_Request.init(value)
@@ -153,13 +198,12 @@ class FileViewController: MasterViewController, UITableViewDelegate, UITableView
         request.originalname = value
         request.parent_id = getActiveId()
         services.fileInsert(request, success: { response in
-            let parent = self.files.index{$0.id == self.getActiveId()}
+            let parent = self.files.firstIndex{$0.id == self.getActiveId()}
             self.files[parent!].addChild([response])
             self.files.removeAll()
             self.generatorProcessing(item: self.root)
             self.tbView.reloadData()
         }) { (error) in
-            
         }
     }
     
@@ -184,7 +228,7 @@ class FileViewController: MasterViewController, UITableViewDelegate, UITableView
         request.file_ids = value.grossIds()
         
         weak var weakobject = value
-        weak var weakself = self;
+        weak var weakself = self
         
         services.fileDelete(request, success: {
             weakobject!.delete()

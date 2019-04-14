@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MIActionSheet" customModule="MTS_POC" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MIActionSheet" customModule="FileMe" customModuleProvider="target">
             <connections>
                 <outlet property="alphaView" destination="u7W-jp-dHT" id="347-B3-S8n"/>
                 <outlet property="btnCancel" destination="YlL-8K-1ST" id="lKz-BU-r73"/>
@@ -51,7 +51,7 @@
                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Deb-xU-jPp" customClass="LineView" customModule="MTS_POC" customModuleProvider="target">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Deb-xU-jPp" customClass="LineView" customModule="FileMe" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="52" width="359" height="1"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
@@ -102,7 +102,7 @@
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="iN0-l3-epB" firstAttribute="centerX" secondItem="z5K-P3-l7V" secondAttribute="centerX" id="6Hz-PV-nvB"/>
                 <constraint firstAttribute="bottom" secondItem="u7W-jp-dHT" secondAttribute="bottom" id="7Td-Kf-ONb"/>
