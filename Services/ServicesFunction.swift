@@ -40,6 +40,8 @@ enum APIFunction : String
     case fileInsert     =    "file/insert"
     case fileDelete     =    "file/delete"
 
+    case printStoreList    =    "printStore/list"
+
 }
 
 

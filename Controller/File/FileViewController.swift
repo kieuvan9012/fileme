@@ -174,7 +174,7 @@ class FileViewController: MasterViewController, UITableViewDelegate, UITableView
     func insertMediaFile(_ value : MediaFile)
     {
         let request = MediaFileInsert_Request.init(value)
-        request.parent_id = getActiveId()
+//        request.parent_id = getActiveId()
         
         services.fileInsert(request, success: {response in
             let parent = self.files.index{$0.id == self.getActiveId()}
@@ -196,7 +196,7 @@ class FileViewController: MasterViewController, UITableViewDelegate, UITableView
     func addFolderViewAccept(_ value: String) {
         let request = MediaFileInsert_Request()
         request.originalname = value
-        request.parent_id = getActiveId()
+//        request.parent_id = getActiveId()
         services.fileInsert(request, success: { response in
             let parent = self.files.firstIndex{$0.id == self.getActiveId()}
             self.files[parent!].addChild([response])

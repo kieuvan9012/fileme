@@ -53,37 +53,35 @@ enum MediaBrand : Int
 }
 
 class MediaFile: Mi {
-    
-    
-    @objc dynamic var destination = "";
-    @objc dynamic var filename = "";
-    @objc dynamic var mimetype = "";
-    @objc dynamic var originalname = "";
-    @objc dynamic var path = "";
-    @objc dynamic var id = 0;
+    @objc dynamic var id = 0
+    @objc dynamic var user_id = 0
+    @objc dynamic var des = "" // xóa plz
+    @objc dynamic var destination = ""
+    @objc dynamic var originalname = ""
+    @objc dynamic var path = ""
+    @objc dynamic var mimetype = ""
     @objc dynamic var size = 0
-    @objc dynamic var parent_id = 1;
-    @objc dynamic var name = "";
-    @objc dynamic var fileExtension = "";
-    @objc dynamic var data : Data!;
-    @objc dynamic var isExpand = false;
-    @objc dynamic var content : Any? ;
-    @objc dynamic var active = false;
-    @objc dynamic var isDowload = false ;
+    @objc dynamic var filename = ""
+    @objc dynamic var parrent_path = ""
+
+    // local
+    
+    @objc dynamic var name = ""
+    @objc dynamic var fileExtension = ""
+    @objc dynamic var data : Data!
+    @objc dynamic var isExpand = false
+    @objc dynamic var content : Any?
+    @objc dynamic var active = false
+    @objc dynamic var isDowload = false
     
     @objc dynamic var identifier = ""
     @objc dynamic var rev = "" // parameter rev: Please specify revision in path instead - dropbox
     
     var url : URL!
-    
-    
-    
-    var fileType  = FileType.none;
+    var fileType  = FileType.none
     var media_type = MediaType.image;
-    @objc dynamic var child : [MediaFile] = [];
-    @objc dynamic var parent : MediaFile! ;
-    
-    
+    @objc dynamic var child : [MediaFile] = []
+    @objc dynamic var parent : MediaFile!
     
     func getNameFromURL() ->String
     {
@@ -323,24 +321,32 @@ class MediaFile: Mi {
 
 class MediaFileInsert_Request : Mi
 {
+//    @objc dynamic var fieldname = ""
+    @objc dynamic var originalname = ""
+    @objc dynamic var encoding = ""
+    @objc dynamic var mimetype = ""
     @objc dynamic var destination = ""
     @objc dynamic var filename = ""
-    @objc dynamic var user_id = userInstance.user.id;
-    @objc dynamic var mimetype = ""
-    @objc dynamic var originalname = ""
     @objc dynamic var path = ""
-    @objc dynamic var parent_id = 0;
-    @objc dynamic var size = 1;
-    
+    @objc dynamic var size = 0
+    @objc dynamic var parrent_path = ""
+
+    // thêm request
+    @objc dynamic var user_id = userInstance.user.id
+
     init(_ media : MediaFile)
     {
         super.init()
-        self.destination = media.destination
-        self.filename = media.filename
-        self.mimetype = media.mimetype
         self.originalname = media.originalname
+        self.mimetype = media.mimetype
+        self.destination = media.description
+        self.filename = media.filename
         self.path = media.path
         self.size = media.size
+        self.parrent_path = media.parrent_path
+        
+        //        self.fieldname = media.fieldname
+        //        self.encoding = media.encoding
     }
     
     required public init() {
@@ -393,21 +399,21 @@ extension Services
             let list = MediaFile.list(data: response.data as! [Dictionary<String, Any>])
             let root  = MediaFile.init()
             root.isExpand = true ;
-            for item in list
-            {
-                for sub in list
-                {
-                    if(sub.parent_id == item.id)
-                    {
-                        item.addChild([sub])
-                    }
-                }
-                
-                if(item.parent_id == 0)
-                {
-                    root.addChild([item])
-                }
-            }
+//            for item in list
+//            {
+//                for sub in list
+//                {
+//                    if(sub.parent_id == item.id)
+//                    {
+//                        item.addChild([sub])
+//                    }
+//                }
+//
+//                if(item.parent_id == 0)
+//                {
+//                    root.addChild([item])
+//                }
+//            }
             success(root)
         }) { (error) in
             failure("")

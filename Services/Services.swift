@@ -8,14 +8,14 @@
 
 import UIKit
 import Alamofire
+
 class APIResponse: Mi
 {
-    @objc dynamic var success = false;
-    @objc dynamic var  message = "";
+    @objc dynamic var success = false
+    @objc dynamic var  message = ""
     @objc dynamic var  data : Any!
     @objc dynamic var  code  = 0
 }
-
 
 enum UploadType : String
 {
@@ -23,7 +23,7 @@ enum UploadType : String
     case book = "book"
 }
 
-let  services = Services.sharedInstance()
+let services = Services.sharedInstance()
 class Services: NSObject {
     static var instance: Services!
     class func sharedInstance() -> Services
@@ -34,26 +34,20 @@ class Services: NSObject {
         }
         return self.instance
     }
-
+    
     func request(api : APIFunction, param : Dictionary <String, AnyObject>, success :@escaping ((APIResponse)->Void), failure :@escaping ((String)->Void))
     {
         weak var weakself = self
         let dataRequest = repareRequest(api: api, parameter: param)
-        
-        
-                do {
-                    let data = try JSONSerialization.data(withJSONObject: param, options: [])
-                    let json = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
-                    if let json = json {
-                        print("JSON: \(json)")
-                    }
-                } catch {
-                    print("JSON serialization failed:  \(error)")
-                }
-
-        
-        
-        
+        do {
+            let data = try JSONSerialization.data(withJSONObject: param, options: [])
+            let json = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
+            if let json = json {
+                print("JSON: \(json)")
+            }
+        } catch {
+            print("JSON serialization failed:  \(error)")
+        }
         
         Alamofire.request(dataRequest.0, method: .post, parameters: dataRequest.1, encoding: JSONEncoding.default, headers: nil)
             .responseJSON { response in
@@ -69,9 +63,6 @@ class Services: NSObject {
                 }
         }
     }
-    
-
-    
     
     func processReponse(response : DataResponse<Any>) -> APIResponse
     {
@@ -94,8 +85,7 @@ class Services: NSObject {
         }
         return (servicesConfig.url.appending(api.rawValue),endParameter)
     }
-
-
+    
     func uploadMedia(_ brand : MediaBrand,images : [UIImage],success :@escaping ((APIResponse)->Void), failure :@escaping ((String)->Void), progress: @escaping ((Progress)->Void))
     {
         weak var weakself = self
@@ -142,7 +132,6 @@ class Services: NSObject {
         }
     }
     
-    
     func uploadFile(file : MediaFile,success :@escaping ((APIResponse)->Void), failure :@escaping ((String)->Void), progress: @escaping ((Progress)->Void))
     {
         weak var weakself = self
@@ -182,7 +171,5 @@ class Services: NSObject {
             }
         }
     }
-
-
-    
 }
+

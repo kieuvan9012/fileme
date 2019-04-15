@@ -13,6 +13,8 @@ class PrintViewController: MasterViewController,PrintAddViewDelegate , PrintSele
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var selectView: PrintSelectView!
     @IBOutlet weak var printContentView: UIView!
+    @IBOutlet weak var lblPrintStore: UILabel!
+    
     var data : [(MediaFile, PrintView)] = []
     
     override func viewDidLoad() {
@@ -26,19 +28,23 @@ class PrintViewController: MasterViewController,PrintAddViewDelegate , PrintSele
         selectView.delegate = self
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated) // test123
-        
-        let media = MediaFile.init()
-        media.mimetype = "docx"
-        media.originalname = "test.docx"
-        media.fileType = .word
-        let pView = PrintView_DOC.init(frame: CGRect.init())
-        pView.set(media)
-        data.append((media,pView))
-        self.selectView.counting = data.count
-        drawView()
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated) // test123
+//        
+//        if(data.count > 0) {
+//            
+//        }
+//        
+//        let media = MediaFile.init()
+//        media.mimetype = "docx"
+//        media.originalname = "test.docx"
+//        media.fileType = .word
+//        let pView = PrintView_DOC.init(frame: CGRect.init())
+//        pView.set(media)
+//        data.append((media,pView))
+//        self.selectView.counting = data.count
+//        drawView()
+//    }
     
     func printSelectViewAdd() {
         let addView = PrintAddView()
@@ -47,7 +53,9 @@ class PrintViewController: MasterViewController,PrintAddViewDelegate , PrintSele
     }
 
     @IBAction func printSelect(_ sender: Any) {
-        let printSelect = PrintSelectViewController()
+        let printSelect = PrintStoreListViewController()
+        printSelect.delegate = self
+        
         push(printSelect)
     }
     
@@ -81,4 +89,11 @@ class PrintViewController: MasterViewController,PrintAddViewDelegate , PrintSele
     func printSelectViewUpdateSelect() {
         drawView()
     }
+}
+
+extension PrintViewController: PrintStoreListViewControllerDelegate{
+    func PrintStoreListViewControllerDidSelect(_ value: PrintStore) {
+        lblPrintStore.attributedText = NSMutableAttributedString().boldLeft(value.name).newLine().normalLeft(value.address + "" + value.district_name)
+    }
+    
 }

@@ -115,20 +115,20 @@ public extension UIView
         return NSKeyedUnarchiver.unarchiveObject(with: NSKeyedArchiver.archivedData(withRootObject: self)) as! T
     }
     
-    public func addByView(_ view : UIView)
+    func addByView(_ view : UIView)
     {
         self.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
         view.addSubview(self)
     }
     
-    public func addByViewWithlAutoSizing(_ view : UIView)
+    func addByViewWithlAutoSizing(_ view : UIView)
     {
         self.frame = CGRect(x: 0, y: 0, width: view.bounds.size.width, height: view.bounds.size.height)
         view.addSubview(self)
         self.autoresizingMask = [UIView.AutoresizingMask.flexibleWidth, UIView.AutoresizingMask.flexibleHeight,UIView.AutoresizingMask.flexibleLeftMargin,UIView.AutoresizingMask.flexibleRightMargin,UIView.AutoresizingMask.flexibleTopMargin,UIView.AutoresizingMask.flexibleBottomMargin ]
     }
     
-    public func removeSubsView()
+    func removeSubsView()
     {
         for view in self.subviews
         {
@@ -155,13 +155,17 @@ public extension UIView
         self.frame.size.height = height
     }
     
-    public func drawRound()
+    func drawRound()
     {
         self.layer.cornerRadius = self.frame.size.width/2;
         self.clipsToBounds = true;
     }
     
-    public func drawRadius(_ radius  : CGFloat)
+    func drawDefaultRadius() {
+        self.drawRadius(4.0)
+    }
+    
+    func drawRadius(_ radius  : CGFloat)
     {
         self.layer.cornerRadius = radius
         self.layer.borderWidth = 0.5
@@ -169,7 +173,8 @@ public extension UIView
         self.clipsToBounds = true;
         self.layer.borderColor = UIColor.clear.cgColor
     }
-    public func drawRadius(_ radius  : CGFloat, corners : CACornerMask )
+    
+    func drawRadius(_ radius  : CGFloat, corners : CACornerMask )
     {
         self.layer.cornerRadius = radius
         self.layer.borderWidth = 0.5
@@ -179,19 +184,16 @@ public extension UIView
         self.layer.borderColor = UIColor.clear.cgColor
         
         //        self.layer.maskedCorners =  corners
-        
     }
     
-    public func drawRadius(_ radius  : CGFloat,color : UIColor , thickness :CGFloat )  {
+    func drawRadius(_ radius  : CGFloat,color : UIColor , thickness :CGFloat )  {
         self.layer.cornerRadius = radius
         self.layer.borderWidth = thickness
         self.layer.masksToBounds = true
         self.layer.borderColor = color.cgColor
     }
     
-    
-    
-    public func addBorder(_ edges: UIRectEdge, color: UIColor, thickness: CGFloat = 0.5) -> [UIView]{
+    func addBorder(_ edges: UIRectEdge, color: UIColor, thickness: CGFloat = 0.5) -> [UIView]{
         var borders = [UIView]()
         func border() -> UIView {
             let border = UIView(frame: CGRect.zero)

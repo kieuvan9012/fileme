@@ -40,7 +40,7 @@ class FileDropboxInstance: NSObject {
             DropboxClientsManager.authorizeFromController(UIApplication.shared,
                                                           controller: vc,
                                                           openURL: { (url: URL) -> Void in
-                                                            UIApplication.shared.canOpenURL(url)
+                                                            UIApplication.shared.openURL(url)
             })
         }
     }

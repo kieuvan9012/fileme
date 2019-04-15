@@ -8,8 +8,7 @@
 
 import UIKit
 
-
-public let  template = ApplicationTemplaceInstance.sharedInstance()
+public let template = ApplicationTemplaceInstance.sharedInstance()
 @objc open class ApplicationTemplaceInstance: NSObject {
     
     static var instance: ApplicationTemplaceInstance!
@@ -29,7 +28,7 @@ public let  template = ApplicationTemplaceInstance.sharedInstance()
     var dangerColor     = "FF671e".hexColor()
     var warningColor    : UIColor!
     
-    var backgroundColor = "EAEBED".hexColor()
+    var backgroundColor = UIColor.groupTableViewBackground//"EAEBED".hexColor()
     var backgroundHighlightColor = "232b3D".hexColor()
     var negativeColor = "F8FAFF".hexColor()
     
@@ -39,11 +38,9 @@ public let  template = ApplicationTemplaceInstance.sharedInstance()
     var newsColor = "3b6de0".hexColor()
     var questionColor = "6a3ce2".hexColor()
 
-    
-    
-    
-    
-    
+    var textColor = "000000".hexColor()
+    var subTextColor = "8F8F8F".hexColor()
+
     var primaryPlusColor = "E64B3B".hexColor()
     var primaryMinusMinusColor = "FFB8B0".hexColor()
 
@@ -56,7 +53,6 @@ public let  template = ApplicationTemplaceInstance.sharedInstance()
     var sellColor = "FF671e".hexColor()
     var naviColor = "44424A".hexColor()
     var accentColor  = "25A3FF".hexColor()
-    var subTextColor = "A5AED0".hexColor()
     var generalTextColor = "000000".hexColor()
 }
 

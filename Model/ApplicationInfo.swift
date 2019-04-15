@@ -55,7 +55,7 @@ class OrderItemDTO : Mi {
 
 extension Services
 {
-    func applicationInfo(success :@escaping (([ApplicationInfo])->Void), failure: ((String)->Void))
+    func applicationInfo(success :@escaping (([ApplicationInfo])->Void), failure: @escaping ((String)->Void))
     {
         let requst = DraftOrderDTO()
         requst.grossModel()
@@ -64,7 +64,7 @@ extension Services
         services.request(api: .applicationInfo, param: endRequest, success: { (response) in
             success(ApplicationInfo.list(data: response.data as! [Dictionary<String, Any>]))
         }) { (error) in
-            
+            failure(error)
         }
     }
 }

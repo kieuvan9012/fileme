@@ -196,11 +196,6 @@ class MIStepNumberView: GreenView, UITextFieldDelegate {
     
     func updateNumberValue()
     {
-        if(_min != nil && tfContent.text!.isEmpty && !zeroToEmpty) { // k đc để trống
-            tfContent.text = _formater.string(from: NSNumber.init(value: _min!))
-            return
-        }
-
         let number = _formater.number(from: tfContent.text!)
         if(number != nil)
         {
@@ -233,6 +228,12 @@ class MIStepNumberView: GreenView, UITextFieldDelegate {
         if(delegate != nil)
         {
             delegate?.MIStepNumberViewWillEdit(self)
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if(textField.text!.isEmpty) {
+            updateValue()
         }
     }
 }

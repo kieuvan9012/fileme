@@ -60,7 +60,7 @@ class User: Mi {
     @objc dynamic var district_name = ""
 
     
-    class func  list(data : [Dictionary<String, Any>]) -> [User]
+    class func list(data : [Dictionary<String, Any>]) -> [User]
     {
         var output  : [User]  = []
         for item in data

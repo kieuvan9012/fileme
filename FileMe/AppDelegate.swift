@@ -77,7 +77,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let loginVC = LoginViewController()
             self.loginNavi = UINavigationController.init(rootViewController: loginVC)
             self.window?.rootViewController  = self.loginNavi
-            self.loginNavi.isNavigationBarHidden = true ;
+            self.loginNavi.isNavigationBarHidden = true
         }
     }
     

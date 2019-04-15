@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="contentView" destination="N5d-GS-Bjf" id="9QX-SO-Mjv"/>
                 <outlet property="innerView" destination="Eob-u7-8A9" id="o0e-Xk-gd5"/>
+                <outlet property="lblPrintStore" destination="FTI-oR-SU5" id="XcU-hf-VDE"/>
                 <outlet property="navigationView" destination="rJf-7a-PVy" id="hbR-AM-MrZ"/>
                 <outlet property="printContentView" destination="JkI-Ja-lPE" id="bTm-0S-tFd"/>
                 <outlet property="selectView" destination="QD9-9I-onb" id="zUV-JJ-bz3"/>
@@ -80,7 +81,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ouz-LW-KAC">
                                             <rect key="frame" x="8" y="8" width="359" height="48"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chọn cửa hiệu in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTI-oR-SU5">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chọn cửa hiệu in" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTI-oR-SU5">
                                                     <rect key="frame" x="8" y="0.0" width="343" height="48"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
@@ -92,11 +93,19 @@
                                                         <action selector="printSelect:" destination="-1" eventType="touchUpInside" id="vJl-Og-dAL"/>
                                                     </connections>
                                                 </button>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="K_Next" translatesAutoresizingMaskIntoConstraints="NO" id="rEe-Qc-INt">
+                                                    <rect key="frame" x="334" y="16.5" width="15" height="15"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="15" id="gk6-be-BVE"/>
+                                                        <constraint firstAttribute="width" secondItem="rEe-Qc-INt" secondAttribute="height" id="ohA-UW-7d0"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="vWT-ro-l6D" secondAttribute="bottom" id="25j-nI-Cnc"/>
                                                 <constraint firstItem="vWT-ro-l6D" firstAttribute="leading" secondItem="Ouz-LW-KAC" secondAttribute="leading" id="702-CS-lCt"/>
+                                                <constraint firstAttribute="trailing" secondItem="rEe-Qc-INt" secondAttribute="trailing" constant="10" id="BpO-Fu-Qit"/>
                                                 <constraint firstAttribute="trailing" secondItem="vWT-ro-l6D" secondAttribute="trailing" id="Ogs-Cy-PTm"/>
                                                 <constraint firstAttribute="bottom" secondItem="FTI-oR-SU5" secondAttribute="bottom" id="Vat-p3-Hne"/>
                                                 <constraint firstAttribute="height" constant="48" id="ZFI-Mb-eBk"/>
@@ -104,6 +113,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="FTI-oR-SU5" secondAttribute="trailing" constant="8" id="frl-pH-Dwf"/>
                                                 <constraint firstItem="vWT-ro-l6D" firstAttribute="top" secondItem="Ouz-LW-KAC" secondAttribute="top" id="gle-OZ-6Mz"/>
                                                 <constraint firstItem="FTI-oR-SU5" firstAttribute="top" secondItem="Ouz-LW-KAC" secondAttribute="top" id="ixd-96-Eet"/>
+                                                <constraint firstItem="rEe-Qc-INt" firstAttribute="centerY" secondItem="Ouz-LW-KAC" secondAttribute="centerY" id="zQl-qM-nU2"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -155,4 +165,7 @@
             <point key="canvasLocation" x="-1639" y="-46"/>
         </view>
     </objects>
+    <resources>
+        <image name="K_Next" width="7" height="12"/>
+    </resources>
 </document>
