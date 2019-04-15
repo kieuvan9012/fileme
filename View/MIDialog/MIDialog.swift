@@ -174,8 +174,23 @@ extension UIView
             dialog.alpha = 1.0
         }
     }
-
     
+    func warning(title : String ,desc : String, acceptBlock : @escaping (()->Void) )
+    {
+        let dialog = MIDialog.init(title: title, desc: desc, type: .warning, acceptBlock: { () in
+            acceptBlock()
+        }) { () in
+        }
+        self.addSubview(dialog)
+        self.setLayout(dialog)
+        dialog.alpha = 0.0
+        
+        dialog.contentView.drawRadius(4)
+        UIView.animate(withDuration: 0.25) { () -> Void in
+            dialog.alpha = 1.0
+        }
+    }
+
     func warning(title : String ,desc : String )
     {
         let dialog = MIDialog.init(title: title, desc: desc, type: .warning, acceptBlock: { () in

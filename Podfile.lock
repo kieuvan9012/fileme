@@ -10,31 +10,12 @@ PODS:
   - Bolts/AppLinks (1.9.0):
     - Bolts/Tasks
   - Bolts/Tasks (1.9.0)
-  - CocoaAsyncSocket (7.6.3)
-  - CocoaLumberjack (3.5.2):
-    - CocoaLumberjack/Core (= 3.5.2)
-  - CocoaLumberjack/Core (3.5.2)
-  - CocoaLumberjack/Swift (3.5.2):
-    - CocoaLumberjack/Core
   - DeviceUtil (5.0.0)
-  - FBSDKCoreKit (4.41.0):
+  - FBSDKCoreKit (4.44.1):
     - Bolts (~> 1.9)
-  - FBSDKLoginKit (4.41.0):
+  - FBSDKLoginKit (4.44.1):
     - FBSDKCoreKit
-  - FirebaseAnalytics (3.9.0):
-    - FirebaseCore (~> 3.6)
-    - FirebaseInstanceID (~> 1.0)
-    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
-  - FirebaseCore (3.6.0):
-    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
-  - FirebaseInstanceID (1.0.10):
-    - FirebaseCore (~> 3.6)
   - Gallery (2.2.0)
-  - Google/Core (3.0.3):
-    - FirebaseAnalytics (~> 3.2)
-  - Google/SignIn (3.0.3):
-    - Google/Core
-    - GoogleSignIn (~> 4.0)
   - GoogleAPIClientForREST/Core (1.2.1):
     - GTMSessionFetcher (>= 1.1.7)
   - GoogleAPIClientForREST/Drive (1.2.1):
@@ -55,8 +36,6 @@ PODS:
   - GoogleToolboxForMac/DebugUtils (2.2.0):
     - GoogleToolboxForMac/Defines (= 2.2.0)
   - GoogleToolboxForMac/Defines (2.2.0)
-  - "GoogleToolboxForMac/NSData+zlib (2.2.0)":
-    - GoogleToolboxForMac/Defines (= 2.2.0)
   - "GoogleToolboxForMac/NSDictionary+URLArguments (2.2.0)":
     - GoogleToolboxForMac/DebugUtils (= 2.2.0)
     - GoogleToolboxForMac/Defines (= 2.2.0)
@@ -69,13 +48,11 @@ PODS:
   - GTMSessionFetcher/Core (1.2.1)
   - GTMSessionFetcher/Full (1.2.1):
     - GTMSessionFetcher/Core (= 1.2.1)
-  - IQKeyboardManager (6.2.0)
-  - KissXML (5.2.3)
-  - libidn (1.35)
+  - IQKeyboardManager (6.2.1)
   - PureLayout (3.1.4)
-  - SDWebImage (4.4.6):
-    - SDWebImage/Core (= 4.4.6)
-  - SDWebImage/Core (4.4.6)
+  - SDWebImage (5.0.1):
+    - SDWebImage/Core (= 5.0.1)
+  - SDWebImage/Core (5.0.1)
   - Socket.IO-Client-Swift (13.1.3):
     - Starscream (~> 3.0.2)
   - Starscream (3.0.6)
@@ -83,16 +60,7 @@ PODS:
   - swiftScan (1.1.5)
   - SwiftyDropbox (5.0.0):
     - Alamofire (~> 4.7.3)
-  - SwiftyStarRatingView (1.0.4)
-  - SwipeableTabBarController (2.0.0)
-  - XMPPFramework/default (4.0.0):
-    - CocoaAsyncSocket (~> 7.6)
-    - CocoaLumberjack
-    - KissXML (~> 5.2)
-    - libidn (~> 1.35)
-  - XMPPFramework/Swift (4.0.0):
-    - CocoaLumberjack/Swift
-    - XMPPFramework/default
+  - SwipeableTabBarController (2.1.0)
 
 DEPENDENCIES:
   - AccountKit
@@ -102,7 +70,6 @@ DEPENDENCIES:
   - DeviceUtil
   - FBSDKLoginKit
   - Gallery
-  - Google/SignIn (~> 3.0.3)
   - GoogleAPIClientForREST/Drive (~> 1.2.1)
   - GoogleMaps
   - GooglePlaces
@@ -114,9 +81,7 @@ DEPENDENCIES:
   - SwiftHash
   - swiftScan
   - SwiftyDropbox
-  - SwiftyStarRatingView
   - SwipeableTabBarController
-  - XMPPFramework/Swift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -125,16 +90,10 @@ SPEC REPOS:
     - AlamofireImage
     - ALCameraViewController
     - Bolts
-    - CocoaAsyncSocket
-    - CocoaLumberjack
     - DeviceUtil
     - FBSDKCoreKit
     - FBSDKLoginKit
-    - FirebaseAnalytics
-    - FirebaseCore
-    - FirebaseInstanceID
     - Gallery
-    - Google
     - GoogleAPIClientForREST
     - GoogleMaps
     - GooglePlaces
@@ -143,8 +102,6 @@ SPEC REPOS:
     - GTMOAuth2
     - GTMSessionFetcher
     - IQKeyboardManager
-    - KissXML
-    - libidn
     - PureLayout
     - SDWebImage
     - Socket.IO-Client-Swift
@@ -152,9 +109,7 @@ SPEC REPOS:
     - SwiftHash
     - swiftScan
     - SwiftyDropbox
-    - SwiftyStarRatingView
     - SwipeableTabBarController
-    - XMPPFramework
 
 SPEC CHECKSUMS:
   AccountKit: 870ccaf5d33facda9408783e28fbe68c5211e069
@@ -162,16 +117,10 @@ SPEC CHECKSUMS:
   AlamofireImage: 78d67ccbb763d87ba44b21583d2153500a195630
   ALCameraViewController: 6398a9282057f709b87a1ecc52a83b48028ade64
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
-  CocoaAsyncSocket: eafaa68a7e0ec99ead0a7b35015e0bf25d2c8987
-  CocoaLumberjack: 118bf4a820efc641f79fa487b75ed928dccfae23
   DeviceUtil: effb5fd6d301a1bd42e0ac367b3391696651431e
-  FBSDKCoreKit: 974810fe3806173f3777c68062fa8ed6fa59b59d
-  FBSDKLoginKit: 159a5c2eebe6a0774c3b128f5085128679233d2b
-  FirebaseAnalytics: e5fe8486efc01bec33f6bf82e2fa9fce4b124052
-  FirebaseCore: 9691ee2ade70c098d7cf92440f4303f16d83ca75
-  FirebaseInstanceID: b9eedd6846fb5e1f0f7279e1deaa7a7e4cf8392e
+  FBSDKCoreKit: a823ae35bdb60ebb8d7a7e51abe7c5d87d2bfced
+  FBSDKLoginKit: 54ae59987f2a8703021557c90a9aebb9e5c2bef6
   Gallery: 3f4c780c4b22906d6b0a5e55d12167cdc4b4fc5b
-  Google: cd92fab98f800f509da88c1e0c570275713bc9d5
   GoogleAPIClientForREST: a8b95a252014ce2e618df6b75dc72eca2c00b4af
   GoogleMaps: fd5c9fa58871781b9fb94d4936f19c69fe60ce32
   GooglePlaces: f09e76993c9c3ee4af8f4f7f535bb94d6aa3b649
@@ -179,20 +128,16 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: ff31605b7d66400dcec09bed5861689aebadda4d
   GTMOAuth2: e8b6512c896235149df975c41d9a36c868ab7fba
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
-  IQKeyboardManager: 6194101620b73af5e67900b8f89707a99de0b804
-  KissXML: 09f88ff8161fd058d67b70740b8b516687b52823
-  libidn: e4576a956b797c584c77aaedfc6e3dd639b61bdc
+  IQKeyboardManager: 964638372b4a61892cc74fdfa6fd26de8c9464a2
   PureLayout: f08c01b8dec00bb14a1fefa3de4c7d9c265df85e
-  SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
+  SDWebImage: 27dd2c9ea07a2252f94557c9fbb6105ee94b74c9
   Socket.IO-Client-Swift: d30d6fd08a38ad2a182b090936a043bf512ab2de
   Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
   SwiftHash: 6d312abe61c8359bdef8d0093642f3a70b1c17ba
   swiftScan: bc6dbf74e6a579c45a861691afc44628d8d9f6ab
   SwiftyDropbox: 378b4425a2e8d0cb24c7b0f2e3af72bfbaaf1e73
-  SwiftyStarRatingView: a2b0057700e0adeb8e7442c55d99cb53b531d2f4
-  SwipeableTabBarController: 4706fcc25de25785c87a7d0b9ac63c056e79bda3
-  XMPPFramework: 5d31ff9f73dce031b24bc49bcf88093627a3a86e
+  SwipeableTabBarController: e6445066473bb548cc74f660c0ebc04d609cde67
 
-PODFILE CHECKSUM: 7ee739191d6fe302035e064c00012d6ab5172f95
+PODFILE CHECKSUM: f1499ca29e9d2c0112aef5394e6b5f60b057bab1
 
 COCOAPODS: 1.5.3

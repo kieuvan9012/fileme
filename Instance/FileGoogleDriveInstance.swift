@@ -7,21 +7,18 @@
 
 import UIKit
 import GoogleAPIClientForREST
-import GTMSessionFetcher
-import GTMOAuth2
+import GoogleSignIn
 
 let ggDriveInstance = FileGoogleDriveInstance.sharedInstance()
 
 class FileGoogleDriveInstance: NSObject {
-    private let kKeychainItemName = "GoogleDrive"
     private let kClientID = "47587196428-3svqb2ftjaj77e79r9f9argeosgd8qvc.apps.googleusercontent.com"
-    private let kClientSecret = ""
-
-    var serviceGGDrive : GTLRDriveService!
+    
+    var serviceGGDrive = GTLRDriveService()
     var fetcher: GTMSessionFetcher! = GTMSessionFetcher()
     var getMediaBlock : (([MediaFile])->Void)!
     private var getSuccessDownBlock : ((Float, Data?, String?)->Void)!
-
+    
     static var instance: FileGoogleDriveInstance!
     class func sharedInstance() -> FileGoogleDriveInstance
     {
@@ -35,51 +32,18 @@ class FileGoogleDriveInstance: NSObject {
     }
     
     private func setUpGoogle() {
-        let dictionary = [
-            "UserAgent" : "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36"
-        ]
-        UserDefaults.standard.register(defaults: dictionary)
-        // Initialize the Drive API service & load existing credentials from the keychain if available.
-        serviceGGDrive = GTLRDriveService()
-        serviceGGDrive.authorizer = GTMOAuth2ViewControllerTouch.authForGoogleFromKeychain(forName: kKeychainItemName, clientID: kClientID, clientSecret: kClientSecret)
-    }
-    
-    private func createAuthController() -> GTMOAuth2ViewControllerTouch? {
-        var authController: GTMOAuth2ViewControllerTouch?
-        // If modifying these scopes, delete your previously saved credentials by
-        // resetting the iOS simulator or uninstall the app.
-        let scopes = [kGTLRAuthScopeDrive]
-        authController = GTMOAuth2ViewControllerTouch(scope: scopes.joined(separator: " "), clientID: kClientID, clientSecret: nil, keychainItemName: kKeychainItemName, delegate: self, finishedSelector: #selector(viewController(_:finishedWithAuth:error:)))
-        return authController
-    }
-
-    @objc private func viewController(_ viewController: GTMOAuth2ViewControllerTouch?, finishedWithAuth authResult: GTMOAuth2Authentication?, error : Error) throws {
-        if (error != nil) { // thất bại
-            print("lỗi gg drive: ", error)
-            serviceGGDrive.authorizer = nil
-            viewController?.dismiss()
-        } else {
-            serviceGGDrive.authorizer = authResult
-            viewController?.dismiss()
-            self.loadListData("root")
-        }
+        GIDSignIn.sharedInstance().clientID = kClientID
     }
     
     func connectGGDrive(_ folderId: String, success : @escaping (([MediaFile])->Void)) {
         self.getMediaBlock = success
-
-        if (serviceGGDrive.authorizer == nil || !(serviceGGDrive.authorizer?.canAuthorize)!) {
-            // Not yet authorized, request authorization by pushing the login UI onto the UI stack.
-            app.window?.rootViewController?.present(createAuthController()!, competion: {
-            })
-        } else {
-            self.loadListData(folderId)
-        }
+        
+        self.loadListData(folderId)
     }
-
+    
     public func sighOut() {
         serviceGGDrive = GTLRDriveService()
-        GTMOAuth2ViewControllerTouch.removeAuthFromKeychain(forName: kKeychainItemName)
+        GIDSignIn.sharedInstance()?.signOut()
     }
     
     func cancelDownload() {
@@ -88,7 +52,7 @@ class FileGoogleDriveInstance: NSObject {
     
     func downloadFile(_ fileData: MediaFile, success: @escaping ((Float, Data?, String?)-> Void)) {
         self.getSuccessDownBlock = success
-
+        
         // start config download
         if(self.fetcher.isFetching) {
             self.fetcher.stopFetching()
@@ -104,9 +68,6 @@ class FileGoogleDriveInstance: NSObject {
             let query = GTLRDriveQuery_FilesGet.queryForMedia(withFileId: fileData.identifier)
             downloadRequest = self.serviceGGDrive.request(for: query) as URLRequest
         }
-        if(downloadRequest == nil) {
-            return
-        }
         
         self.fetcher = self.serviceGGDrive.fetcherService.fetcher(with: downloadRequest)
         
@@ -114,7 +75,7 @@ class FileGoogleDriveInstance: NSObject {
         self.fetcher.receivedProgressBlock = { bytesWritten, totalBytesWritten in
             let progress = Float(totalBytesWritten) / Float(fileData.size)
             print("progressData:", progress)
-
+            
             self.getSuccessDownBlock(progress, nil, nil)
         }
         
@@ -140,7 +101,7 @@ class FileGoogleDriveInstance: NSObject {
         //            }
         //        }
     }
-
+    
     
     public func loadListData(_ folderId: String){
         var lstData: [MediaFile] = []
@@ -151,9 +112,9 @@ class FileGoogleDriveInstance: NSObject {
         query.q = String(format: "trashed = false and '%@' In parents ", folderId)
         
         serviceGGDrive.executeQuery(query) { (ticket, result, error) in
-            print(ticket)
-            print(result as! GTLRDrive_FileList)
-            print(error as Any)
+//            print(ticket)
+//            print(result as! GTLRDrive_FileList)
+//            print(error as Any)
             
             if(error == nil) {
                 let lstFilesData = (result as! GTLRDrive_FileList).files!
@@ -177,7 +138,4 @@ class FileGoogleDriveInstance: NSObject {
             }
         }
     }
-
-
-    
 }

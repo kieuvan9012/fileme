@@ -6,7 +6,8 @@
 //
 
 import UIKit
-import SwiftyDropbox
+import GoogleSignIn
+import GoogleAPIClientForREST
 
 protocol DriveDropBoxViewControllerDelegate: class {
     func successDownloadFile(_ data: MediaFile)
@@ -15,17 +16,21 @@ protocol DriveDropBoxViewControllerDelegate: class {
 class DriveDropBoxViewController: MasterViewController {
     @IBOutlet weak var tbContent: UITableView!
     @IBOutlet weak var viewLogout: UIView!
-    var fileType: FileStore = FileStore.fileMe
+    var fileType: FileStore = FileStore.drive
     weak var actionDelegate: DriveDropBoxViewControllerDelegate?
     
     private var lstData: [MediaFile] = []
     private var folderId = ""
     private var folderName = ""
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.setUpView()
+        
+        if(isGGDriveMode()) { // lỗi call ở willappear, response trả về sau khi load lại màn hình này -> config sai !!!
+            self.connectGGDrive()
+        }
     }
     
     private func setUpView() {
@@ -35,7 +40,7 @@ class DriveDropBoxViewController: MasterViewController {
         
         tbContent.es.addPullToRefresh {
             if(self.isGGDriveMode()) {
-                self.loadGGDriveData()
+                self.connectGGDrive()
             } else {
                 self.loadDropboxData()
             }
@@ -65,18 +70,21 @@ class DriveDropBoxViewController: MasterViewController {
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        if(isGGDriveMode()) {
+    private func connectGGDrive() {
+        if (ggDriveInstance.serviceGGDrive.authorizer == nil || !(ggDriveInstance.serviceGGDrive.authorizer?.canAuthorize)!) {
+            GIDSignIn.sharedInstance().delegate = self
+            GIDSignIn.sharedInstance().uiDelegate = self
+            GIDSignIn.sharedInstance().scopes = [kGTLRAuthScopeDrive]
+            GIDSignIn.sharedInstance()?.signIn() // chỉ call dc ở UIViewcontroller .... k dùng dc ở NSOject
+        } else {
             self.loadGGDriveData()
         }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
-        if(!isGGDriveMode()) { // dropbox nên load viewDidAppear
+        
+        if(!isGGDriveMode()) { // dropbox load ở viewDidAppear
             self.loadDropboxData()
         }
     }
@@ -166,14 +174,15 @@ extension DriveDropBoxViewController: UITableViewDelegate {
     
     func processDownload(_ progress: Float,_ data: Data?,_ error: String?,_ dto: MediaFile) {
         if(data != nil && progress == 1 && error == nil) { // case download thành công
-            self.view.warning(title: "Thành công", desc: "Tải tệp thành công")
             self.view.hideAlertBox()
-            self.popToViewControllerCustomClass(HomeViewController.self)
-
-            if(actionDelegate != nil) {
+            if(self.actionDelegate != nil) {
                 dto.data = data
-                actionDelegate?.successDownloadFile(dto) // 123123
+                self.actionDelegate?.successDownloadFile(dto)
             }
+            self.view.warning(title: "Thành công", desc: "Tải tệp thành công") {
+                self.popToViewControllerCustomClass(HomeViewController.self)
+            }
+            
         } else if(error != nil) {
             self.view.hideAlertBox()
             if(!(error?.contains("Code=-999"))!) { // cancelled dropbox
@@ -194,3 +203,19 @@ extension DriveDropBoxViewController: DownloadFileViewDelegate {
         self.view.hideAlertBox()
     }
 }
+
+// MARK: Google Drive Sign In
+extension DriveDropBoxViewController: GIDSignInDelegate {
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let _ = error {
+            ggDriveInstance.serviceGGDrive.authorizer = nil
+            self.tbContent.es.stopPullToRefresh()
+        } else {
+            ggDriveInstance.serviceGGDrive.authorizer = user.authentication.fetcherAuthorizer()
+            self.loadGGDriveData()
+        }
+    }
+}
+
+extension DriveDropBoxViewController: GIDSignInUIDelegate {}
+

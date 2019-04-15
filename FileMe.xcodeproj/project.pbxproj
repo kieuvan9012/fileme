@@ -986,14 +986,14 @@
 		510EA45B222BF8B200DB3724 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				510EA45C222BF8B200DB3724 /* GreenCheckbox.xib */,
-				510EA45D222BF8B200DB3724 /* GreenCheckbox.swift */,
-				510EA45E222BF8B200DB3724 /* GreenEmptyView.swift */,
-				510EA45F222BF8B200DB3724 /* GreenButtonCenter.xib */,
 				510EA463222BF8B200DB3724 /* GreenButtonCenter.swift */,
+				510EA45F222BF8B200DB3724 /* GreenButtonCenter.xib */,
+				510EA45D222BF8B200DB3724 /* GreenCheckbox.swift */,
+				510EA45C222BF8B200DB3724 /* GreenCheckbox.xib */,
+				510EA45E222BF8B200DB3724 /* GreenEmptyView.swift */,
+				510EA460222BF8B200DB3724 /* LandingView */,
 				0BC43B5A225A076D00C11CD0 /* MIStepNumberView */,
 				0BC43B4D225A01C800C11CD0 /* MIStepView */,
-				510EA460222BF8B200DB3724 /* LandingView */,
 			);
 			path = View;
 			sourceTree = "<group>";
