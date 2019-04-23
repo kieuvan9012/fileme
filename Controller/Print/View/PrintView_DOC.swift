@@ -8,13 +8,8 @@
 import UIKit
 
 class PrintView_DOC: PrintView {
-    @IBOutlet weak var pageCountingView: MIDropListView!
-    
     @IBOutlet weak var colorView: MIDropListView!
-    
     @IBOutlet weak var typeView: MIDropListView!
-    
-    
     @IBOutlet weak var layoutView: MIDropListView!
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var lbName: UILabel!
@@ -27,7 +22,8 @@ class PrintView_DOC: PrintView {
     @IBOutlet weak var radioLimitPage: RadioView!
     @IBOutlet weak var radioFullPage: RadioView!
     @IBOutlet weak var numberCopiesView: MIStepNumberView!
-    
+    @IBOutlet weak var pageCountingView: MIDropListView!
+
     @IBOutlet weak var radioBinding: RadioView!
     @IBOutlet weak var radioStandartView: RadioView!
     @IBOutlet weak var radioCover: RadioView!

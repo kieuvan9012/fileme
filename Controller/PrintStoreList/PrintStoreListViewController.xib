@@ -26,7 +26,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="64" id="JUZ-Va-qEK"/>
+                        <constraint firstAttribute="height" priority="750" constant="64" id="JUZ-Va-qEK"/>
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="iLs-dh-0Gp"/>
                 </view>

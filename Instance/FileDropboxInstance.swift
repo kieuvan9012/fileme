@@ -75,7 +75,7 @@ class FileDropboxInstance: NSObject {
 
     }
     
-    public func sighOut() {
+    public func signOut() {
         DropboxClientsManager.unlinkClients()
     }
 

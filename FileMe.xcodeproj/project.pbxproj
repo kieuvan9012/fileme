@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0B17EEC7226325520054D156 /* GreenExtension+NSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B17EEC6226325520054D156 /* GreenExtension+NSMutableAttributedString.swift */; };
+		0B1CDE5F226C696A00488EEB /* PrintFileSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1CDE5E226C696A00488EEB /* PrintFileSelectViewController.swift */; };
+		0B1CDE61226C697200488EEB /* PrintFileSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B1CDE60226C697200488EEB /* PrintFileSelectViewController.xib */; };
+		0B1CDE63226C6D1300488EEB /* MyFileDataInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1CDE62226C6D1300488EEB /* MyFileDataInstance.swift */; };
 		0BC43B3E2259E4D200C11CD0 /* ESPullToRefresh+Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC43B302259E4D200C11CD0 /* ESPullToRefresh+Manager.swift */; };
 		0BC43B3F2259E4D200C11CD0 /* ESRefreshAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC43B312259E4D200C11CD0 /* ESRefreshAnimator.swift */; };
 		0BC43B402259E4D200C11CD0 /* ESRefreshComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC43B322259E4D200C11CD0 /* ESRefreshComponent.swift */; };
@@ -313,6 +316,9 @@
 
 /* Begin PBXFileReference section */
 		0B17EEC6226325520054D156 /* GreenExtension+NSMutableAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GreenExtension+NSMutableAttributedString.swift"; sourceTree = "<group>"; };
+		0B1CDE5E226C696A00488EEB /* PrintFileSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintFileSelectViewController.swift; sourceTree = "<group>"; };
+		0B1CDE60226C697200488EEB /* PrintFileSelectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrintFileSelectViewController.xib; sourceTree = "<group>"; };
+		0B1CDE62226C6D1300488EEB /* MyFileDataInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFileDataInstance.swift; sourceTree = "<group>"; };
 		0BC43B302259E4D200C11CD0 /* ESPullToRefresh+Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ESPullToRefresh+Manager.swift"; sourceTree = "<group>"; };
 		0BC43B312259E4D200C11CD0 /* ESRefreshAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESRefreshAnimator.swift; sourceTree = "<group>"; };
 		0BC43B322259E4D200C11CD0 /* ESRefreshComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESRefreshComponent.swift; sourceTree = "<group>"; };
@@ -879,6 +885,7 @@
 				51463C04223EBA3E00841276 /* FileICloudInstance.swift */,
 				4F3A10D2223FC16A004E1F65 /* FileGoogleDriveInstance.swift */,
 				4F3A10D4223FC17A004E1F65 /* FileDropboxInstance.swift */,
+				0B1CDE62226C6D1300488EEB /* MyFileDataInstance.swift */,
 			);
 			path = Instance;
 			sourceTree = "<group>";
@@ -1424,6 +1431,8 @@
 				51F215CF223B4D1E009FAC97 /* PrintAddView.xib */,
 				51F215D1223B4DAE009FAC97 /* PrintAddUnitView.swift */,
 				51F215D3223B4DB8009FAC97 /* PrintAddUnitView.xib */,
+				0B1CDE5E226C696A00488EEB /* PrintFileSelectViewController.swift */,
+				0B1CDE60226C697200488EEB /* PrintFileSelectViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1521,6 +1530,7 @@
 				51463BEA223D5AB200841276 /* PrintSelectViewController.xib in Resources */,
 				5166BF5B2257120E00A08B97 /* NavigationView.xib in Resources */,
 				510EA492222BF8B300DB3724 /* Library.png in Resources */,
+				0B1CDE61226C697200488EEB /* PrintFileSelectViewController.xib in Resources */,
 				510EA3C5222BF48A00DB3724 /* input.mp3 in Resources */,
 				51F215D4223B4DB8009FAC97 /* PrintAddUnitView.xib in Resources */,
 				51463BF5223E12F600841276 /* FileAddView.xib in Resources */,
@@ -1795,6 +1805,7 @@
 				510EA477222BF8B300DB3724 /* GreenExtention+UITableView.swift in Sources */,
 				510EA2AA222BF44C00DB3724 /* ServicesConfig.swift in Sources */,
 				51463BE5223D59F900841276 /* PrintView.swift in Sources */,
+				0B1CDE63226C6D1300488EEB /* MyFileDataInstance.swift in Sources */,
 				510EA525222BF94700DB3724 /* ReactUserView.swift in Sources */,
 				510EA639222BFAD700DB3724 /* MasterViewController.swift in Sources */,
 				510EA407222BF6BF00DB3724 /* DeviceInfo.swift in Sources */,
@@ -1856,6 +1867,7 @@
 				510EA47C222BF8B300DB3724 /* GreenLabel.swift in Sources */,
 				510B496C2234F8D800BA4706 /* FileListCell.swift in Sources */,
 				510EA47E222BF8B300DB3724 /* GreenView.swift in Sources */,
+				0B1CDE5F226C696A00488EEB /* PrintFileSelectViewController.swift in Sources */,
 				510EA413222BF7F100DB3724 /* UserInstance.swift in Sources */,
 				510EA564222BF94700DB3724 /* MasterFooterView.swift in Sources */,
 				510EA46E222BF8B300DB3724 /* GreenExtension+String.swift in Sources */,

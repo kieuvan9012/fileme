@@ -41,3 +41,20 @@ class MasterViewController: UIViewController {
         view.hideAlertBox()
     }
 }
+
+class MasterUITableView: UITableView {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        self.backgroundColor = .clear
+        self.separatorStyle = .none
+    }
+}
+
+class MasterUITableViewCell: UITableViewCell {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        self.backgroundColor = .clear
+    }
+}

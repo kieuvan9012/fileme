@@ -107,9 +107,9 @@ class DriveDropBoxViewController: MasterViewController {
     @IBAction func signOutButtonPressed(_ sender: Any) {
         view.dialog(title: "Xác nhận", desc: String(format: "Bạn có muốn đăng xuất %@ ?", getTypeName()), type: .infoConfirm, acceptBlock: {
             if(self.isGGDriveMode()) {
-                ggDriveInstance.sighOut()
+                ggDriveInstance.signOut()
             } else {
-                dropboxInstance.sighOut()
+                dropboxInstance.signOut()
             }
             
             self.navigationController?.popViewController(animated: false)

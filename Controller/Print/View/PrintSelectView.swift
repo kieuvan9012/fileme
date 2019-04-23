@@ -14,17 +14,9 @@ protocol PrintSelectViewDelegate: class  {
 
 class PrintSelectView: GreenView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    
     weak var delegate : PrintSelectViewDelegate?
-    var selectIndex = -1;
-    
-
+    var selectIndex = -1
     private var  _count = 0
-    
-    
-    
-    
-
     
     var counting : Int{
         set{
@@ -64,6 +56,7 @@ class PrintSelectView: GreenView, UICollectionViewDelegate, UICollectionViewData
         cell.set(String(indexPath.row + 1))
         return cell 
     }
+    
     @IBAction func touchInAdd(_ sender: Any) {
         delegate?.printSelectViewAdd()
     }

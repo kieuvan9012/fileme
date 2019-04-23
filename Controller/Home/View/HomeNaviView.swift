@@ -25,7 +25,7 @@ class HomeNaviView: GreenView, UITextFieldDelegate
     
     var activeSearch = false
     @IBOutlet weak var lbTitle: UILabel!
-    var delegate : HomeNaviViewDelegate!
+    var delegate : HomeNaviViewDelegate?
     var right_0_block : (()->Void)!
     
     @IBOutlet weak var btSearch: UIButton!
@@ -78,7 +78,7 @@ class HomeNaviView: GreenView, UITextFieldDelegate
     }
 
     @IBAction func tfChange(_ sender: Any) {
-        delegate.homeNaviViewSearch((tfSearch.text?.trim())!)
+        delegate?.homeNaviViewSearch((tfSearch.text?.trim())!)
     }
     
     
@@ -106,12 +106,12 @@ class HomeNaviView: GreenView, UITextFieldDelegate
     
     func textFieldDidEndEditing(_ textField: UITextField)
     {
-        delegate.homeNaviViewDisableSearch()
+        delegate?.homeNaviViewDisableSearch()
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         searchStyle()
-        delegate.homeNaviViewActiveSearchEngine()
+        delegate?.homeNaviViewActiveSearchEngine()
     }
     
     

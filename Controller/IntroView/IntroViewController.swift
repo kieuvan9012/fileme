@@ -26,7 +26,7 @@ class IntroViewController: UIViewController {
                 weakself?.processData()
             }
         }) { (error) in
-            
+            app.home() // test123
         }
     }
     

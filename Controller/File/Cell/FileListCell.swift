@@ -7,24 +7,23 @@
 
 import UIKit
 
-class FileListCell: UITableViewCell {
-
+class FileListCell: MasterUITableViewCell {
     @IBOutlet weak var activeView: UIView!
-    
+    @IBOutlet weak var lbTitle: UILabel!
+    @IBOutlet weak var levelTraits: NSLayoutConstraint!
+    @IBOutlet weak var imgView: UIImageView!
+
     var file : MediaFile!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
-    @IBOutlet weak var lbTitle: UILabel!
-    @IBOutlet weak var levelTraits: NSLayoutConstraint!
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
     }
     
-    @IBOutlet weak var imgView: UIImageView!
     func set(_ file : MediaFile)
     {
         self.file = file
@@ -45,6 +44,5 @@ class FileListCell: UITableViewCell {
         {
             activeView.backgroundColor = .white
         }
-
     }
 }

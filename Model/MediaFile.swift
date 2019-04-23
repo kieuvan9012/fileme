@@ -37,7 +37,7 @@ enum MediaType : Int
 enum FileType : String
 {
     case folder =  "folder"
-    case excel = "excel"
+    case pdf = "pdf"
     case word = "word"
     case ppt = "ppt"
     case image = "image"
@@ -62,10 +62,9 @@ class MediaFile: Mi {
     @objc dynamic var mimetype = ""
     @objc dynamic var size = 0
     @objc dynamic var filename = ""
-    @objc dynamic var parrent_path = ""
-
-    // local
+    @objc dynamic var parent_id = 0
     
+    // local
     @objc dynamic var name = ""
     @objc dynamic var fileExtension = ""
     @objc dynamic var data : Data!
@@ -114,7 +113,6 @@ class MediaFile: Mi {
         }
     }
     
-    
     func getEndData()->Data
     {
         if(url != nil)
@@ -133,16 +131,24 @@ class MediaFile: Mi {
     
     func processFileType()
     {
+//        switch mimetype {
+//        case "doc","docx","docm","dotx","dotm","docb": fileType = .word;
+//        case "xls","xlsb","xlsm","xlsx": fileType = .excel;
+//        case "sldx","pptx","pptm","potx","potm","ppam","ppsx","ppsm": fileType = .ppt;
+//        case "png","jpg","jpeg" : fileType = .image;
+//        default : fileType = .folder;
+//        }
+        
         switch mimetype {
-        case "doc","docx","docm","dotx","dotm","docb": fileType = .word;
-        case "xls","xlsb","xlsm","xlsx": fileType = .excel;
-        case "sldx","pptx","pptm","potx","potm","ppam","ppsx","ppsm": fileType = .ppt;
-        case "png","jpg","jpeg" : fileType = .image;
-        default : fileType = .folder;
+        case "doc", "docx", "docm", "dotx", "dotm","docb", "txt": fileType = .word; break;
+        case "pdf": fileType = .pdf; break;
+        case "sldx", "pptx", "pptm", "potx", "potm", "ppam", "ppsx", "ppsm": fileType = .ppt; break;
+        case "png", "jpg", "jpeg" : fileType = .image; break;
+        default : fileType = .folder; break;
         }
     }
     
-    class func  list(data : [Dictionary<String, Any>]) -> [MediaFile]
+    class func list(data : [Dictionary<String, Any>]) -> [MediaFile]
     {
         var output  : [MediaFile]  = []
         for item in data
@@ -196,11 +202,19 @@ class MediaFile: Mi {
     func imageDisplay()->UIImage
     {
         
+//        switch mimetype {
+//        case "doc","docx","docm","dotx","dotm","docb": return "Word".image();
+//        case "xls","xlsb","xlsm","xlsx": return "Excel".image();
+//        case "sldx","pptx","pptm","potx","potm","ppam","ppsx","ppsm": return "PowerPoint".image();
+//        case "png","jpg","jpeg" : return "PowerPoint".image();
+//        default : return "Folder".image();
+//        }
+        
         switch mimetype {
-        case "doc","docx","docm","dotx","dotm","docb": return "Word".image();
-        case "xls","xlsb","xlsm","xlsx": return "Excel".image();
-        case "sldx","pptx","pptm","potx","potm","ppam","ppsx","ppsm": return "PowerPoint".image();
-        case "png","jpg","jpeg" : return "PowerPoint".image();
+        case "doc", "docx", "docm", "dotx", "dotm","docb", "txt": return "Word".image();
+        case "pdf": return "Pdf".image()
+        case "sldx", "pptx", "pptm", "potx", "potm", "ppam", "ppsx", "ppsm": return "PowerPoint".image();
+        case "png", "jpg", "jpeg" : return "Image".image();
         default : return "Folder".image();
         }
     }
@@ -231,7 +245,7 @@ class MediaFile: Mi {
     {
         if(parent == nil)
         {
-            return 0 ;
+            return 0 
         }
         if(isOpen())
         {
@@ -329,7 +343,7 @@ class MediaFileInsert_Request : Mi
     @objc dynamic var filename = ""
     @objc dynamic var path = ""
     @objc dynamic var size = 0
-    @objc dynamic var parrent_path = ""
+    @objc dynamic var parent_id = 0
 
     // thêm request
     @objc dynamic var user_id = userInstance.user.id
@@ -343,7 +357,7 @@ class MediaFileInsert_Request : Mi
         self.filename = media.filename
         self.path = media.path
         self.size = media.size
-        self.parrent_path = media.parrent_path
+        self.parent_id = media.parent_id
         
         //        self.fieldname = media.fieldname
         //        self.encoding = media.encoding
@@ -398,22 +412,22 @@ extension Services
             
             let list = MediaFile.list(data: response.data as! [Dictionary<String, Any>])
             let root  = MediaFile.init()
-            root.isExpand = true ;
-//            for item in list
-//            {
-//                for sub in list
-//                {
-//                    if(sub.parent_id == item.id)
-//                    {
-//                        item.addChild([sub])
-//                    }
-//                }
-//
-//                if(item.parent_id == 0)
-//                {
-//                    root.addChild([item])
-//                }
-//            }
+            root.isExpand = true
+            for item in list
+            {
+                for sub in list
+                {
+                    if(sub.parent_id == item.id)
+                    {
+                        item.addChild([sub])
+                    }
+                }
+
+                if(item.parent_id == 0)
+                {
+                    root.addChild([item])
+                }
+            }
             success(root)
         }) { (error) in
             failure("")

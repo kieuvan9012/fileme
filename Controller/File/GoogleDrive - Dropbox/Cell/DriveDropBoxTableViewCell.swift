@@ -55,10 +55,9 @@ class DriveDropBoxTableViewCell: UITableViewCell {
 
 class ConfigFileType: NSObject {
     static let lstFileSupport = ["doc", "docx", "docm", "dotx", "dotm", "docb",
-                                 "xls", "xlsb", "xlsm", "xlsx",
                                  "sldx", "pptx", "pptm", "potx", "potm", "ppam", "ppsx", "ppsm",
                                  "png", "jpg", "jpeg",
-                                 "txt", "pdf", "folder"]
+                                 "txt", "pdf", "folder"] // "xls", "xlsb", "xlsm", "xlsx",
     
     class func isFolderGGDrive(_ fileExtension: String?, mimeType: String) -> Bool {
         if(fileExtension == nil && mimeType  == "application/vnd.google-apps.folder") {

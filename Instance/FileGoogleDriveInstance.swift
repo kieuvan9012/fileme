@@ -41,7 +41,7 @@ class FileGoogleDriveInstance: NSObject {
         self.loadListData(folderId)
     }
     
-    public func sighOut() {
+    public func signOut() {
         serviceGGDrive = GTLRDriveService()
         GIDSignIn.sharedInstance()?.signOut()
     }

@@ -30,7 +30,7 @@ class TableView: UITableView
     }
 }
 
-class FileViewController: MasterViewController, UITableViewDelegate, UITableViewDataSource, AddFolderViewDelegate,FileAddViewDelegate
+class FileViewController: MasterViewController, AddFolderViewDelegate,FileAddViewDelegate
 {
     @IBOutlet weak var stackView: UIStackView!
     var files : [MediaFile] = []
@@ -40,12 +40,13 @@ class FileViewController: MasterViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = template.backgroundColor
+
         simpleNavi.set("My File")
         tbView.setIdentifier("FileListCell")
         
         self.tbView.stackView = stackView
         simpleNavi.bringSubviewToFront(stackView)
-        loadData()
         
         tbView.es.addPullToRefresh {
             self.loadData()
@@ -56,6 +57,7 @@ class FileViewController: MasterViewController, UITableViewDelegate, UITableView
         super.viewWillAppear(animated)
         
         notifyInstance.add(self, .hitOutsideCell, selector: #selector(hitOutsideCell))
+        loadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -79,12 +81,19 @@ class FileViewController: MasterViewController, UITableViewDelegate, UITableView
         weak var weakself = self
         files.removeAll()
         
-        services.fileList(success: { (response) in
-            weakself?.root = response
-            weakself?.generatorProcessing(item: response)
+        myFileInstance.getFilesData { (response) in
+            weakself?.processResponseFilesData(response)
+        }
+    }
+    
+    func processResponseFilesData(_ val: String) {
+        weak var weakself = self
+
+        if(val.isEmpty) {
+            weakself?.files = myFileInstance.filesData
             weakself?.updateData()
-        }) { (error) in
-            
+        } else {
+            weakself?.view.error(desc: val)
         }
     }
     
@@ -95,28 +104,12 @@ class FileViewController: MasterViewController, UITableViewDelegate, UITableView
         weakself?.tbView.es.stopPullToRefresh()
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tbView.dequeueReusableCell(withIdentifier: "FileListCell") as! FileListCell
-        cell.set(files[indexPath.row])
-        return cell ;
-    }
-    
-    func generatorProcessing(item : MediaFile)
-    {
-        files.append(item)
-        for child in item.child
-        {
-            generatorProcessing(item: child)
-        }
-    }
-    
     @IBAction func addTouch(_ sender: Any) {
         let selectFileView = FileAddView.init(frame: CGRect.init())
-        selectFileView.delegate = self;
+        selectFileView.delegate = self
+        
         view.alertBox(selectFileView, ratio: 0.90)
-
     }
-    
     
     func fileAddViewSelect(_ storeType: FileStore) {
         hideAlertBox()
@@ -143,67 +136,33 @@ class FileViewController: MasterViewController, UITableViewDelegate, UITableView
         }
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return files[indexPath.row].getHeightDisplay();
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return files.count
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let data = files[indexPath.row]
-        if(data.fileType != .folder) {
-            //                let add = PrintViewController()
-            //                add.data.append()
-            //
-            //                self.push(add)
-
-            
-            _ = MIActionSheet("title", "des", action: [("a", UIColor.red), ("2", UIColor.green)], actionBlock: { (index) in
-                
-            })
-            
-            return
-        }
-        
-        data.toggle()
-        tbView.reloadData()
-    }
-    
-    func insertMediaFile(_ value : MediaFile)
-    {
-        let request = MediaFileInsert_Request.init(value)
-//        request.parent_id = getActiveId()
-        
-        services.fileInsert(request, success: {response in
-            let parent = self.files.index{$0.id == self.getActiveId()}
-            self.files[parent!].addChild([value])
-            self.files.removeAll()
-            self.generatorProcessing(item: self.root)
-            self.tbView.reloadData()
-        }) { (error) in
-            
-        }
-    }
-    
     @IBAction func createFolderTouch(_ sender: Any) {
         let add = AddFolderView()
-        add.delegate = self;
+        add.delegate = self
+        
         view.alertBox(add, ratio: 0.90)
     }
     
     func addFolderViewAccept(_ value: String) {
-        let request = MediaFileInsert_Request()
-        request.originalname = value
-//        request.parent_id = getActiveId()
-        services.fileInsert(request, success: { response in
-            let parent = self.files.firstIndex{$0.id == self.getActiveId()}
-            self.files[parent!].addChild([response])
-            self.files.removeAll()
-            self.generatorProcessing(item: self.root)
-            self.tbView.reloadData()
-        }) { (error) in
+        weak var weakself = self
+        myFileInstance.addFolderViewAccept(value, parentId: getActiveId()) { (response) in
+            weakself?.processResponseFilesData(response)
+        }
+    }
+    
+    func insertMediaFile(_ value : MediaFile)
+    {
+        weak var weakself = self
+        myFileInstance.insertMediaFile(value, parentId: getActiveId()) { (response) in
+            weakself?.processResponseFilesData(response)
+        }
+    }
+
+    func deleteFile(_ value : MediaFile)
+    {
+        weak var weakself = self
+        myFileInstance.deleteFile(value, parentId: getActiveId()) { (response) in
+            weakself?.processResponseFilesData(response)
         }
     }
     
@@ -215,30 +174,48 @@ class FileViewController: MasterViewController, UITableViewDelegate, UITableView
         }
         return 0
     }
+}
+
+extension FileViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return files[indexPath.row].getHeightDisplay()
+    }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return files.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tbView.dequeueReusableCell(withIdentifier: "FileListCell") as! FileListCell
+        cell.set(files[indexPath.row])
+        
+        return cell
+    }
+}
+
+extension FileViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             deleteFile(files[indexPath.row])
         }
     }
     
-    func deleteFile(_ value : MediaFile)
-    {
-        let request = MediaFileDelete_Request()
-        request.file_ids = value.grossIds()
-        
-        weak var weakobject = value
-        weak var weakself = self
-        
-        services.fileDelete(request, success: {
-            weakobject!.delete()
-            weakself!.files.removeAll()
-            weakself?.generatorProcessing(item: (weakself?.root)!)
-            weakself?.tbView.reloadData()
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let data = files[indexPath.row]
+        if(data.fileType != .folder) {
+            //                let add = PrintViewController()
+            //                add.data.append()
+            //
+            //                self.push(add)
+            _ = MIActionSheet("title", "des", action: [("a", UIColor.red), ("2", UIColor.green)], actionBlock: { (index) in
+            })
             
-        }) { (error) in
-            
+            return
         }
+        
+        data.toggle()
+        
+        tbView.reloadData()
     }
 }
 
